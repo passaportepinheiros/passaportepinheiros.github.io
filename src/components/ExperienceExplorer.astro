@@ -255,7 +255,13 @@ const statusFilterItems = [
       .trim();
 
   const favoriteStorageKey = 'passaporte-pinheiros:favorites';
-  const visitedStorageKey = 'passaporte-pinheiros:visited';
+
+  const hasVisits = (slug: string): boolean => {
+    try {
+      const visits = JSON.parse(localStorage.getItem(`pp_visits_${slug}`) ?? '[]');
+      return Array.isArray(visits) && visits.length > 0;
+    } catch { return false; }
+  };
 
   document.querySelectorAll('[data-explorer]').forEach((root) => {
     const searchInput = root.querySelector<HTMLInputElement>('[data-search-input]');
@@ -288,14 +294,9 @@ const statusFilterItems = [
     };
 
     const readFavorites = () => readStorageSet(favoriteStorageKey);
-    const readVisited = () => readStorageSet(visitedStorageKey);
 
     const writeFavorites = (favorites: Set<string>) => {
       writeStorageSet(favoriteStorageKey, favorites);
-    };
-
-    const writeVisited = (visited: Set<string>) => {
-      writeStorageSet(visitedStorageKey, visited);
     };
 
     const syncFavorites = () => {
@@ -308,22 +309,11 @@ const statusFilterItems = [
       });
     };
 
-    const syncVisited = () => {
-      const visited = readVisited();
-      root.querySelectorAll('[data-visited-button]').forEach((button) => {
-        const id = button.getAttribute('data-visited-id');
-        const active = id ? visited.has(id) : false;
-        button.setAttribute('data-active', String(active));
-        button.setAttribute('aria-pressed', String(active));
-      });
-    };
-
     const updateStatusCounts = () => {
       const favorites = readFavorites();
-      const visited = readVisited();
       const counts = {
         favoritos: cards.filter((card) => favorites.has(card.getAttribute('data-experience-id') || '')).length,
-        visitados: cards.filter((card) => visited.has(card.getAttribute('data-experience-id') || '')).length,
+        visitados: cards.filter((card) => hasVisits(card.getAttribute('data-slug') || '')).length,
       };
 
       root.querySelectorAll<HTMLElement>('[data-status-count]').forEach((item) => {
@@ -343,11 +333,11 @@ const statusFilterItems = [
     const applyFilters = () => {
       const query = normalize(searchInput?.value || '');
       const favorites = readFavorites();
-      const visited = readVisited();
       let visible = 0;
 
       cards.forEach((card) => {
         const id = card.getAttribute('data-experience-id') || '';
+        const slug = card.getAttribute('data-slug') || '';
         const category = card.getAttribute('data-category');
         const payload = normalize(card.getAttribute('data-search') || '');
         const categoryMatches = activeCategory === 'todos' || category === activeCategory;
@@ -355,7 +345,7 @@ const statusFilterItems = [
         const statusMatches =
           activeStatus === 'todos' ||
           (activeStatus === 'favoritos' && favorites.has(id)) ||
-          (activeStatus === 'visitados' && visited.has(id));
+          (activeStatus === 'visitados' && hasVisits(slug));
         const shouldShow = categoryMatches && searchMatches && statusMatches;
 
         card.hidden = !shouldShow;
@@ -441,25 +431,7 @@ const statusFilterItems = [
       });
     });
 
-    root.querySelectorAll('[data-visited-button]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const id = button.getAttribute('data-visited-id');
-        if (!id) return;
-
-        const visited = readVisited();
-        if (visited.has(id)) {
-          visited.delete(id);
-        } else {
-          visited.add(id);
-        }
-        writeVisited(visited);
-        syncVisited();
-        applyFilters();
-      });
-    });
-
     syncFavorites();
-    syncVisited();
     updateStatusCounts();
     applyFilters();
 
@@ -700,7 +672,7 @@ const statusFilterItems = [
       const delBtn = target.closest('[data-delete-visit]') as HTMLElement | null;
       if (delBtn) {
         const idx = parseInt(delBtn.dataset.deleteVisit ?? '-1', 10);
-        if (idx >= 0) { deleteVisitEntry(slug, idx); rerenderVisits(slug); }
+        if (idx >= 0) { deleteVisitEntry(slug, idx); rerenderVisits(slug); updateStatusCounts(); applyFilters(); }
         return;
       }
     });
@@ -718,6 +690,8 @@ const statusFilterItems = [
       form.reset();
       document.getElementById('visit-form-wrap')?.classList.add('hidden');
       rerenderVisits(slug);
+      updateStatusCounts();
+      applyFilters();
     });
 
     const updateModalCounter = () => {

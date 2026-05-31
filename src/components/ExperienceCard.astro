@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, CircleCheck, Heart, Sparkles } from '@lucide/astro';
+import { ArrowRight, Heart, Sparkles } from '@lucide/astro';
 import {
   categoryLabel,
   compactDescription,
@@ -36,18 +36,6 @@ const experienceId = `${data.category}:${data.slug}`;
         loading="lazy"
       />
     </a>
-    <button
-      type="button"
-      class="visited-button focus-ring absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface/95 text-primary shadow-sm transition"
-      data-visited-button
-      data-visited-id={experienceId}
-      data-no-modal
-      title="Marcar como visitado"
-      aria-label={`Marcar ${data.title} como visitado`}
-      aria-pressed="false"
-    >
-      <CircleCheck class="h-5 w-5" aria-hidden="true" />
-    </button>
     <button
       type="button"
       class="favorite-button focus-ring absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface/95 text-primary shadow-sm transition"
