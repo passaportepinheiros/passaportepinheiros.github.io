@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { ArrowLeft, AtSign, ExternalLink, MapPin, MessageCircle, Phone, Sparkles } from '@lucide/astro';
+import { ArrowLeft, AtSign, ExternalLink, Globe, MapPin, MessageCircle, Phone, Sparkles } from '@lucide/astro';
 import ExperienceCard from '../../../components/ExperienceCard.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import {
@@ -100,6 +100,11 @@ const telefoneMeta = (telefone: Telefone) => {
                 <AtSign class="h-4 w-4" aria-hidden="true" />
                 @{data.instagram}
               </span>
+              {data.categoria_fsq && (
+                <span class="rounded bg-white/15 px-3 py-1 text-sm font-semibold backdrop-blur">
+                  {data.categoria_fsq}
+                </span>
+              )}
             </div>
 
             <div class="flex max-w-4xl items-end gap-5">
@@ -151,6 +156,18 @@ const telefoneMeta = (telefone: Telefone) => {
             Ver no Instagram
             <ExternalLink class="h-4 w-4" aria-hidden="true" />
           </a>
+          {data.website && (
+            <a
+              href={data.website}
+              target="_blank"
+              rel="noreferrer noopener"
+              class="focus-ring inline-flex items-center justify-center gap-2 rounded border border-border px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-muted transition hover:border-primary hover:text-primary"
+            >
+              <Globe class="h-4 w-4" aria-hidden="true" />
+              Site oficial
+              <ExternalLink class="h-4 w-4" aria-hidden="true" />
+            </a>
+          )}
         </div>
 
         {
