@@ -615,7 +615,7 @@ const statusFilterItems = [
 
     const rawExpData = document.getElementById('exp-data')?.textContent ?? '[]';
     const allExpData: ExpModalData[] = JSON.parse(rawExpData);
-    const baseUrl = explorer.getAttribute('data-base-url') || '/';
+    const baseUrl = root.getAttribute('data-base-url') || '/';
     const withBasePath = (path: string) => `${baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`}${path.replace(/^\/+/, '')}`;
     let currentSlug = '';
 
