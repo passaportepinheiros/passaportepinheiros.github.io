@@ -1,22 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
 import { ArrowLeft, AtSign, ExternalLink, Globe, MapPin, MessageCircle, Phone, Sparkles } from '@lucide/astro';
-import ExperienceCard from '../../../components/ExperienceCard.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import {
   categoryLabel,
   compactDescription,
   descriptionParagraphs,
   sortExperiences,
   type Experience,
-} from '../../../lib/experiences';
+} from '../lib/experiences';
 
 export async function getStaticPaths() {
   const experiences = await getCollection('experiencias');
 
   return experiences.map((experience) => ({
     params: {
-      category: experience.data.category,
       slug: experience.data.slug,
     },
     props: { experience },
@@ -33,7 +32,12 @@ const allExperiences = sortExperiences(await getCollection('experiencias'));
 const related = allExperiences
   .filter((item) => item.data.category === data.category && item.data.slug !== data.slug)
   .slice(0, 3);
-const paragraphs = descriptionParagraphs(data.description);
+const fallbackDescription = 'Informações da experiência em atualização.';
+const description = data.description ?? fallbackDescription;
+const benefitDescription = data.description
+  ? compactDescription(data.description, 180)
+  : 'Benefício Passaporte em atualização.';
+const paragraphs = descriptionParagraphs(description);
 type Endereco = (typeof data.enderecos)[number];
 type Telefone = Endereco['telefones'][number];
 
@@ -70,15 +74,18 @@ const telefoneMeta = (telefone: Telefone) => {
 };
 ---
 
-<BaseLayout title={data.title} description={compactDescription(data.description, 156)}>
+<BaseLayout title={data.title} description={compactDescription(description, 156)}>
   <article>
     <section class="relative overflow-hidden bg-primary text-white">
-      <img
-        src={data.images.experience}
-        alt={`Foto de ${data.title}`}
-        class="absolute inset-0 h-full w-full object-cover opacity-45"
-        loading="eager"
-      />
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.22),transparent_30%),linear-gradient(135deg,var(--color-primary-strong),var(--color-primary))]"></div>
+      {data.images?.experience && (
+        <img
+          src={data.images.experience}
+          alt={`Foto de ${data.title}`}
+          class="absolute inset-0 h-full w-full object-cover opacity-45"
+          loading="eager"
+        />
+      )}
       <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-primary/25"></div>
 
       <div class="container-shell relative min-h-[420px] py-8 md:min-h-[500px] md:py-12">
@@ -96,10 +103,12 @@ const telefoneMeta = (telefone: Telefone) => {
               <span class="rounded bg-white px-3 py-1 font-display text-xs font-bold uppercase tracking-wide text-primary">
                 {categoryLabel(data.category)}
               </span>
-              <span class="inline-flex items-center gap-2 rounded bg-white/15 px-3 py-1 text-sm font-semibold backdrop-blur">
-                <AtSign class="h-4 w-4" aria-hidden="true" />
-                @{data.instagram}
-              </span>
+              {data.instagram && (
+                <span class="inline-flex items-center gap-2 rounded bg-white/15 px-3 py-1 text-sm font-semibold backdrop-blur">
+                  <AtSign class="h-4 w-4" aria-hidden="true" />
+                  @{data.instagram}
+                </span>
+              )}
               {data.categoria_fsq && (
                 <span class="rounded bg-white/15 px-3 py-1 text-sm font-semibold backdrop-blur">
                   {data.categoria_fsq}
@@ -108,11 +117,17 @@ const telefoneMeta = (telefone: Telefone) => {
             </div>
 
             <div class="flex max-w-4xl items-end gap-5">
-              <img
-                src={data.images.logo}
-                alt={`Logo de ${data.title}`}
-                class="hidden h-20 w-20 rounded-lg border border-white/70 bg-white object-contain p-2 md:block"
-              />
+              {data.images?.logo ? (
+                <img
+                  src={data.images.logo}
+                  alt={`Logo de ${data.title}`}
+                  class="hidden h-20 w-20 rounded-lg border border-white/70 bg-white object-contain p-2 md:block"
+                />
+              ) : (
+                <span class="hidden h-20 w-20 shrink-0 items-center justify-center rounded-lg border border-white/70 bg-white/95 text-primary md:inline-flex">
+                  <Sparkles class="h-8 w-8" aria-hidden="true" />
+                </span>
+              )}
               <div>
                 <h1 class="font-display text-4xl font-extrabold leading-[1.05] md:text-6xl">{data.title}</h1>
                 <p class="mt-4 inline-flex items-center gap-2 text-base font-semibold text-white/90">
@@ -141,21 +156,23 @@ const telefoneMeta = (telefone: Telefone) => {
           </span>
           <div>
             <p class="font-display text-sm font-bold uppercase tracking-wide text-primary">Benefício Passaporte</p>
-            <p class="mt-2 text-sm leading-relaxed text-muted">{compactDescription(data.description, 180)}</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{benefitDescription}</p>
           </div>
         </div>
 
         <div class="mt-6 grid gap-3 border-t border-border/70 pt-5">
-          <a
-            href={data.instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            class="focus-ring inline-flex items-center justify-center gap-2 rounded border border-primary px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white"
-          >
-            <AtSign class="h-4 w-4" aria-hidden="true" />
-            Ver no Instagram
-            <ExternalLink class="h-4 w-4" aria-hidden="true" />
-          </a>
+          {data.instagramUrl && (
+            <a
+              href={data.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="focus-ring inline-flex items-center justify-center gap-2 rounded border border-primary px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white"
+            >
+              <AtSign class="h-4 w-4" aria-hidden="true" />
+              Ver no Instagram
+              <ExternalLink class="h-4 w-4" aria-hidden="true" />
+            </a>
+          )}
           {data.website && (
             <a
               href={data.website}

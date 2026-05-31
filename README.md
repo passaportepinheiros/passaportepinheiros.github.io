@@ -62,6 +62,8 @@ Os endereços digitados manualmente ficam no frontmatter em `enderecos`. Cada it
 
 Ao rodar `process_images.py`, o bloco `enderecos` já existente é preservado para evitar perder dados cadastrados manualmente.
 
+Experiências criadas a partir de `digitado.txt` podem começar como rascunhos sem `description` e sem `images`. O site exibe um texto de atualização nesses casos, e os campos podem ser completados depois pelo Pages CMS ou por enriquecimento.
+
 ## Site Astro
 
 O site usa Astro Content Collections e Tailwind CSS. Para rodar localmente:
@@ -89,12 +91,42 @@ Para validar os arquivos Astro e TypeScript:
 pnpm check
 ```
 
+## Importar lugares digitados
+
+O arquivo `digitado.txt` contém lugares digitados manualmente a partir do livreto. Para criar Markdown apenas para os lugares que ainda não existem em `src/content/experiencias`, rode:
+
+```sh
+python3 import_digitado.py --dry-run
+python3 import_digitado.py
+```
+
+O importador normaliza endereços e telefones quando possível, pula aliases de lugares já cadastrados e cria experiências sem foto/benefício quando essas informações ainda não existem.
+
+Depois, o fluxo recomendado é:
+
+```sh
+python3 geocode_experiencias.py
+FOURSQUARE_API_KEY="sua-chave" python3 foursquare_enrich.py
+```
+
+O geocoding adiciona `lat`/`lng`; o Foursquare usa essas coordenadas para buscar categoria, site e Instagram quando disponível.
+
 Rotas principais:
 
 - `/` lista todas as experiências com busca e filtros;
 - `/restaurantes`, `/produtos` e `/servicos` abrem a lista filtrada por categoria;
-- `/experiencias/{categoria}/{slug}` abre a página de detalhe;
+- `/{slug}` abre a página de detalhe;
 - `/como-funciona` mostra uma página institucional simples.
+
+## Deploy no GitHub Pages
+
+O deploy está em `.github/workflows/deploy.yml`. Antes de publicar, o workflow verifica se o GitHub Pages está habilitado e se a fonte está configurada como GitHub Actions; se não estiver, ele mantém o build rodando e pula apenas o deploy para evitar o erro 404 de `actions/deploy-pages`.
+
+Para habilitar no GitHub:
+
+1. Abra `Settings > Pages`.
+2. Em `Build and deployment`, selecione `Source: GitHub Actions`.
+3. Rode novamente o workflow `Deploy to GitHub Pages`.
 
 ## Pages CMS
 

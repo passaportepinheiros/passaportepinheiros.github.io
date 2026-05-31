@@ -29,21 +29,21 @@ const experiencias = defineCollection({
     title: z.string(),
     slug: z.string(),
     category: z.enum(['produtos', 'restaurantes', 'servicos']),
-    instagram: z.string(),
-    instagramUrl: z.url(),
+    instagram: z.string().optional(),
+    instagramUrl: z.url().optional(),
     enderecos: z.array(enderecoSchema).default([]),
     foursquare_id: z.string().optional(),
     categoria_fsq: z.string().optional(),
     website: z.string().optional(),
-    description: z.string(),
+    description: z.string().optional(),
     images: z.object({
       experience: z.string(),
       logo: z.string(),
-    }),
+    }).optional(),
     source: z.object({
       path: z.string(),
       filename: z.string(),
-    }),
+    }).optional(),
   }),
 });
 

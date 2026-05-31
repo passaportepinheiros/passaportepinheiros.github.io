@@ -383,17 +383,17 @@ describe('searchPayload', () => {
 describe('experiencePath', () => {
   it('retorna caminho correto para restaurante', () => {
     const exp = makeExperience({ category: 'restaurantes', slug: 'piraja' });
-    expect(experiencePath(exp)).toBe('/experiencias/restaurantes/piraja/');
+    expect(experiencePath(exp)).toBe('/piraja/');
   });
 
   it('retorna caminho correto para serviço', () => {
     const exp = makeExperience({ category: 'servicos', slug: 'barbearia-top' });
-    expect(experiencePath(exp)).toBe('/experiencias/servicos/barbearia-top/');
+    expect(experiencePath(exp)).toBe('/barbearia-top/');
   });
 
   it('retorna caminho correto para produto', () => {
     const exp = makeExperience({ category: 'produtos', slug: 'blanche-brasil' });
-    expect(experiencePath(exp)).toBe('/experiencias/produtos/blanche-brasil/');
+    expect(experiencePath(exp)).toBe('/blanche-brasil/');
   });
 
   it('termina com barra', () => {
@@ -401,8 +401,13 @@ describe('experiencePath', () => {
     expect(experiencePath(exp)).toMatch(/\/$/);
   });
 
-  it('começa com /experiencias/', () => {
+  it('começa com /', () => {
     const exp = makeExperience({ category: 'restaurantes', slug: 'teste' });
-    expect(experiencePath(exp)).toMatch(/^\/experiencias\//);
+    expect(experiencePath(exp)).toMatch(/^\//);
+  });
+
+  it('não usa categoria no caminho público', () => {
+    const exp = makeExperience({ category: 'restaurantes', slug: 'teste' });
+    expect(experiencePath(exp)).toBe('/teste/');
   });
 });

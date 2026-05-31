@@ -2,20 +2,9 @@
 import { getCollection } from 'astro:content';
 import ExperienceExplorer from '../components/ExperienceExplorer.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { categories, categoryLabel, sortExperiences, type Category } from '../lib/experiences';
+import { categoryLabel, sortExperiences, type Category } from '../lib/experiences';
 
-export function getStaticPaths() {
-  return categories.map((category) => ({
-    params: { category: category.value },
-    props: { category: category.value },
-  }));
-}
-
-interface Props {
-  category: Category;
-}
-
-const { category } = Astro.props;
+const category: Category = 'restaurantes';
 const allExperiences = sortExperiences(await getCollection('experiencias'));
 const title = categoryLabel(category);
 ---

@@ -74,9 +74,9 @@ export function searchPayload(experience: Experience): string {
     experience.data.title,
     experience.data.slug,
     experience.data.category,
-    experience.data.instagram,
-    experience.data.instagramUrl,
-    experience.data.description,
+    experience.data.instagram ?? '',
+    experience.data.instagramUrl ?? '',
+    experience.data.description ?? '',
     enderecos,
   ]
     .join(' ')
@@ -84,5 +84,13 @@ export function searchPayload(experience: Experience): string {
 }
 
 export function experiencePath(experience: Experience): string {
-  return `/experiencias/${experience.data.category}/${experience.data.slug}/`;
+  return `/${experience.data.slug}/`;
+}
+
+export function buildExperiencesUrl(category?: Category | 'todos', busca?: string): string {
+  const params = new URLSearchParams();
+  if (category && category !== 'todos') params.set('categoria', category);
+  if (busca && busca.trim()) params.set('busca', busca.trim());
+  const qs = params.toString();
+  return `/experiencias/${qs ? `?${qs}` : ''}`;
 }
