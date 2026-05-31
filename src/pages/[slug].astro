@@ -73,9 +73,39 @@ const telefoneMeta = (telefone: Telefone) => {
         external: false,
       };
 };
+
+const siteOrigin = Astro.site ? new URL(Astro.site).origin : 'https://passaportepinheiros.com.br';
+const pageUrl = `${siteOrigin}${withBase(`/${data.slug}/`)}`;
+const ogImage = data.images?.experience ? `${siteOrigin}${withBase(data.images.experience)}` : undefined;
+
+const schemaType = data.category === 'restaurantes' ? 'Restaurant' : 'LocalBusiness';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  name: data.title,
+  description: compactDescription(description, 200),
+  url: pageUrl,
+  ...(ogImage ? { image: ogImage } : {}),
+  ...(data.website ? { sameAs: [data.website] } : {}),
+  ...(data.instagramUrl ? { sameAs: [data.instagramUrl] } : {}),
+  address: primeiroEndereco
+    ? {
+        '@type': 'PostalAddress',
+        streetAddress: `${primeiroEndereco.logradouro}, ${primeiroEndereco.numero}${primeiroEndereco.complemento ? `, ${primeiroEndereco.complemento}` : ''}`,
+        addressLocality: primeiroEndereco.cidade ?? 'São Paulo',
+        addressRegion: 'SP',
+        addressCountry: 'BR',
+        ...(primeiroEndereco.cep ? { postalCode: primeiroEndereco.cep } : {}),
+      }
+    : undefined,
+  ...(primeiroEndereco?.telefones[0]
+    ? { telephone: primeiroEndereco.telefones[0].formatado }
+    : {}),
+};
 ---
 
-<BaseLayout title={data.title} description={compactDescription(description, 156)}>
+<BaseLayout title={data.title} description={compactDescription(description, 156)} ogImage={ogImage} canonical={pageUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
   <article>
     <section class="relative overflow-hidden bg-primary text-white">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(255,255,255,0.22),transparent_30%),linear-gradient(135deg,var(--color-primary-strong),var(--color-primary))]"></div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teles.dev.br/passaportepinheiros/sitemap-index.xml
