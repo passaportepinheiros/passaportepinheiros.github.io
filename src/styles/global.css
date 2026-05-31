@@ -71,7 +71,8 @@ a {
 
 button,
 input {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .container-shell {
@@ -171,10 +172,22 @@ input {
   color: white;
 }
 
+.visited-button[data-active="true"] {
+  background: var(--color-mint);
+  border-color: var(--color-mint);
+  color: white;
+}
+
 .filter-button[aria-pressed="true"] {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: white;
+}
+
+.status-filter-button[aria-pressed="true"] {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary-strong);
 }
 
 @media (max-width: 767px) {
