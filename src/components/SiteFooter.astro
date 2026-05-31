@@ -1,10 +1,14 @@
+---
+import { withBase } from '../lib/urls';
+---
+
 <footer class="bg-primary">
   <div class="container-shell grid gap-10 py-14 md:grid-cols-[1fr_auto] md:items-start">
     <!-- Brand -->
     <div class="flex flex-col gap-6">
-      <a href="/" aria-label="Passaporte Pinheiros">
+      <a href={withBase('/')} aria-label="Passaporte Pinheiros">
         <img
-          src="/brand/logo-passaporte-pinheiros-white.svg"
+          src={withBase('/brand/logo-passaporte-pinheiros-white.svg')}
           alt="Passaporte Pinheiros"
           class="h-14 w-auto"
         />
@@ -40,8 +44,8 @@
     <div class="flex flex-col gap-3">
       <p class="font-display text-base font-bold text-white">Links Úteis</p>
       <nav class="flex flex-col gap-2 font-body text-sm text-white/80" aria-label="Links do rodapé">
-        <a class="hover:text-white transition" href="/contato/">Contato</a>
-        <a class="hover:text-white transition" href="/politicas-de-privacidade/">Políticas de Privacidade</a>
+        <a class="hover:text-white transition" href={withBase('/contato/')}>Contato</a>
+        <a class="hover:text-white transition" href={withBase('/politicas-de-privacidade/')}>Políticas de Privacidade</a>
       </nav>
     </div>
   </div>
