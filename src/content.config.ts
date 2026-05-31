@@ -41,4 +41,15 @@ const experiencias = defineCollection({
   }),
 });
 
-export const collections = { experiencias };
+const faq = defineCollection({
+  loader: glob({
+    base: './src/content/faq',
+    pattern: '**/*.md',
+  }),
+  schema: z.object({
+    question: z.string(),
+    order: z.number(),
+  }),
+});
+
+export const collections = { experiencias, faq };
