@@ -15,11 +15,55 @@ concurrency:
     cancel-in-progress: false
 
 jobs:
+    pages:
+        runs-on: ubuntu-latest
+        outputs:
+            enabled: ${{ steps.check.outputs.enabled }}
+        steps:
+            - name: Check GitHub Pages configuration
+              id: check
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  GH_REPO: ${{ github.repository }}
+              run: |
+                  status="$(curl -sS -o /tmp/pages.json -w "%{http_code}" \
+                    -H "Accept: application/vnd.github+json" \
+                    -H "Authorization: Bearer ${GH_TOKEN}" \
+                    -H "X-GitHub-Api-Version: 2022-11-28" \
+                    "https://api.github.com/repos/${GH_REPO}/pages")"
+
+                  if [ "$status" = "404" ]; then
+                    echo "enabled=false" >> "$GITHUB_OUTPUT"
+                    echo "::warning::GitHub Pages is not enabled. Enable Settings > Pages > Build and deployment > Source: GitHub Actions."
+                    exit 0
+                  fi
+
+                  if [ "$status" != "200" ]; then
+                    cat /tmp/pages.json
+                    echo "::error::Could not read GitHub Pages configuration. HTTP status: $status"
+                    exit 1
+                  fi
+
+                  build_type="$(python3 -c 'import json; print(json.load(open("/tmp/pages.json", encoding="utf-8")).get("build_type", ""))')"
+
+                  if [ "$build_type" != "workflow" ]; then
+                    echo "enabled=false" >> "$GITHUB_OUTPUT"
+                    echo "::warning::GitHub Pages is enabled, but its source is not GitHub Actions. Set Settings > Pages > Build and deployment > Source: GitHub Actions."
+                    exit 0
+                  fi
+
+                  echo "enabled=true" >> "$GITHUB_OUTPUT"
+
     build:
+        needs: pages
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+
+            - name: Configure Pages
+              if: needs.pages.outputs.enabled == 'true'
+              uses: actions/configure-pages@v5
 
             - name: Setup pnpm
               uses: pnpm/action-setup@v4
@@ -37,12 +81,14 @@ jobs:
               run: pnpm build
 
             - name: Upload Pages artifact
+              if: needs.pages.outputs.enabled == 'true'
               uses: actions/upload-pages-artifact@v3
               with:
                   path: dist/
 
     deploy:
-        needs: build
+        needs: [pages, build]
+        if: needs.pages.outputs.enabled == 'true'
         runs-on: ubuntu-latest
         environment:
             name: github-pages
@@ -51,3 +97,13 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
+
+    deploy-disabled:
+        needs: [pages, build]
+        if: needs.pages.outputs.enabled != 'true'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Report skipped deploy
+              run: |
+                  echo "GitHub Pages deploy was skipped because this repository is not configured for Pages deployments from GitHub Actions."
+                  echo "Enable it at: https://github.com/${{ github.repository }}/settings/pages"
