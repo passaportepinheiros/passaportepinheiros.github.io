@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11942200014"
         formatado: "(11) 94220-0014"
+    lat: -23.5646118
+    lng: -46.6840063
 description: |-
   Na compra de 1 sanduíche de
   frango desfiado no pão folha,

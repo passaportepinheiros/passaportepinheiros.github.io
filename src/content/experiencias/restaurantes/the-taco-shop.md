@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1138150337"
         formatado: "(11) 3815-0337"
+    lat: -23.5610422
+    lng: -46.6978999
 description: |-
   Na compra de um prato, ganhe
   outro de igual ou menor valor.

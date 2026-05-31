@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Costa Carvalho"
     numero: "96"
     telefones: []
+    lat: -23.5607933
+    lng: -46.6992019
 description: |-
   Na compra de 1 vermute artesanal
   + 1 entrada, seu acompanhante

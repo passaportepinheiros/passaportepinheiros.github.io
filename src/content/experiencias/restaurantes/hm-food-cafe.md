@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Teodoro Sampaio"
     numero: "1027"
     complemento: "1º andar"
+    lat: -23.5590236
+    lng: -46.6797948
     telefones:
       - tipo: "telefone"
         numero: "1135088841"

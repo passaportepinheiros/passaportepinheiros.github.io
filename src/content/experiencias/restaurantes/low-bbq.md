@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "1235"
     telefones: []
+    lat: -23.5682473
+    lng: -46.6895835
 description: |-
   Na compra de 1 prato
   individual ou sanduíche,

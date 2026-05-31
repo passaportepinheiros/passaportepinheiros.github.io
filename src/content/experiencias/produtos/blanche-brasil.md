@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11952164439"
         formatado: "(11) 95216-4439"
+    lat: -23.5644123
+    lng: -46.6843296
 description: |-
   Na compra de 1 óculos,
   ganhe outro dentre as peças

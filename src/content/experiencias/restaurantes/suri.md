@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1130341763"
         formatado: "(11) 3034-1763"
+    lat: -23.5605599
+    lng: -46.6991992
 description: |-
   Primeira visita:
   na compra de 1 drink ou refresco,

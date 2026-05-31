@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11966298143"
         formatado: "(11) 96629-8143"
+    lat: -23.5678141
+    lng: -46.6926543
 description: |-
   Na compra de 1 cookie e um café,
   ganhe outro cookie e outro café de

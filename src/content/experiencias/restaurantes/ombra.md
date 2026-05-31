@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Lisboa"
     numero: "579"
     telefones: []
+    lat: -23.5556943
+    lng: -46.6824043
 description: |-
   Na compra de 1 pedaço de
   pizza, seu acompanhante

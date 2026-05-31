@@ -13,6 +13,8 @@ const enderecoSchema = z.object({
   numero: z.string(),
   complemento: z.string().optional(),
   telefones: z.array(telefoneSchema).default([]),
+  lat: z.number().optional(),
+  lng: z.number().optional(),
 });
 
 const experiencias = defineCollection({

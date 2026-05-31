@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1131956373"
         formatado: "(11) 3195-6373"
+    lat: -23.565239
+    lng: -46.6821741
 description: |-
   Na compra de 1 prato,
   ganhe 1 taça de vinho Braz.

@@ -14,6 +14,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11915600230"
         formatado: "(11) 91560-0230"
+    lat: -23.5622128
+    lng: -46.6806438
 description: |-
   Na compra de 1 pote de Caramelo
   com Flor de Sal, ganhe outro de

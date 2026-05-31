@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "113819770"
         formatado: "11 3819770"
+    lat: -23.5566609
+    lng: -46.6925073
 description: |-
   Na compra de um rodízio
   completo ganhe 50% de

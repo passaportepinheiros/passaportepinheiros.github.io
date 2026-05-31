@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11916988203"
         formatado: "(11) 91698-8203"
+    lat: -23.5646023
+    lng: -46.6965086
 description: |-
   Na compra de 1 Cinnamon Roll
   Cobertura Especial seu

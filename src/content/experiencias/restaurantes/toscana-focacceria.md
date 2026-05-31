@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11970583883"
         formatado: "(11) 97058-3883"
+    lat: -23.5648188
+    lng: -46.6806688
 description: |-
   Na compra de qualquer
   item do cardápio,

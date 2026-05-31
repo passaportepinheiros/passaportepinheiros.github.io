@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11917273700"
         formatado: "(11) 91727-3700"
+    lat: -23.562338
+    lng: -46.6813699
 description: |-
   Desconto de R$ 75,00 para
   novas assinaturas

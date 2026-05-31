@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1130630114"
         formatado: "(11) 3063-0114"
+    lat: -23.5654099
+    lng: -46.6825816
 description: |-
   Na compra de 1 nhoque artesanal
   de batatas ao molho de ragu de

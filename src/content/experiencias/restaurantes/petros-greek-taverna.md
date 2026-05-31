@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1138985890"
         formatado: "(11) 3898-5890"
+    lat: -23.5616319
+    lng: -46.6846357
 description: |-
   Na compra de uma jarra de
   Clericot, ganhe outra.

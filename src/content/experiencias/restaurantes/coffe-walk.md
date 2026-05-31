@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "165"
     telefones: []
+    lat: -23.5650646
+    lng: -46.6852478
 description: |-
   Primeiro Carimbo:
   50% de desconto em qualquer

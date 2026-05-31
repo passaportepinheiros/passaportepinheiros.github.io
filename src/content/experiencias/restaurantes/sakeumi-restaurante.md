@@ -14,6 +14,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11981315948"
         formatado: "(11) 98131-5948"
+    lat: -23.5684604
+    lng: -46.6889072
 description: |-
   Na compra de 1 Rodízio TRADICIONAL
   ganhe 50% de desconto no Rodízio

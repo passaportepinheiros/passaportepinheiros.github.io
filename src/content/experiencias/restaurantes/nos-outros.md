@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1129855020"
         formatado: "(11) 2985-5020"
+    lat: -23.5627284
+    lng: -46.6815386
 description: |-
   Na compra de 1 item* do
   cardápio, seu acompanhante

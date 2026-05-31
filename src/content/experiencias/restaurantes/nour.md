@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1138194304"
         formatado: "(11) 3819-4304"
+    lat: -23.5682522
+    lng: -46.6900367
 description: |-
   Na compra de 1 prato,
   seu acompanhante ganha 50%

@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11999197767"
         formatado: "(11) 99919-7767"
+    lat: -23.5579437
+    lng: -46.6902415
 description: |-
   Na compra de um petisco
   e um drink

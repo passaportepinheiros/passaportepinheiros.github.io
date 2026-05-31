@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11934175556"
         formatado: "(11) 93417-5556"
+    lat: -23.567068
+    lng: -46.6964271
 description: |-
   Na compra de 1 prato, seu
   acompanhante ganha outro de igual

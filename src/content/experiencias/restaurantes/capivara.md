@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11997800795"
         formatado: "(11) 99780-0795"
+    lat: -23.5662057
+    lng: -46.6957202
 description: |-
   Na compra de um 1 lanche ou 1
   porção, seu acompanhante ganha

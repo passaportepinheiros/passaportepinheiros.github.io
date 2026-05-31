@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11932453531"
         formatado: "(11) 93245-3531"
+    lat: -23.5602205
+    lng: -46.6779748
 description: |-
   1º Carimbo:
   Na compra de 1 pint de chope da casa + 1

@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11937289841"
         formatado: "(11) 93728-9841"
+    lat: -23.5602828
+    lng: -46.6964918
 description: |-
   Na compra de 1 entrada,
   ganhe outra de igual ou menor

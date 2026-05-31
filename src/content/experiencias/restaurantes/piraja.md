@@ -7,12 +7,16 @@ instagramUrl: "https://www.instagram.com/barpiraja/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "209"
+    lat: -23.5646567
+    lng: -46.6802655
     telefones:
       - tipo: "telefone"
         numero: "1155552042"
         formatado: "(11) 5555-2042"
   - logradouro: "Avenida Rebouças"
     numero: "3970"
+    lat: -23.5737033
+    lng: -46.6958894
     telefones:
       - tipo: "telefone"
         numero: "1122995335"
@@ -20,6 +24,8 @@ enderecos:
   - logradouro: "Avenida das Nações Unidas"
     numero: "4777"
     complemento: "3º Piso, Jardim Universidade Pinheiros"
+    lat: -23.5510818
+    lng: -46.7221429
     telefones:
       - tipo: "telefone"
         numero: "1122995337"

@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11950439629"
         formatado: "(11) 95043-9629"
+    lat: -23.5638375
+    lng: -46.6859113
 description: |-
   Na compra de 1 Prato
   Principal (ou do dia)

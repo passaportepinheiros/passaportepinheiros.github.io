@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "11988623954"
         formatado: "(11) 98862-3954"
+    lat: -23.5563886
+    lng: -46.6820371
 description: |-
   Na compra de 1 porção de
   Gyoza ganhe outra porção de

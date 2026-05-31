@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Teodoro Sampaio"
     numero: "2767"
     complemento: "Sala 72"
+    lat: -23.5677375
+    lng: -46.6940669
     telefones:
       - tipo: "telefone"
         numero: "11999874307"

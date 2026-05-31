@@ -11,6 +11,8 @@ enderecos:
       - tipo: "whatsapp"
         numero: "41987900700"
         formatado: "(41) 98790-0700"
+    lat: -23.5659304
+    lng: -46.6846483
 description: |-
   Na compra de 1 prato do
   cardápio, seu

@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Coropé"
     numero: "51"
     telefones: []
+    lat: -23.5613243
+    lng: -46.694053
 description: |-
   Na compra de 1 burguer ou
   sanduíche, seu acompanhante

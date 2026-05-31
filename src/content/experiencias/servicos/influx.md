@@ -14,6 +14,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1199691981"
         formatado: "(11) 9969-1981"
+    lat: -23.5656917
+    lng: -46.6848088
 description: |-
   Isenção da taxa de matricula
 images:

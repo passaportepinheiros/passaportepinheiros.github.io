@@ -8,6 +8,8 @@ enderecos:
   - logradouro: "Rua Pedro Cristi"
     numero: "89"
     complemento: "Mercado de Pinheiros"
+    lat: -23.5656156
+    lng: -46.6924088
     telefones:
       - tipo: "telefone"
         numero: "11954570655"

@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "113030631821"
         formatado: "1130 3063 1821"
+    lat: -23.5649696
+    lng: -46.6815241
 description: |-
   Compre 1 gelato
   pequeno, médio ou grande e seu

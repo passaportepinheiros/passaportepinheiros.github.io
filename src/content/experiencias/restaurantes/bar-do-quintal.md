@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11979352847"
         formatado: "(11) 97935-2847"
+    lat: -23.5615247
+    lng: -46.6947464
 description: |-
   Aos Sábados e Domingos, na
   compra de 1 Buffet de Feijoada à

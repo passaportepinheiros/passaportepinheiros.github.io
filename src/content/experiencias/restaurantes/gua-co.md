@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11991165868"
         formatado: "(11) 99116-5868"
+    lat: -23.5671044
+    lng: -46.6860913
 description: |-
   Na compra de 1 prato principal,
   ganhe um taco.

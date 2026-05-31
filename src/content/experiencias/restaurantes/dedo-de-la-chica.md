@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "1138198522"
         formatado: "(11) 3819-8522"
+    lat: -23.5588081
+    lng: -46.6880846
 description: |-
   Na compra de 1 rodízio
   mexicano seu acompanhante
