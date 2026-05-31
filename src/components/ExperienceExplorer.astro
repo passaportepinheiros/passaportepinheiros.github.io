@@ -18,6 +18,7 @@ import {
   type Category,
   type Experience,
 } from '../lib/experiences';
+import { appBase, withBase } from '../lib/urls';
 
 interface Props {
   experiences: Experience[];
@@ -36,7 +37,12 @@ const experiencesData = sortedExperiences.map((exp) => ({
   description: exp.data.description,
   instagram: exp.data.instagram,
   instagramUrl: exp.data.instagramUrl,
-  images: exp.data.images,
+  images: exp.data.images
+    ? {
+        experience: withBase(exp.data.images.experience),
+        logo: withBase(exp.data.images.logo),
+      }
+    : undefined,
   enderecos: exp.data.enderecos.map((end) => ({
     logradouro: end.logradouro,
     numero: end.numero,
@@ -60,7 +66,13 @@ const statusFilterItems = [
 ];
 ---
 
-<section class="container-shell pt-8 pb-10 md:pt-10 md:pb-14" id="experiencias" data-explorer data-initial-category={initialCategory}>
+<section
+  class="container-shell pt-8 pb-10 md:pt-10 md:pb-14"
+  id="experiencias"
+  data-explorer
+  data-base-url={appBase}
+  data-initial-category={initialCategory}
+>
   <div class="mb-8 grid gap-6 lg:grid-cols-[320px_1fr]">
     <aside class="rounded-lg border border-border/70 bg-surface p-6 shadow-[0_16px_44px_rgba(0,110,199,0.06)] lg:sticky lg:top-28 lg:self-start">
       <div class="mb-6">
@@ -603,6 +615,8 @@ const statusFilterItems = [
 
     const rawExpData = document.getElementById('exp-data')?.textContent ?? '[]';
     const allExpData: ExpModalData[] = JSON.parse(rawExpData);
+    const baseUrl = explorer.getAttribute('data-base-url') || '/';
+    const withBasePath = (path: string) => `${baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`}${path.replace(/^\/+/, '')}`;
     let currentSlug = '';
 
     const catLabels: Record<string, string> = {
@@ -862,7 +876,7 @@ const statusFilterItems = [
       if (modalTitle) modalTitle.textContent = exp.title;
       if (modalCategory) modalCategory.textContent = catLabels[exp.category] ?? exp.category;
       if (modalBody) modalBody.innerHTML = renderModalBody(exp);
-      if (modalLink) modalLink.href = `/${exp.slug}/`;
+      if (modalLink) modalLink.href = withBasePath(`/${exp.slug}/`);
       updateModalCounter();
     };
 

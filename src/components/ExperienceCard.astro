@@ -7,6 +7,7 @@ import {
   searchPayload,
   type Experience,
 } from '../lib/experiences';
+import { withBase } from '../lib/urls';
 
 interface Props {
   experience: Experience;
@@ -31,7 +32,7 @@ const experienceId = `${data.category}:${data.slug}`;
     <a href={href} aria-label={`Ver ${data.title}`}>
       {data.images?.experience ? (
         <img
-          src={data.images.experience}
+          src={withBase(data.images.experience)}
           alt={`Foto de ${data.title}`}
           class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           loading="lazy"
@@ -59,7 +60,7 @@ const experienceId = `${data.category}:${data.slug}`;
     <div class="mb-4 flex min-h-[5.25rem] items-start gap-3">
       {data.images?.logo && (
         <img
-          src={data.images.logo}
+          src={withBase(data.images.logo)}
           alt={`Logo de ${data.title}`}
           class="h-12 w-12 shrink-0 rounded-full border border-border/60 bg-white object-contain p-1"
           loading="lazy"
