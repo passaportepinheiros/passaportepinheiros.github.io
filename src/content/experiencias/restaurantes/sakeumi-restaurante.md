@@ -34,6 +34,8 @@ images:
 source:
   path: "data/instagram/restaurantes/685723285_18107686235304897_3936802905578385527_n..webp"
   filename: "685723285_18107686235304897_3936802905578385527_n..webp"
+tags: ["asiatica", "japonesa"]
+benefitType: "desconto"
 ---
 
 # Sakeumi Restaurante

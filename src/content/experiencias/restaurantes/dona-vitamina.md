@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684762221_18107533028304897_499562404416732035_n..webp"
   filename: "684762221_18107533028304897_499562404416732035_n..webp"
+tags: ["hamburguer", "padaria", "saudavel", "sucos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Dona Vitamina

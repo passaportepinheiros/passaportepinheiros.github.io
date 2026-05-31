@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684281085_18107582714304897_1053894189868637870_n..webp"
   filename: "684281085_18107582714304897_1053894189868637870_n..webp"
+tags: ["pizza", "vinho"]
+benefitType: "brinde"
 ---
 
 # Braz Trattoria

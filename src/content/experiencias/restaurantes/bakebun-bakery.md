@@ -26,6 +26,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686466601_18107653433304897_2816366475888946094_n..webp"
   filename: "686466601_18107653433304897_2816366475888946094_n..webp"
+tags: ["padaria"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Bakebun Bakery

@@ -32,6 +32,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684275118_18107686445304897_6736158086641761042_n..webp"
   filename: "684275118_18107686445304897_6736158086641761042_n..webp"
+tags: ["bar", "drinks", "pet", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # O Pasquim

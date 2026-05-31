@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684585222_18107533154304897_7504348542463716753_n..webp"
   filename: "684585222_18107533154304897_7504348542463716753_n..webp"
+tags: ["bar", "drinks", "hamburguer", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Capivara

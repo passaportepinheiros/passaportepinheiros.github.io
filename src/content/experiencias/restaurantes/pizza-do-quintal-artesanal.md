@@ -16,6 +16,8 @@ categoria_fsq: "Pet Supplies Store"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["loja", "pet"]
+benefitType: "beneficio-especial"
 ---
 
 # Pizza do Quintal Artesanal

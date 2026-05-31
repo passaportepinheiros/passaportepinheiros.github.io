@@ -13,6 +13,8 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["servico"]
+benefitType: "beneficio-especial"
 ---
 
 # Quiropraxia Pinheiros

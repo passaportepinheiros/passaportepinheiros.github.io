@@ -15,6 +15,8 @@ instagramUrl: "https://www.instagram.com/brazelettrica/"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["pizza"]
+benefitType: "beneficio-especial"
 ---
 
 # Bráz Elettrica

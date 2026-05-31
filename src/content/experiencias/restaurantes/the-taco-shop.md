@@ -26,6 +26,8 @@ images:
 source:
   path: "data/instagram/restaurantes/685914583_18107653667304897_6376612293793662530_n..webp"
   filename: "685914583_18107653667304897_6376612293793662530_n..webp"
+tags: ["mexicana"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # The Taco Shop

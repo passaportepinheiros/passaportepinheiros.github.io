@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/servicos/685894226_18107695934304897_8716529358017958955_n..webp"
   filename: "685894226_18107695934304897_8716529358017958955_n..webp"
+tags: ["pet", "servico"]
+benefitType: "desconto"
 ---
 
 # Modern Pets

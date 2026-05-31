@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/694283467_18107582660304897_7971929137062943954_n..webp"
   filename: "694283467_18107582660304897_7971929137062943954_n..webp"
+tags: ["cafe"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # HM Food Café

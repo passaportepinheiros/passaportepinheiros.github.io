@@ -31,6 +31,8 @@ images:
 source:
   path: "data/instagram/restaurantes/687169360_18107582702304897_4316215101597420399_n..webp"
   filename: "687169360_18107582702304897_4316215101597420399_n..webp"
+tags: ["brasileira", "hamburguer", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # C... do Padre

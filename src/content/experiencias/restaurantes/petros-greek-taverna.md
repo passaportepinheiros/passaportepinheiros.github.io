@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/687684471_18107686358304897_7428499089525854654_n..webp"
   filename: "687684471_18107686358304897_7428499089525854654_n..webp"
+tags: ["vinho"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Petros Greek Taverna

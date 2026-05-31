@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684831002_18107533127304897_6298949641024748270_n..webp"
   filename: "684831002_18107533127304897_6298949641024748270_n..webp"
+tags: ["doces", "sobremesa"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Carmel's Pipocas

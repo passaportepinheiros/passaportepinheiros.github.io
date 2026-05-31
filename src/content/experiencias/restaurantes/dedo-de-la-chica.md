@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684620935_18107533070304897_1974193859578041160_n..webp"
   filename: "684620935_18107533070304897_1974193859578041160_n..webp"
+tags: ["mexicana"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Dedo de La Chica

@@ -31,6 +31,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684358399_18107582684304897_9171869787164451850_n..webp"
   filename: "684358399_18107582684304897_9171869787164451850_n..webp"
+tags: ["cafe", "padaria"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Feliciana Pães

@@ -16,6 +16,8 @@ categoria_fsq: "Pastry Shop"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["confeitaria", "doces"]
+benefitType: "beneficio-especial"
 ---
 
 # Luiza Lafer Confeitaria

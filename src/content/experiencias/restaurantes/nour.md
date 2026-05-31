@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684551696_18107695847304897_1610803269986908375_n..webp"
   filename: "684551696_18107695847304897_1610803269986908375_n..webp"
+tags: ["arabe", "oriente-medio"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Nour

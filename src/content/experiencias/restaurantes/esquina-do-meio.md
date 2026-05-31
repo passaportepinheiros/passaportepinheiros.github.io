@@ -16,6 +16,8 @@ categoria_fsq: "Water Park"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["familia", "lazer"]
+benefitType: "beneficio-especial"
 ---
 
 # Esquina do Meio

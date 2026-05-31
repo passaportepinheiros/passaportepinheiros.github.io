@@ -16,6 +16,8 @@ categoria_fsq: "Italian Restaurant"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["italiana", "massas", "produto"]
+benefitType: "beneficio-especial"
 ---
 
 # Cristal Casamia

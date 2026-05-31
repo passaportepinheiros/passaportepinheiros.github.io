@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/688761688_18107653544304897_5460981802516203332_n..webp"
   filename: "688761688_18107653544304897_5460981802516203332_n..webp"
+tags: ["bar", "coquetel", "drinks"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Trinca Bar

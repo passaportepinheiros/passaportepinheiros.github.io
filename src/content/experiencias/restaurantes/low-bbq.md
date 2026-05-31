@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686367932_18107653253304897_6232399824314841584_n..webp"
   filename: "686367932_18107653253304897_6232399824314841584_n..webp"
+tags: ["carnes", "churrasco", "hamburguer"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Low BBQ

@@ -16,6 +16,8 @@ categoria_fsq: "Dance Studio"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["aulas", "danca"]
+benefitType: "beneficio-especial"
 ---
 
 # Glow Coffee Protein

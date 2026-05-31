@@ -17,6 +17,8 @@ website: "http://www.casadobrincar.com.br"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["entretenimento"]
+benefitType: "beneficio-especial"
 ---
 
 # Quinta do Olivardo

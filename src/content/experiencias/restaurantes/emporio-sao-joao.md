@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684263169_18107532989304897_7154819012744215479_n..webp"
   filename: "684263169_18107532989304897_7154819012744215479_n..webp"
+tags: ["brasileira", "churrasco"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Emporio São João

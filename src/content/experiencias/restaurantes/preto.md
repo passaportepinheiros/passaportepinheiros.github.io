@@ -18,6 +18,8 @@ instagramUrl: "https://www.instagram.com/preto.cozinha/"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["brasileira", "nordestina"]
+benefitType: "beneficio-especial"
 ---
 
 # Preto

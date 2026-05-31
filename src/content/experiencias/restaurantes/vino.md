@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/687686958_18107653511304897_5129309674380833100_n..webp"
   filename: "687686958_18107653511304897_5129309674380833100_n..webp"
+tags: ["bar", "vinho"]
+benefitType: "desconto"
 ---
 
 # Vino!

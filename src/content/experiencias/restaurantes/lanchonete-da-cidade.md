@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684351895_18107653265304897_521418019643609772_n..webp"
   filename: "684351895_18107653265304897_521418019643609772_n..webp"
+tags: ["hamburguer", "lanche"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Lanchonete da Cidade

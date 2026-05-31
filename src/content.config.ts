@@ -44,6 +44,14 @@ const experiencias = defineCollection({
       path: z.string(),
       filename: z.string(),
     }).optional(),
+    tags: z.array(z.string()).default([]),
+    benefitType: z.enum([
+      'compre-1-leve-outro',
+      'desconto',
+      'brinde',
+      'isencao-taxa',
+      'beneficio-especial',
+    ]).default('beneficio-especial'),
   }),
 });
 

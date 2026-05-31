@@ -32,6 +32,8 @@ images:
 source:
   path: "data/instagram/restaurantes/689455568_18107686286304897_6584300782887316755_n..webp"
   filename: "689455568_18107686286304897_6584300782887316755_n..webp"
+tags: ["francesa"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Rendez Vous

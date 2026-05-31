@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686168952_18107686214304897_8284574910715016662_n..webp"
   filename: "686168952_18107686214304897_8284574910715016662_n..webp"
+tags: ["drinks"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Suri

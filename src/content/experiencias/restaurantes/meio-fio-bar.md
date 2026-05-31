@@ -18,6 +18,8 @@ instagramUrl: "https://www.instagram.com/arlete.bar/"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["bar", "coquetel", "drinks"]
+benefitType: "beneficio-especial"
 ---
 
 # Meio Fio Bar

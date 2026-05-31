@@ -8,12 +8,15 @@ import {
   Search,
   ShoppingBag,
   SlidersHorizontal,
+  Tag,
   Utensils,
 } from '@lucide/astro';
 import ExperienceCard from './ExperienceCard.astro';
 import {
+  benefitTypes,
   categoryLabel,
   getCategoryCounts,
+  knownTags,
   sortExperiences,
   type Category,
   type Experience,
@@ -23,9 +26,12 @@ import { appBase, withBase } from '../lib/urls';
 interface Props {
   experiences: Experience[];
   initialCategory?: Category | 'todos';
+  initialBusca?: string;
+  initialBenefit?: string;
+  initialTags?: string;
 }
 
-const { experiences, initialCategory = 'todos' } = Astro.props;
+const { experiences, initialCategory = 'todos', initialBusca = '', initialBenefit = '', initialTags = '' } = Astro.props;
 const sortedExperiences = sortExperiences(experiences);
 const counts = getCategoryCounts(sortedExperiences);
 const initialLabel = initialCategory === 'todos' ? 'Todas' : categoryLabel(initialCategory);
@@ -37,6 +43,8 @@ const experiencesData = sortedExperiences.map((exp) => ({
   description: exp.data.description,
   instagram: exp.data.instagram,
   instagramUrl: exp.data.instagramUrl,
+  tags: exp.data.tags ?? [],
+  benefitType: exp.data.benefitType ?? 'beneficio-especial',
   images: exp.data.images
     ? {
         experience: withBase(exp.data.images.experience),
@@ -72,6 +80,9 @@ const statusFilterItems = [
   data-explorer
   data-base-url={appBase}
   data-initial-category={initialCategory}
+  data-initial-busca={initialBusca}
+  data-initial-benefit={initialBenefit}
+  data-initial-tags={initialTags}
 >
   <div class="mb-8 grid gap-6 lg:grid-cols-[320px_1fr]">
     <aside class="rounded-lg border border-border/70 bg-surface p-6 shadow-[0_16px_44px_rgba(0,110,199,0.06)] lg:sticky lg:top-28 lg:self-start">
@@ -100,6 +111,51 @@ const statusFilterItems = [
             </button>
           ))
         }
+      </div>
+
+      <div class="mt-7 border-t border-border/70 pt-5">
+        <p class="brand-heading text-xs font-bold uppercase tracking-wide text-muted">
+          Tipo de Benefício
+        </p>
+        <div class="mt-3 grid gap-2">
+          {
+            benefitTypes.map(({ value, label, emoji }) => (
+              <button
+                type="button"
+                class="benefit-filter-button focus-ring flex items-center justify-between rounded-lg border border-border/70 bg-surface-soft/60 px-4 py-2.5 text-left font-display text-xs font-bold uppercase tracking-wide text-primary transition hover:border-primary"
+                data-benefit-filter-button
+                data-benefit-value={value}
+                aria-pressed="false"
+              >
+                <span class="flex items-center gap-2">
+                  <span aria-hidden="true">{emoji}</span>
+                  {label}
+                </span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-7 border-t border-border/70 pt-5">
+        <p class="brand-heading text-xs font-bold uppercase tracking-wide text-muted">
+          Tags
+        </p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {
+            knownTags.map(({ value, label }) => (
+              <button
+                type="button"
+                class="tag-filter-button focus-ring rounded-full border border-border/70 px-3 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-muted transition hover:border-primary hover:text-primary aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white"
+                data-tag-filter-button
+                data-tag-value={value}
+                aria-pressed="false"
+              >
+                {label}
+              </button>
+            ))
+          }
+        </div>
       </div>
 
       <div class="mt-7 border-t border-border/70 pt-5">
@@ -218,7 +274,7 @@ const statusFilterItems = [
     class="flex min-h-full w-full items-end justify-center sm:items-center sm:p-4"
     id="exp-modal-backdrop"
   >
-    <div class="modal-panel relative flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-border/70 bg-white shadow-2xl sm:rounded-2xl">
+    <div class="modal-panel relative flex max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-border/70 bg-white dark:bg-[#1a2535] shadow-2xl sm:rounded-2xl">
 
       <!-- Scrollable content -->
       <div class="flex-1 overflow-y-auto">
@@ -256,7 +312,7 @@ const statusFilterItems = [
       </div>
 
       <!-- Footer -->
-      <div class="flex shrink-0 items-center justify-between border-t border-border/70 bg-white px-5 py-4">
+      <div class="flex shrink-0 items-center justify-between border-t border-border/70 bg-white dark:bg-[#1a2535] px-5 py-4">
         <div class="flex gap-2">
           <button
             type="button"
@@ -317,6 +373,8 @@ const statusFilterItems = [
     const statusFilterButtons = [
       ...root.querySelectorAll<HTMLButtonElement>('[data-status-filter-button]'),
     ];
+    const benefitFilterButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-benefit-filter-button]')];
+    const tagFilterButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-tag-filter-button]')];
     const cards = [...root.querySelectorAll<HTMLElement>('[data-experience-card]')];
     const resultCount = root.querySelector<HTMLElement>('[data-results-count]');
     const activeLabel = root.querySelector<HTMLElement>('[data-active-filter-label]');
@@ -326,6 +384,27 @@ const statusFilterItems = [
 
     let activeCategory = root.getAttribute('data-initial-category') || 'todos';
     let activeStatus = 'todos';
+    let activeBenefitType = root.getAttribute('data-initial-benefit') || 'todos';
+    let activeTags: Set<string> = new Set(
+      (root.getAttribute('data-initial-tags') || '').split(',').filter(Boolean)
+    );
+
+    // Seed search input from initial value
+    const initialBusca = root.getAttribute('data-initial-busca') || '';
+    if (searchInput && initialBusca) searchInput.value = initialBusca;
+
+    // URL sync helper
+    const syncUrl = () => {
+      const params = new URLSearchParams();
+      if (activeCategory && activeCategory !== 'todos') params.set('categoria', activeCategory);
+      const q = searchInput?.value.trim() ?? '';
+      if (q) params.set('busca', q);
+      if (activeBenefitType && activeBenefitType !== 'todos') params.set('beneficio', activeBenefitType);
+      if (activeTags.size > 0) params.set('tags', [...activeTags].join(','));
+      const qs = params.toString();
+      const newUrl = `${window.location.pathname}${qs ? `?${qs}` : ''}`;
+      window.history.replaceState(null, '', newUrl);
+    };
     let currentView: 'list' | 'map' = 'list';
     const mapContainer = root.querySelector<HTMLElement>('[data-map-view]');
     const viewToggles = [...root.querySelectorAll<HTMLButtonElement>('[data-view-toggle]')];
@@ -395,13 +474,17 @@ const statusFilterItems = [
         const slug = card.getAttribute('data-slug') || '';
         const category = card.getAttribute('data-category');
         const payload = normalize(card.getAttribute('data-search') || '');
+        const cardTags = (card.getAttribute('data-tags') || '').split(',').filter(Boolean);
+        const cardBenefit = card.getAttribute('data-benefit-type') || '';
         const categoryMatches = activeCategory === 'todos' || category === activeCategory;
         const searchMatches = !query || payload.includes(query);
         const statusMatches =
           activeStatus === 'todos' ||
           (activeStatus === 'favoritos' && favorites.has(id)) ||
           (activeStatus === 'visitados' && hasVisits(slug));
-        const shouldShow = categoryMatches && searchMatches && statusMatches;
+        const benefitMatches = activeBenefitType === 'todos' || cardBenefit === activeBenefitType;
+        const tagsMatch = activeTags.size === 0 || [...activeTags].every((t) => cardTags.includes(t));
+        const shouldShow = categoryMatches && searchMatches && statusMatches && benefitMatches && tagsMatch;
 
         card.hidden = !shouldShow;
         if (shouldShow) visible += 1;
@@ -419,6 +502,18 @@ const statusFilterItems = [
           'aria-pressed',
           String(button.getAttribute('data-status-filter-value') === activeStatus),
         );
+      });
+
+      benefitFilterButtons.forEach((button) => {
+        button.setAttribute(
+          'aria-pressed',
+          String(button.getAttribute('data-benefit-value') === activeBenefitType),
+        );
+      });
+
+      tagFilterButtons.forEach((button) => {
+        const tag = button.getAttribute('data-tag-value') || '';
+        button.setAttribute('aria-pressed', String(activeTags.has(tag)));
       });
 
       const activeButton = filterButtons.find(
@@ -442,6 +537,7 @@ const statusFilterItems = [
       grid?.classList.toggle('hidden', visible === 0 || currentView === 'map');
       updateVisibleSlugs();
       updateStatusCounts();
+      syncUrl();
       // updateMapMarkers is defined after this — called via scheduledMapUpdate
       scheduleMapUpdate();
     };
@@ -466,9 +562,28 @@ const statusFilterItems = [
     clearButton?.addEventListener('click', () => {
       activeCategory = 'todos';
       activeStatus = 'todos';
+      activeBenefitType = 'todos';
+      activeTags.clear();
       if (searchInput) searchInput.value = '';
       applyFilters();
       searchInput?.focus();
+    });
+
+    benefitFilterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const val = button.getAttribute('data-benefit-value') || 'todos';
+        activeBenefitType = activeBenefitType === val ? 'todos' : val;
+        applyFilters();
+      });
+    });
+
+    tagFilterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const tag = button.getAttribute('data-tag-value') || '';
+        if (activeTags.has(tag)) activeTags.delete(tag);
+        else activeTags.add(tag);
+        applyFilters();
+      });
     });
 
     root.querySelectorAll('[data-favorite-button]').forEach((button) => {
@@ -718,12 +833,12 @@ const statusFilterItems = [
               <div>
                 <label for="visit-date" class="block text-[12px] font-semibold uppercase tracking-widest text-muted mb-1">Data da visita</label>
                 <input type="date" id="visit-date" name="date" required
-                  class="w-full rounded-lg border border-border/70 bg-white px-3 py-2 text-[14px] text-ink focus:border-primary focus:outline-none" />
+                  class="w-full rounded-lg border border-border/70 bg-white dark:bg-[#1a2535] dark:text-white px-3 py-2 text-[14px] text-ink focus:border-primary focus:outline-none" />
               </div>
               <div>
                 <label for="visit-comment" class="block text-[12px] font-semibold uppercase tracking-widest text-muted mb-1">Comentário <span class="normal-case font-normal">(opcional)</span></label>
                 <textarea id="visit-comment" name="comment" rows="3" placeholder="Como foi a experiência?"
-                  class="w-full rounded-lg border border-border/70 bg-white px-3 py-2 text-[14px] text-ink resize-none focus:border-primary focus:outline-none placeholder:text-muted/50"></textarea>
+                  class="w-full rounded-lg border border-border/70 bg-white dark:bg-[#1a2535] dark:text-white px-3 py-2 text-[14px] text-ink resize-none focus:border-primary focus:outline-none placeholder:text-muted/50"></textarea>
               </div>
               <div class="flex gap-2 justify-end">
                 <button type="button" id="btn-cancel-visit" class="rounded-lg border border-border/70 px-4 py-2 text-[13px] font-semibold text-muted transition hover:bg-surface-muted">Cancelar</button>
@@ -763,7 +878,7 @@ const statusFilterItems = [
     };
 
     const renderVisitItem = (v: VisitEntry, i: number) => `
-      <div class="flex gap-4 rounded-xl border border-border/70 bg-white p-4 group" data-visit-idx="${i}">
+      <div class="flex gap-4 rounded-xl border border-border/70 bg-white dark:bg-[#243047] p-4 group" data-visit-idx="${i}">
         <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border/70 bg-surface-soft">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>

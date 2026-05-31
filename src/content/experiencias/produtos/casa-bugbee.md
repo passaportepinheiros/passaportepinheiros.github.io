@@ -16,6 +16,8 @@ categoria_fsq: "Children's Clothing Store"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["infantil", "loja", "produto", "roupas"]
+benefitType: "beneficio-especial"
 ---
 
 # Casa Bugbee

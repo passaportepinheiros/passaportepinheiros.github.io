@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686319292_18107582549304897_4286890208299419828_n..webp"
   filename: "686319292_18107582549304897_4286890208299419828_n..webp"
+tags: ["cafe"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Coffe Walk

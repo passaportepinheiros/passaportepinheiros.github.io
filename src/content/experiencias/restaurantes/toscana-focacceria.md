@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684302753_18107653589304897_4439106225119108146_n..webp"
   filename: "684302753_18107653589304897_4439106225119108146_n..webp"
+tags: ["italiana", "massas"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Toscana Focacceria

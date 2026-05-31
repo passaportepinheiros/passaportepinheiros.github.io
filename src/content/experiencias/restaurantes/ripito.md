@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686331001_18107686250304897_3574150192523446794_n..webp"
   filename: "686331001_18107686250304897_3574150192523446794_n..webp"
+tags: ["cafe", "doces"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Ripito

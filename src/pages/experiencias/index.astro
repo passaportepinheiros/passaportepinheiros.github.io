@@ -2,14 +2,30 @@
 import { getCollection } from 'astro:content';
 import ExperienceExplorer from '../../components/ExperienceExplorer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { sortExperiences } from '../../lib/experiences';
+import { sortExperiences, type Category } from '../../lib/experiences';
 
 const experiences = sortExperiences(await getCollection('experiencias'));
+
+const validCategories: Category[] = ['restaurantes', 'servicos', 'produtos'];
+const categoriaParam = Astro.url.searchParams.get('categoria') ?? '';
+const initialCategory = (validCategories.includes(categoriaParam as Category)
+  ? categoriaParam
+  : 'todos') as Category | 'todos';
+
+const buscaParam = Astro.url.searchParams.get('busca') ?? '';
+const benefitParam = Astro.url.searchParams.get('beneficio') ?? '';
+const tagsParam = Astro.url.searchParams.get('tags') ?? '';
 ---
 
 <BaseLayout
   title="Experiências"
   description="Lista de experiências participantes do Passaporte Pinheiros."
 >
-  <ExperienceExplorer experiences={experiences} />
+  <ExperienceExplorer
+    experiences={experiences}
+    initialCategory={initialCategory}
+    initialBusca={buscaParam}
+    initialBenefit={benefitParam}
+    initialTags={tagsParam}
+  />
 </BaseLayout>

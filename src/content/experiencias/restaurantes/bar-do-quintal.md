@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/687523008_18107582762304897_6649100160283709191_n..webp"
   filename: "687523008_18107582762304897_6649100160283709191_n..webp"
+tags: ["pizza"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Bar do Quintal

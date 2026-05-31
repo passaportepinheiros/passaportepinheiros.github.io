@@ -55,6 +55,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684506231_18107686316304897_7941550905378918750_n..webp"
   filename: "684506231_18107686316304897_7941550905378918750_n..webp"
+tags: ["bar", "chopp", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Pirajá

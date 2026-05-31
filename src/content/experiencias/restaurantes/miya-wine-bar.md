@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684237932_18107532797304897_3147131184310313914_n..webp"
   filename: "684237932_18107532797304897_3147131184310313914_n..webp"
+tags: ["bar", "vinho"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Miya Wine Bar

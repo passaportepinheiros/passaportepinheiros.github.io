@@ -34,6 +34,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684391011_18107653313304897_7121303415902274826_n..webp"
   filename: "684391011_18107653313304897_7121303415902274826_n..webp"
+tags: ["bar", "cerveja", "chopp", "pet", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Beer4u

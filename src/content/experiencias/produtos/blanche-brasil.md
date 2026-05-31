@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/produtos/684272246_18107582729304897_2538628061660273634_n..webp"
   filename: "684272246_18107582729304897_2538628061660273634_n..webp"
+tags: ["artesanato", "loja", "produto"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Blanche Brasil

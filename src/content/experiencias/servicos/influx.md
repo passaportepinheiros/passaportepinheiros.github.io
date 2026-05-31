@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/servicos/686396333_18107582633304897_5352370658744856420_n..webp"
   filename: "686396333_18107582633304897_5352370658744856420_n..webp"
+tags: ["escola", "idiomas", "servico"]
+benefitType: "isencao-taxa"
 ---
 
 # InFlux

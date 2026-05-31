@@ -29,6 +29,8 @@ images:
 source:
   path: "data/instagram/restaurantes/694461037_18107653469304897_7524314637509775171_n..webp"
   filename: "694461037_18107653469304897_7524314637509775171_n..webp"
+tags: ["gelato", "sobremesa", "sorvete"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Albero Dei Gelati

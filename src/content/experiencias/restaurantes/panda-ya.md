@@ -30,6 +30,8 @@ images:
 source:
   path: "data/instagram/restaurantes/689207448_18107686397304897_4616318609163430430_n..webp"
   filename: "689207448_18107686397304897_4616318609163430430_n..webp"
+tags: ["asiatica", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Panda Ya

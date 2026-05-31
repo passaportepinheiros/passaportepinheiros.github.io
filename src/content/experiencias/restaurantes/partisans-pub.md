@@ -16,6 +16,8 @@ categoria_fsq: "Bar"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["bar", "drinks"]
+benefitType: "beneficio-especial"
 ---
 
 # Partisans Pub

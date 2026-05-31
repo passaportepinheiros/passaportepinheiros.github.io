@@ -18,6 +18,8 @@ instagramUrl: "https://www.instagram.com/barracadalulu/"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["confort-food"]
+benefitType: "beneficio-especial"
 ---
 
 # Barraca da Lulu

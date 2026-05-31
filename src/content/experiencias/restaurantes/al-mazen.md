@@ -28,6 +28,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684762217_18107532764304897_5243164425353511701_n..webp"
   filename: "684762217_18107532764304897_5243164425353511701_n..webp"
+tags: ["arabe", "oriente-medio"]
+benefitType: "desconto"
 ---
 
 # Al Mazen

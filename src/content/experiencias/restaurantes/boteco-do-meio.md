@@ -16,6 +16,8 @@ categoria_fsq: "Restaurant"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: []
+benefitType: "beneficio-especial"
 ---
 
 # Boteco do Meio

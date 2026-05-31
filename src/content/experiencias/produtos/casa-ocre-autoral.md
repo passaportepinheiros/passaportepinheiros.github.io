@@ -12,6 +12,8 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: ["produto"]
+benefitType: "beneficio-especial"
 ---
 
 # Casa Ocre Autoral

@@ -32,6 +32,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686344361_18107695886304897_1510785856816467132_n..webp"
   filename: "686344361_18107695886304897_1510785856816467132_n..webp"
+tags: ["drinks", "petiscos"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # NOS outros

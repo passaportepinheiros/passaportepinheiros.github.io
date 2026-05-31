@@ -27,6 +27,8 @@ images:
 source:
   path: "data/instagram/restaurantes/684607858_18107532911304897_120946300452091460_n..webp"
   filename: "684607858_18107532911304897_120946300452091460_n..webp"
+tags: ["mexicana"]
+benefitType: "brinde"
 ---
 
 # GUA.CO

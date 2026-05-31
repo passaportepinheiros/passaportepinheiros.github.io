@@ -25,6 +25,8 @@ images:
 source:
   path: "data/instagram/restaurantes/687801291_18107582744304897_443903714475058698_n..webp"
   filename: "687801291_18107582744304897_443903714475058698_n..webp"
+tags: ["cafe"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Beik Cookies

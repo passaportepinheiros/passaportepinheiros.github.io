@@ -95,3 +95,49 @@ export function buildExperiencesUrl(category?: Category | 'todos', busca?: strin
   const qs = params.toString();
   return withBase(`/experiencias/${qs ? `?${qs}` : ''}`);
 }
+
+export type BenefitType =
+  | 'compre-1-leve-outro'
+  | 'desconto'
+  | 'brinde'
+  | 'isencao-taxa'
+  | 'beneficio-especial';
+
+export const benefitTypes: Array<{ value: BenefitType; label: string; emoji: string }> = [
+  { value: 'compre-1-leve-outro', label: 'Compre 1 Leve 2', emoji: '🎁' },
+  { value: 'desconto', label: 'Desconto', emoji: '🏷️' },
+  { value: 'brinde', label: 'Brinde', emoji: '✨' },
+  { value: 'isencao-taxa', label: 'Isenção de Taxa', emoji: '🆓' },
+  { value: 'beneficio-especial', label: 'Benefício Especial', emoji: '⭐' },
+];
+
+export function benefitTypeLabel(value: BenefitType): string {
+  return benefitTypes.find((b) => b.value === value)?.label ?? value;
+}
+
+export const knownTags: Array<{ value: string; label: string }> = [
+  { value: 'cafe', label: 'Café' },
+  { value: 'bar', label: 'Bar' },
+  { value: 'drinks', label: 'Drinks' },
+  { value: 'chopp', label: 'Chopp/Cerveja' },
+  { value: 'vinho', label: 'Vinho' },
+  { value: 'pizza', label: 'Pizza' },
+  { value: 'hamburguer', label: 'Hambúrguer' },
+  { value: 'japonesa', label: 'Japonesa' },
+  { value: 'italiana', label: 'Italiana' },
+  { value: 'mexicana', label: 'Mexicana' },
+  { value: 'arabe', label: 'Árabe' },
+  { value: 'brasileira', label: 'Brasileira' },
+  { value: 'churrasco', label: 'Churrasco' },
+  { value: 'gelato', label: 'Gelato' },
+  { value: 'sorvete', label: 'Sorvete' },
+  { value: 'doces', label: 'Doces' },
+  { value: 'padaria', label: 'Padaria' },
+  { value: 'petiscos', label: 'Petiscos' },
+  { value: 'pastel', label: 'Pastel' },
+  { value: 'saudavel', label: 'Saudável' },
+  { value: 'danca', label: 'Dança' },
+  { value: 'pet', label: 'Pet' },
+  { value: 'tattoo', label: 'Tatuagem' },
+  { value: 'idiomas', label: 'Idiomas' },
+];

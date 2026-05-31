@@ -14,6 +14,8 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
+tags: []
+benefitType: "beneficio-especial"
 ---
 
 # Yeah Manjah

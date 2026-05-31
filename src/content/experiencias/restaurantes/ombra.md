@@ -26,6 +26,8 @@ images:
 source:
   path: "data/instagram/restaurantes/685789872_18107686421304897_4224829060856598659_n..webp"
   filename: "685789872_18107686421304897_4224829060856598659_n..webp"
+tags: ["pizza", "vinho"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Ombra

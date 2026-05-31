@@ -35,6 +35,8 @@ images:
 source:
   path: "data/instagram/restaurantes/686425276_18107685992304897_211750122792936024_n..webp"
   filename: "686425276_18107685992304897_211750122792936024_n..webp"
+tags: ["loja", "mercado", "pastel"]
+benefitType: "compre-1-leve-outro"
 ---
 
 # Taba Pastéis e Salgados
