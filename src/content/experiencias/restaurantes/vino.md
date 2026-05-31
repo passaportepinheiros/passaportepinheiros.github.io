@@ -13,6 +13,8 @@ enderecos:
         formatado: "(41) 98790-0700"
     lat: -23.5659304
     lng: -46.6846483
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato do
   cardápio, seu

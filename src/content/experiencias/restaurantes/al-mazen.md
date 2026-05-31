@@ -13,6 +13,8 @@ enderecos:
         formatado: "11 3819770"
     lat: -23.5566609
     lng: -46.6925073
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de um rodízio
   completo ganhe 50% de

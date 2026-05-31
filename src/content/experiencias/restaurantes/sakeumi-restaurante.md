@@ -16,6 +16,8 @@ enderecos:
         formatado: "(11) 98131-5948"
     lat: -23.5684604
     lng: -46.6889072
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 Rodízio TRADICIONAL
   ganhe 50% de desconto no Rodízio

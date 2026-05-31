@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 95216-4439"
     lat: -23.5644123
     lng: -46.6843296
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 óculos,
   ganhe outro dentre as peças

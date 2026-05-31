@@ -9,6 +9,8 @@ enderecos:
     numero: "209"
     lat: -23.5646567
     lng: -46.6802655
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "1155552042"
@@ -17,6 +19,8 @@ enderecos:
     numero: "3970"
     lat: -23.5737033
     lng: -46.6958894
+    bairro: "Jardim Europa"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "1122995335"
@@ -26,6 +30,8 @@ enderecos:
     complemento: "3º Piso, Jardim Universidade Pinheiros"
     lat: -23.5510818
     lng: -46.7221429
+    bairro: "Boaçava"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "1122995337"

@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 2985-5020"
     lat: -23.5627284
     lng: -46.6815386
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 item* do
   cardápio, seu acompanhante

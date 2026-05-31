@@ -10,6 +10,8 @@ enderecos:
     complemento: "1º andar"
     lat: -23.5590236
     lng: -46.6797948
+    bairro: "Jardim Paulista"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "1135088841"

@@ -16,6 +16,8 @@ enderecos:
         formatado: "(11) 9969-1981"
     lat: -23.5656917
     lng: -46.6848088
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Isenção da taxa de matricula
 images:

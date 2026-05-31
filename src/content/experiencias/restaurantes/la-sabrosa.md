@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 2925-6189"
     lat: -23.5624096
     lng: -46.6803283
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 taco,
   ganhe outro de igual ou menor

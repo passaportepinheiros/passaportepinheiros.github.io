@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 95043-9629"
     lat: -23.5638375
     lng: -46.6859113
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 Prato
   Principal (ou do dia)

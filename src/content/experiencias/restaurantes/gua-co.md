@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 99116-5868"
     lat: -23.5671044
     lng: -46.6860913
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato principal,
   ganhe um taco.

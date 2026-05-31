@@ -10,6 +10,8 @@ enderecos:
     complemento: "Mercado de Pinheiros"
     lat: -23.5656156
     lng: -46.6924088
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "11995342473"

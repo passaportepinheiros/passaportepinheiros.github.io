@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 93245-3531"
     lat: -23.5602205
     lng: -46.6779748
+    bairro: "Jardim Paulista"
+    cidade: "São Paulo"
 description: |-
   1º Carimbo:
   Na compra de 1 pint de chope da casa + 1

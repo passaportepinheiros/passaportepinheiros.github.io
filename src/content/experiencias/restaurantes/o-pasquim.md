@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 99919-7767"
     lat: -23.5579437
     lng: -46.6902415
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de um petisco
   e um drink

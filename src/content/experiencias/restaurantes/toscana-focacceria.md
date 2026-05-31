@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 97058-3883"
     lat: -23.5648188
     lng: -46.6806688
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de qualquer
   item do cardápio,

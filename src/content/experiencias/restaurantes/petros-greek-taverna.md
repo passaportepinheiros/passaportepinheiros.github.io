@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3898-5890"
     lat: -23.5616319
     lng: -46.6846357
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de uma jarra de
   Clericot, ganhe outra.

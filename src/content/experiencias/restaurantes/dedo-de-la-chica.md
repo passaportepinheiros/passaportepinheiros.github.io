@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3819-8522"
     lat: -23.5588081
     lng: -46.6880846
+    bairro: "Vila Madalena"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 rodízio
   mexicano seu acompanhante

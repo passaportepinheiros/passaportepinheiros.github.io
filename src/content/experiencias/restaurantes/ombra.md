@@ -10,6 +10,8 @@ enderecos:
     telefones: []
     lat: -23.5556943
     lng: -46.6824043
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 pedaço de
   pizza, seu acompanhante

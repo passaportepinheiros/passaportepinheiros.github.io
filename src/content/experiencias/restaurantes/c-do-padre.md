@@ -1,5 +1,5 @@
 ---
-title: "C do Padre"
+title: "C... do Padre"
 slug: "c-do-padre"
 category: "restaurantes"
 instagram: "ocdopadre"
@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 93417-5556"
     lat: -23.567068
     lng: -46.6964271
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato, seu
   acompanhante ganha outro de igual
@@ -29,7 +31,7 @@ source:
   filename: "687169360_18107582702304897_4316215101597420399_n..webp"
 ---
 
-# C do Padre
+# C... do Padre
 
 Na compra de 1 prato, seu
 acompanhante ganha outro de igual

@@ -10,6 +10,8 @@ enderecos:
     telefones: []
     lat: -23.5650646
     lng: -46.6852478
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Primeiro Carimbo:
   50% de desconto em qualquer

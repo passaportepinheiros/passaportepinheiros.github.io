@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3195-6373"
     lat: -23.565239
     lng: -46.6821741
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato,
   ganhe 1 taça de vinho Braz.

@@ -10,6 +10,8 @@ enderecos:
     telefones: []
     lat: -23.5607933
     lng: -46.6992019
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 vermute artesanal
   + 1 entrada, seu acompanhante

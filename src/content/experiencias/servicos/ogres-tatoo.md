@@ -10,6 +10,8 @@ enderecos:
     complemento: "Sala 72"
     lat: -23.5677375
     lng: -46.6940669
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
     telefones:
       - tipo: "telefone"
         numero: "11999874307"

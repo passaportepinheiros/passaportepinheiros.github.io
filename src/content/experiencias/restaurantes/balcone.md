@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3476-7084"
     lat: -23.5594591
     lng: -46.6768991
+    bairro: "Jardim Paulista"
+    cidade: "São Paulo"
 description: |-
   Na compra de um prato*
   seu acompanhante ganha outro de

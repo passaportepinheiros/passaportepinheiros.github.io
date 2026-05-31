@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 4564-0146"
     lat: -23.56493
     lng: -46.6853397
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato principal à la
   carte, seu acompanhante ganha

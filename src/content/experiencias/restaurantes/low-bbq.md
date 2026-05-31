@@ -10,6 +10,8 @@ enderecos:
     telefones: []
     lat: -23.5682473
     lng: -46.6895835
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 prato
   individual ou sanduíche,

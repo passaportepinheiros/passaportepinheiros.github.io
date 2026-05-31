@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3034-1763"
     lat: -23.5605599
     lng: -46.6991992
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Primeira visita:
   na compra de 1 drink ou refresco,

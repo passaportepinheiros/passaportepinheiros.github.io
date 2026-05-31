@@ -10,6 +10,8 @@ enderecos:
     telefones: []
     lat: -23.5613243
     lng: -46.694053
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 burguer ou
   sanduíche, seu acompanhante

@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 94220-0014"
     lat: -23.5646118
     lng: -46.6840063
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 sanduíche de
   frango desfiado no pão folha,

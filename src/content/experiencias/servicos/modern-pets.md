@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 91727-3700"
     lat: -23.562338
     lng: -46.6813699
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Desconto de R$ 75,00 para
   novas assinaturas

@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 3063-0114"
     lat: -23.5654099
     lng: -46.6825816
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 nhoque artesanal
   de batatas ao molho de ragu de

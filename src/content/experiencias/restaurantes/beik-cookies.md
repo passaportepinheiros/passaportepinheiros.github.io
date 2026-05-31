@@ -13,6 +13,8 @@ enderecos:
         formatado: "(11) 96629-8143"
     lat: -23.5678141
     lng: -46.6926543
+    bairro: "Pinheiros"
+    cidade: "São Paulo"
 description: |-
   Na compra de 1 cookie e um café,
   ganhe outro cookie e outro café de
