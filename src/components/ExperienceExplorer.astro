@@ -430,7 +430,8 @@ const statusFilterItems = [
       grid?.classList.toggle('hidden', visible === 0 || currentView === 'map');
       updateVisibleSlugs();
       updateStatusCounts();
-      updateMapMarkers();
+      // updateMapMarkers is defined after this — called via scheduledMapUpdate
+      scheduleMapUpdate();
     };
 
     filterButtons.forEach((button) => {
@@ -474,6 +475,9 @@ const statusFilterItems = [
         applyFilters();
       });
     });
+
+    // scheduleMapUpdate is a forward ref resolved after map functions are defined
+    let scheduleMapUpdate = () => {};
 
     syncFavorites();
     updateStatusCounts();
@@ -560,6 +564,9 @@ const statusFilterItems = [
         setView(view);
       });
     });
+
+    // Resolve the forward ref now that updateMapMarkers is defined
+    scheduleMapUpdate = () => updateMapMarkers();
 
     // ---- Experience Modal ----
     type ExpModalData = {
