@@ -4,6 +4,13 @@ slug: "capivara"
 category: "restaurantes"
 instagram: "redecapivara"
 instagramUrl: "https://www.instagram.com/redecapivara/"
+enderecos:
+  - logradouro: "Rua Guaicuí"
+    numero: "19"
+    telefones:
+      - tipo: "telefone"
+        numero: "11997800795"
+        formatado: "(11) 99780-0795"
 description: |-
   Na compra de um 1 lanche ou 1
   porção, seu acompanhante ganha

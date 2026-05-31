@@ -4,6 +4,13 @@ slug: "nos-outros"
 category: "restaurantes"
 instagram: "nos.otros"
 instagramUrl: "https://www.instagram.com/nos.otros/"
+enderecos:
+  - logradouro: "Rua Cônego Eugênio Leite"
+    numero: "727"
+    telefones:
+      - tipo: "telefone"
+        numero: "1129855020"
+        formatado: "(11) 2985-5020"
 description: |-
   Na compra de 1 item* do
   cardápio, seu acompanhante

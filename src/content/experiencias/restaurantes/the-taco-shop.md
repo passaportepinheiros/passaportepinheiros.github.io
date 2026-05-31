@@ -4,6 +4,13 @@ slug: "the-taco-shop"
 category: "restaurantes"
 instagram: "thetacoshop_br"
 instagramUrl: "https://www.instagram.com/thetacoshop_br/"
+enderecos:
+  - logradouro: "Rua Ferreira de Araújo"
+    numero: "381"
+    telefones:
+      - tipo: "telefone"
+        numero: "1138150337"
+        formatado: "(11) 3815-0337"
 description: |-
   Na compra de um prato, ganhe
   outro de igual ou menor valor.

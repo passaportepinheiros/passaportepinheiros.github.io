@@ -4,6 +4,13 @@ slug: "miya-wine-bar"
 category: "restaurantes"
 instagram: "miyawinebar"
 instagramUrl: "https://www.instagram.com/miyawinebar/"
+enderecos:
+  - logradouro: "Rua Padre Carvalho"
+    numero: "55"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "11937289841"
+        formatado: "(11) 93728-9841"
 description: |-
   Na compra de 1 entrada,
   ganhe outra de igual ou menor

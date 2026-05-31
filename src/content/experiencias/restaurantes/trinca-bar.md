@@ -4,6 +4,10 @@ slug: "trinca-bar"
 category: "restaurantes"
 instagram: "trincabar"
 instagramUrl: "https://www.instagram.com/trincabar/"
+enderecos:
+  - logradouro: "Rua Costa Carvalho"
+    numero: "96"
+    telefones: []
 description: |-
   Na compra de 1 vermute artesanal
   + 1 entrada, seu acompanhante

@@ -4,6 +4,13 @@ slug: "o-pasquim"
 category: "restaurantes"
 instagram: "opasquimbar"
 instagramUrl: "https://www.instagram.com/opasquimbar/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "1097"
+    telefones:
+      - tipo: "telefone"
+        numero: "11999197767"
+        formatado: "(11) 99919-7767"
 description: |-
   Na compra de um petisco
   e um drink

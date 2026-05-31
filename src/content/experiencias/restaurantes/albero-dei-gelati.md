@@ -4,6 +4,13 @@ slug: "albero-dei-gelati"
 category: "restaurantes"
 instagram: "alberodeigelati"
 instagramUrl: "https://www.instagram.com/alberodeigelati/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "342"
+    telefones:
+      - tipo: "telefone"
+        numero: "113030631821"
+        formatado: "1130 3063 1821"
 description: |-
   Compre 1 gelato
   pequeno, médio ou grande e seu

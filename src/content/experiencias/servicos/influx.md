@@ -4,6 +4,16 @@ slug: "influx"
 category: "servicos"
 instagram: "influxbr"
 instagramUrl: "https://www.instagram.com/influxbr/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "75"
+    telefones:
+      - tipo: "telefone"
+        numero: "1130813549"
+        formatado: "(11) 3081-3549"
+      - tipo: "telefone"
+        numero: "1199691981"
+        formatado: "(11) 9969-1981"
 description: |-
   Isenção da taxa de matricula
 images:

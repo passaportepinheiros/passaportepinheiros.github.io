@@ -4,6 +4,13 @@ slug: "panda-ya"
 category: "restaurantes"
 instagram: "pandaya.dumpling"
 instagramUrl: "https://www.instagram.com/pandaya.dumpling/"
+enderecos:
+  - logradouro: "Rua Lisboa"
+    numero: "971"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "11988623954"
+        formatado: "(11) 98862-3954"
 description: |-
   Na compra de 1 porção de
   Gyoza ganhe outra porção de

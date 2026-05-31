@@ -4,6 +4,13 @@ slug: "suri"
 category: "restaurantes"
 instagram: "suricevichebar"
 instagramUrl: "https://www.instagram.com/suricevichebar/"
+enderecos:
+  - logradouro: "Rua Costa Carvalho"
+    numero: "72"
+    telefones:
+      - tipo: "telefone"
+        numero: "1130341763"
+        formatado: "(11) 3034-1763"
 description: |-
   Primeira visita:
   na compra de 1 drink ou refresco,

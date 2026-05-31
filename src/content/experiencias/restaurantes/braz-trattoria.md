@@ -4,6 +4,13 @@ slug: "braz-trattoria"
 category: "restaurantes"
 instagram: "braztrattoria"
 instagramUrl: "https://www.instagram.com/braztrattoria/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "412"
+    telefones:
+      - tipo: "telefone"
+        numero: "1131956373"
+        formatado: "(11) 3195-6373"
 description: |-
   Na compra de 1 prato,
   ganhe 1 taça de vinho Braz.

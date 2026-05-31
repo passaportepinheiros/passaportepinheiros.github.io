@@ -4,6 +4,14 @@ slug: "ogres-tatoo"
 category: "servicos"
 instagram: "ogrestattoo"
 instagramUrl: "https://www.instagram.com/ogrestattoo/"
+enderecos:
+  - logradouro: "Rua Teodoro Sampaio"
+    numero: "2767"
+    complemento: "Sala 72"
+    telefones:
+      - tipo: "telefone"
+        numero: "11999874307"
+        formatado: "(11) 99987-4307"
 description: |-
   20% de desconto em
   qualquer tattoo e piercing.

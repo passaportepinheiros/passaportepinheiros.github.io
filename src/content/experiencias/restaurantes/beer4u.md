@@ -4,6 +4,13 @@ slug: "beer4u"
 category: "restaurantes"
 instagram: "beer4upinheiros"
 instagramUrl: "https://www.instagram.com/beer4upinheiros/"
+enderecos:
+  - logradouro: "Rua João Moura"
+    numero: "595"
+    telefones:
+      - tipo: "telefone"
+        numero: "11932453531"
+        formatado: "(11) 93245-3531"
 description: |-
   1º Carimbo:
   Na compra de 1 pint de chope da casa + 1

@@ -4,6 +4,13 @@ slug: "al-mazen"
 category: "restaurantes"
 instagram: "almazen_chefmazenzwawe"
 instagramUrl: "https://www.instagram.com/almazen_chefmazenzwawe/"
+enderecos:
+  - logradouro: "Rua Mourato Coelho"
+    numero: "1327"
+    telefones:
+      - tipo: "telefone"
+        numero: "113819770"
+        formatado: "11 3819770"
 description: |-
   Na compra de um rodízio
   completo ganhe 50% de

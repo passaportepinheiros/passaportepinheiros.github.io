@@ -4,6 +4,13 @@ slug: "dona-vitamina"
 category: "restaurantes"
 instagram: "donavitamina"
 instagramUrl: "https://www.instagram.com/donavitamina/"
+enderecos:
+  - logradouro: "Rua Mateus Grou"
+    numero: "152"
+    telefones:
+      - tipo: "telefone"
+        numero: "11942200014"
+        formatado: "(11) 94220-0014"
 description: |-
   Na compra de 1 sanduíche de
   frango desfiado no pão folha,

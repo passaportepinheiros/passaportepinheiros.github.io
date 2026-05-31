@@ -4,6 +4,13 @@ slug: "emporio-sao-joao"
 category: "restaurantes"
 instagram: "emporiosaojoao"
 instagramUrl: "https://www.instagram.com/emporiosaojoao/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "456"
+    telefones:
+      - tipo: "telefone"
+        numero: "1130630114"
+        formatado: "(11) 3063-0114"
 description: |-
   Na compra de 1 nhoque artesanal
   de batatas ao molho de ragu de

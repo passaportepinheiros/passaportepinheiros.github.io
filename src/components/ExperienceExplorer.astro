@@ -1,0 +1,222 @@
+---
+import { BriefcaseBusiness, Search, ShoppingBag, SlidersHorizontal, Utensils } from '@lucide/astro';
+import ExperienceCard from './ExperienceCard.astro';
+import {
+  categoryLabel,
+  getCategoryCounts,
+  sortExperiences,
+  type Category,
+  type Experience,
+} from '../lib/experiences';
+
+interface Props {
+  experiences: Experience[];
+  initialCategory?: Category | 'todos';
+}
+
+const { experiences, initialCategory = 'todos' } = Astro.props;
+const sortedExperiences = sortExperiences(experiences);
+const counts = getCategoryCounts(sortedExperiences);
+const initialLabel = initialCategory === 'todos' ? 'Todas' : categoryLabel(initialCategory);
+
+const filterItems = [
+  { value: 'todos', label: 'Todas', count: counts.todos, Icon: SlidersHorizontal },
+  { value: 'restaurantes', label: 'Restaurantes', count: counts.restaurantes, Icon: Utensils },
+  { value: 'servicos', label: 'Serviços', count: counts.servicos, Icon: BriefcaseBusiness },
+  { value: 'produtos', label: 'Produtos', count: counts.produtos, Icon: ShoppingBag },
+];
+---
+
+<section class="container-shell pt-8 pb-10 md:pt-10 md:pb-14" id="experiencias" data-explorer data-initial-category={initialCategory}>
+  <div class="mb-8 grid gap-6 lg:grid-cols-[320px_1fr]">
+    <aside class="rounded-lg border border-border/70 bg-surface p-6 shadow-[0_16px_44px_rgba(0,110,199,0.06)] lg:sticky lg:top-28 lg:self-start">
+      <div class="mb-6">
+        <p class="brand-heading text-sm font-bold text-primary">Filtros</p>
+        <h2 class="brand-heading mt-2 text-4xl font-bold leading-none text-ink">
+          Experiências
+        </h2>
+      </div>
+
+      <div class="grid gap-2">
+        {
+          filterItems.map(({ value, label, count, Icon }) => (
+            <button
+              type="button"
+              class="filter-button focus-ring flex items-center justify-between rounded-full border border-border/70 px-4 py-3 text-left font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:border-primary"
+              data-filter-button
+              data-filter-value={value}
+              aria-pressed={initialCategory === value ? 'true' : 'false'}
+            >
+              <span class="flex items-center gap-3">
+                <Icon class="h-5 w-5" aria-hidden="true" />
+                {label}
+              </span>
+              <span class="rounded bg-surface-muted px-2 py-1 text-xs text-muted">{count}</span>
+            </button>
+          ))
+        }
+      </div>
+    </aside>
+
+    <div>
+      <div class="mb-6 rounded-lg border border-border/70 bg-surface p-4 shadow-[0_16px_44px_rgba(0,110,199,0.06)]">
+        <div class="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+          <label class="focus-within:border-primary flex min-h-12 items-center gap-3 rounded-full border border-border/70 bg-background px-4 transition">
+            <Search class="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
+            <span class="sr-only">Buscar experiências</span>
+            <input
+              class="w-full border-0 bg-transparent py-3 text-base text-ink outline-none placeholder:text-muted/80"
+              type="search"
+              placeholder="Buscar por nome, benefício ou Instagram"
+              data-search-input
+            />
+          </label>
+
+          <button
+            type="button"
+            class="focus-ring rounded-full border border-primary px-5 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white"
+            data-clear-filters
+          >
+            Limpar
+          </button>
+        </div>
+
+        <div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted">
+          <span class="rounded-full bg-primary-soft px-3 py-1 font-display text-xs font-bold uppercase tracking-wide text-primary" data-active-filter-label>
+            {initialLabel}
+          </span>
+          <span>
+            <strong class="text-primary" data-results-count>{sortedExperiences.length}</strong>
+            experiências encontradas
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" data-results-grid>
+        {sortedExperiences.map((experience) => <ExperienceCard experience={experience} />)}
+      </div>
+
+      <div class="hidden rounded-lg border border-border/70 bg-surface p-8 text-center" data-empty-state>
+        <p class="font-display text-2xl font-bold text-primary">Nenhuma experiência encontrada</p>
+        <p class="mt-2 text-muted">Tente buscar por outro nome ou trocar os filtros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const normalize = (value: unknown) =>
+    String(value)
+      .toString()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+
+  const favoriteStorageKey = 'passaporte-pinheiros:favorites';
+
+  document.querySelectorAll('[data-explorer]').forEach((root) => {
+    const searchInput = root.querySelector<HTMLInputElement>('[data-search-input]');
+    const clearButton = root.querySelector<HTMLButtonElement>('[data-clear-filters]');
+    const filterButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-filter-button]')];
+    const cards = [...root.querySelectorAll<HTMLElement>('[data-experience-card]')];
+    const resultCount = root.querySelector<HTMLElement>('[data-results-count]');
+    const activeLabel = root.querySelector<HTMLElement>('[data-active-filter-label]');
+    const emptyState = root.querySelector<HTMLElement>('[data-empty-state]');
+    const grid = root.querySelector<HTMLElement>('[data-results-grid]');
+
+    let activeCategory = root.getAttribute('data-initial-category') || 'todos';
+
+    const readFavorites = () => {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(favoriteStorageKey) || '[]');
+        return new Set<string>(Array.isArray(parsed) ? parsed : []);
+      } catch {
+        return new Set<string>();
+      }
+    };
+
+    const writeFavorites = (favorites: Set<string>) => {
+      localStorage.setItem(favoriteStorageKey, JSON.stringify([...favorites]));
+    };
+
+    const syncFavorites = () => {
+      const favorites = readFavorites();
+      root.querySelectorAll('[data-favorite-button]').forEach((button) => {
+        const id = button.getAttribute('data-favorite-id');
+        const active = id ? favorites.has(id) : false;
+        button.setAttribute('data-active', String(active));
+        button.setAttribute('aria-pressed', String(active));
+      });
+    };
+
+    const applyFilters = () => {
+      const query = normalize(searchInput?.value || '');
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        const payload = normalize(card.getAttribute('data-search') || '');
+        const categoryMatches = activeCategory === 'todos' || category === activeCategory;
+        const searchMatches = !query || payload.includes(query);
+        const shouldShow = categoryMatches && searchMatches;
+
+        card.hidden = !shouldShow;
+        if (shouldShow) visible += 1;
+      });
+
+      filterButtons.forEach((button) => {
+        button.setAttribute(
+          'aria-pressed',
+          String(button.getAttribute('data-filter-value') === activeCategory),
+        );
+      });
+
+      const activeButton = filterButtons.find(
+        (button) => button.getAttribute('data-filter-value') === activeCategory,
+      );
+      if (activeLabel && activeButton) {
+        activeLabel.textContent = activeButton.textContent?.replace(/\d+/g, '').trim() || 'Todas';
+      }
+
+      if (resultCount) resultCount.textContent = String(visible);
+      emptyState?.classList.toggle('hidden', visible > 0);
+      grid?.classList.toggle('hidden', visible === 0);
+    };
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeCategory = button.getAttribute('data-filter-value') || 'todos';
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', applyFilters);
+
+    clearButton?.addEventListener('click', () => {
+      activeCategory = 'todos';
+      if (searchInput) searchInput.value = '';
+      applyFilters();
+      searchInput?.focus();
+    });
+
+    root.querySelectorAll('[data-favorite-button]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.getAttribute('data-favorite-id');
+        if (!id) return;
+
+        const favorites = readFavorites();
+        if (favorites.has(id)) {
+          favorites.delete(id);
+        } else {
+          favorites.add(id);
+        }
+        writeFavorites(favorites);
+        syncFavorites();
+      });
+    });
+
+    syncFavorites();
+    applyFilters();
+  });
+</script>

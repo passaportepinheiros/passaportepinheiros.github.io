@@ -4,6 +4,13 @@ slug: "petros-greek-taverna"
 category: "restaurantes"
 instagram: "petrosgreektaverna"
 instagramUrl: "https://www.instagram.com/petrosgreektaverna/"
+enderecos:
+  - logradouro: "Rua Doutor Virgílio Carvalho Pinto"
+    numero: "137"
+    telefones:
+      - tipo: "telefone"
+        numero: "1138985890"
+        formatado: "(11) 3898-5890"
 description: |-
   Na compra de uma jarra de
   Clericot, ganhe outra.

@@ -4,6 +4,14 @@ slug: "feliciana-paes"
 category: "restaurantes"
 instagram: "feliciana.paes"
 instagramUrl: "https://www.instagram.com/feliciana.paes/"
+enderecos:
+  - logradouro: "Rua Pedro Cristi"
+    numero: "89"
+    complemento: "Mercado de Pinheiros"
+    telefones:
+      - tipo: "telefone"
+        numero: "11995342473"
+        formatado: "(11) 99534-2473"
 description: |-
   Na compra de 1 bebida quente + 1
   pão na chapa seu

@@ -4,6 +4,13 @@ slug: "gua-co"
 category: "restaurantes"
 instagram: "gua.co"
 instagramUrl: "https://www.instagram.com/gua.co/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "861"
+    telefones:
+      - tipo: "telefone"
+        numero: "11991165868"
+        formatado: "(11) 99116-5868"
 description: |-
   Na compra de 1 prato principal,
   ganhe um taco.

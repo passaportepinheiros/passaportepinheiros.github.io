@@ -1,0 +1,184 @@
+@import "tailwindcss" source(none);
+
+@source "../";
+
+@theme {
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Work Sans", "Arial", sans-serif;
+
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f2f7fc;
+  --color-surface-muted: #e8f2fb;
+  --color-primary: #006ec7;
+  --color-primary-strong: #005aa8;
+  --color-primary-soft: #e3f1fc;
+  --color-ink: #242424;
+  --color-muted: #5c6268;
+  --color-border: #cfddea;
+  --color-amber: #b77400;
+  --color-mint: #24745a;
+  --color-rose: #aa3151;
+}
+
+:root {
+  --container-max: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #f8fbfd;
+  background-image:
+    url("/brand/wave-pattern.svg"),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 252, 0.94));
+  background-position:
+    center top,
+    center;
+  background-repeat:
+    repeat-y,
+    no-repeat;
+  background-size:
+    max(1800px, 100vw) auto,
+    cover;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container-shell {
+  width: min(100% - 32px, var(--container-max));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--color-primary-strong);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.experience-card[hidden] {
+  display: none;
+}
+
+.primary-cta,
+.primary-cta:visited,
+.primary-cta:hover,
+.primary-cta:focus-visible {
+  color: #ffffff;
+}
+
+.brand-heading {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.brand-pill {
+  border-radius: 9999px;
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(0, 110, 199, 0.18);
+}
+
+.brand-pill:hover {
+  background: var(--color-primary-strong);
+}
+
+.blue-word {
+  color: var(--color-primary);
+}
+
+.brand-ribbon {
+  position: relative;
+  height: 42px;
+  overflow: hidden;
+  border-block: 1px solid rgba(0, 110, 199, 0.14);
+  background: var(--color-surface);
+}
+
+.brand-ribbon::before,
+.brand-ribbon::after {
+  content: "";
+  position: absolute;
+  left: -6%;
+  width: 112%;
+  height: 8px;
+  background: var(--color-primary);
+  transform: rotate(-2.5deg);
+}
+
+.brand-ribbon::before {
+  top: 12px;
+}
+
+.brand-ribbon::after {
+  top: 25px;
+  opacity: 0.32;
+}
+
+.brand-ribbon span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.favorite-button[data-active="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.filter-button[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .container-shell {
+    width: min(100% - 24px, var(--container-max));
+  }
+}

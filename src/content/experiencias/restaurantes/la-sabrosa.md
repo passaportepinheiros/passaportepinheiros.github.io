@@ -4,6 +4,13 @@ slug: "la-sabrosa"
 category: "restaurantes"
 instagram: "taquerialasabrosa"
 instagramUrl: "https://www.instagram.com/taquerialasabrosa/"
+enderecos:
+  - logradouro: "Rua Francisco Leitão"
+    numero: "246"
+    telefones:
+      - tipo: "telefone"
+        numero: "1129256189"
+        formatado: "(11) 2925-6189"
 description: |-
   Na compra de 1 taco,
   ganhe outro de igual ou menor

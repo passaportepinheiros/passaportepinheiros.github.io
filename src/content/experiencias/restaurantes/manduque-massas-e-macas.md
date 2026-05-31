@@ -4,6 +4,14 @@ slug: "manduque-massas-e-macas"
 category: "restaurantes"
 instagram: "manduque.massas"
 instagramUrl: "https://www.instagram.com/manduque.massas/"
+enderecos:
+  - logradouro: "Rua Pedro Cristi"
+    numero: "89"
+    complemento: "Mercado de Pinheiros"
+    telefones:
+      - tipo: "telefone"
+        numero: "11918554227"
+        formatado: "(11) 91855-4227"
 description: |-
   Na compra de qualquer prato, leve
   para casa nossa deliciosa massa

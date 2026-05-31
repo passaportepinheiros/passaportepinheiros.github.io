@@ -4,6 +4,13 @@ slug: "blanche-brasil"
 category: "produtos"
 instagram: "blanche.brasil"
 instagramUrl: "https://www.instagram.com/blanche.brasil/"
+enderecos:
+  - logradouro: "Rua Mateus Grou"
+    numero: "185"
+    telefones:
+      - tipo: "telefone"
+        numero: "11952164439"
+        formatado: "(11) 95216-4439"
 description: |-
   Na compra de 1 óculos,
   ganhe outro dentre as peças

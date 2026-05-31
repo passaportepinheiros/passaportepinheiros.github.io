@@ -4,6 +4,10 @@ slug: "coffe-walk"
 category: "restaurantes"
 instagram: "coffeewalkbr"
 instagramUrl: "https://www.instagram.com/coffeewalkbr/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "165"
+    telefones: []
 description: |-
   Primeiro Carimbo:
   50% de desconto em qualquer

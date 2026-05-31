@@ -4,6 +4,14 @@ slug: "taba-pasteis-e-salgados"
 category: "restaurantes"
 instagram: "tabapasteis"
 instagramUrl: "https://www.instagram.com/tabapasteis/"
+enderecos:
+  - logradouro: "Rua Pedro Cristi"
+    numero: "89"
+    complemento: "Mercado de Pinheiros"
+    telefones:
+      - tipo: "telefone"
+        numero: "11954570655"
+        formatado: "(11) 95457-0655"
 description: |-
   No primeiro carimbo:
   compre 1 pastel e ganhe outro pastel de

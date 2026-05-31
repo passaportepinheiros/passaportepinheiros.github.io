@@ -1,0 +1,98 @@
+---
+import { Menu, X } from '@lucide/astro';
+
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
+  { href: '/restaurantes/', label: 'Restaurantes', active: pathname.startsWith('/restaurantes') },
+  { href: '/servicos/', label: 'Serviços', active: pathname.startsWith('/servicos') },
+  { href: '/produtos/', label: 'Produtos', active: pathname.startsWith('/produtos') },
+  { href: '/como-funciona/', label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-border/70 bg-white/95 backdrop-blur">
+  <div class="container-shell flex h-20 items-center justify-between gap-6">
+    <a href="/" class="flex items-center" aria-label="Passaporte Pinheiros">
+      <img
+        src="/brand/logo-passaporte-pinheiros.svg"
+        alt="Passaporte Pinheiros"
+        class="h-10 w-auto md:h-12"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Navegação principal">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'font-body text-[14px] font-semibold uppercase tracking-wide transition-colors hover:text-primary',
+              link.active ? 'border-b-2 border-primary pb-1 text-primary' : 'text-muted',
+            ]}
+            aria-current={link.active ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      class="primary-cta brand-pill hidden px-5 py-3 font-display text-sm font-bold uppercase tracking-wide transition md:inline-flex"
+      href="/#experiencias"
+    >
+      Ver experiências
+    </a>
+
+    <button
+      class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded border border-border text-primary md:hidden"
+      type="button"
+      data-mobile-menu-button
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menu"
+    >
+      <Menu class="menu-open h-5 w-5" aria-hidden="true" />
+      <X class="menu-close hidden h-5 w-5" aria-hidden="true" />
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="container-shell hidden border-t border-border/70 py-3 md:hidden"
+    data-mobile-menu
+    aria-label="Navegação mobile"
+  >
+    <div class="grid gap-1">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'rounded px-3 py-3 font-display text-sm font-bold uppercase tracking-wide',
+              link.active ? 'bg-primary text-white' : 'text-primary hover:bg-surface-muted',
+            ]}
+            aria-current={link.active ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuButton = document.querySelector('[data-mobile-menu-button]');
+  const menu = document.querySelector('[data-mobile-menu]');
+
+  menuButton?.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden', expanded);
+    menuButton.querySelector('.menu-open')?.classList.toggle('hidden', !expanded);
+    menuButton.querySelector('.menu-close')?.classList.toggle('hidden', expanded);
+  });
+</script>

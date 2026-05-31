@@ -4,6 +4,14 @@ slug: "hm-food-cafe"
 category: "restaurantes"
 instagram: "hmfoodcafe"
 instagramUrl: "https://www.instagram.com/hmfoodcafe/"
+enderecos:
+  - logradouro: "Rua Teodoro Sampaio"
+    numero: "1027"
+    complemento: "1º andar"
+    telefones:
+      - tipo: "telefone"
+        numero: "1135088841"
+        formatado: "(11) 3508-8841"
 description: |-
   Na compra de 1 prato, seu
   acompanhante ganha outro

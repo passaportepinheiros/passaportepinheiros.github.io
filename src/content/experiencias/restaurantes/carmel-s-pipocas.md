@@ -4,6 +4,16 @@ slug: "carmel-s-pipocas"
 category: "restaurantes"
 instagram: "carmelspipocas"
 instagramUrl: "https://www.instagram.com/carmelspipocas/"
+enderecos:
+  - logradouro: "Rua Francisco Leitão"
+    numero: "285"
+    telefones:
+      - tipo: "telefone"
+        numero: "41984188689"
+        formatado: "(41) 98418-8689"
+      - tipo: "whatsapp"
+        numero: "11915600230"
+        formatado: "(11) 91560-0230"
 description: |-
   Na compra de 1 pote de Caramelo
   com Flor de Sal, ganhe outro de

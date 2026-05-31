@@ -4,6 +4,26 @@ slug: "piraja"
 category: "restaurantes"
 instagram: "barpiraja"
 instagramUrl: "https://www.instagram.com/barpiraja/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "209"
+    telefones:
+      - tipo: "telefone"
+        numero: "1155552042"
+        formatado: "(11) 5555-2042"
+  - logradouro: "Avenida Rebouças"
+    numero: "3970"
+    telefones:
+      - tipo: "telefone"
+        numero: "1122995335"
+        formatado: "(11) 2299-5335"
+  - logradouro: "Avenida das Nações Unidas"
+    numero: "4777"
+    complemento: "3º Piso, Jardim Universidade Pinheiros"
+    telefones:
+      - tipo: "telefone"
+        numero: "1122995337"
+        formatado: "(11) 2299-5337"
 description: |-
   Na compra de um chopp + uma porção
   da sessão "bolinhos"*, seu acompanhante

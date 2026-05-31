@@ -4,6 +4,13 @@ slug: "bar-do-quintal"
 category: "restaurantes"
 instagram: "bardoquintal"
 instagramUrl: "https://www.instagram.com/bardoquintal/"
+enderecos:
+  - logradouro: "Rua Coropé"
+    numero: "87"
+    telefones:
+      - tipo: "telefone"
+        numero: "11979352847"
+        formatado: "(11) 97935-2847"
 description: |-
   Aos Sábados e Domingos, na
   compra de 1 Buffet de Feijoada à

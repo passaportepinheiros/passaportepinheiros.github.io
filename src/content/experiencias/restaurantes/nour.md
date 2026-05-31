@@ -4,6 +4,13 @@ slug: "nour"
 category: "restaurantes"
 instagram: "nourbrasil"
 instagramUrl: "https://www.instagram.com/nourbrasil/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "1277"
+    telefones:
+      - tipo: "telefone"
+        numero: "1138194304"
+        formatado: "(11) 3819-4304"
 description: |-
   Na compra de 1 prato,
   seu acompanhante ganha 50%

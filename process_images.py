@@ -628,12 +628,48 @@ def yaml_block(value: str, indent: str = "  ") -> str:
     return "\n".join(f"{indent}{line}" for line in lines)
 
 
-def markdown_for(info: CardInfo, slug: str, category: str, source_name: str) -> str:
+def frontmatter_field_block(path: Path, field_name: str) -> str:
+    if not path.exists():
+        return ""
+
+    markdown = path.read_text(encoding="utf-8")
+    if not markdown.startswith("---\n"):
+        return ""
+
+    end = markdown.find("\n---", 4)
+    if end == -1:
+        return ""
+
+    lines = markdown[4:end].splitlines()
+    start = f"{field_name}:"
+
+    for index, line in enumerate(lines):
+        if line != start:
+            continue
+
+        block = [line]
+        for next_line in lines[index + 1 :]:
+            if next_line and not next_line.startswith((" ", "\t")):
+                break
+            block.append(next_line)
+        return "\n".join(block)
+
+    return ""
+
+
+def markdown_for(
+    info: CardInfo,
+    slug: str,
+    category: str,
+    source_name: str,
+    preserved_frontmatter: str = "",
+) -> str:
     instagram = clean_instagram(info.instagram)
     instagram_url = f"https://www.instagram.com/{instagram}/" if instagram else ""
     image_url = f"{PUBLIC_ASSETS_URL}/{category}/{slug}/experiencia.jpg"
     logo_url = f"{PUBLIC_ASSETS_URL}/{category}/{slug}/logo.png"
     source_path = f"data/instagram/{category}/{source_name}"
+    preserved = f"{preserved_frontmatter}\n" if preserved_frontmatter else ""
 
     return f"""---
 title: {yaml_quote(info.title)}
@@ -641,7 +677,7 @@ slug: {yaml_quote(slug)}
 category: {yaml_quote(category)}
 instagram: {yaml_quote(instagram)}
 instagramUrl: {yaml_quote(instagram_url)}
-description: |-
+{preserved}description: |-
 {yaml_block(info.description)}
 images:
   experience: {yaml_quote(image_url)}
@@ -678,10 +714,17 @@ def process_image(category: str, image_path: Path, dry_run: bool, use_curated: b
 
     content_path.parent.mkdir(parents=True, exist_ok=True)
     asset_dir.mkdir(parents=True, exist_ok=True)
+    preserved_frontmatter = frontmatter_field_block(content_path, "enderecos")
     crop_experience_photo(image_path, asset_dir / "experiencia.jpg")
     crop_logo(image_path, asset_dir / "logo.png")
     content_path.write_text(
-        markdown_for(info, slug, category, image_path.name),
+        markdown_for(
+            info,
+            slug,
+            category,
+            image_path.name,
+            preserved_frontmatter=preserved_frontmatter,
+        ),
         encoding="utf-8",
     )
     return content_path

@@ -4,6 +4,10 @@ slug: "low-bbq"
 category: "restaurantes"
 instagram: "lowbbqbar"
 instagramUrl: "https://www.instagram.com/lowbbqbar/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "1235"
+    telefones: []
 description: |-
   Na compra de 1 prato
   individual ou sanduíche,

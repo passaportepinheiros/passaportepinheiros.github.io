@@ -41,6 +41,13 @@ slug: "beer4u"
 category: "restaurantes"
 instagram: "beer4upinheiros"
 instagramUrl: "https://www.instagram.com/beer4upinheiros/"
+enderecos:
+  - logradouro: "Rua João Moura"
+    numero: "595"
+    telefones:
+      - tipo: "telefone"
+        numero: "11932453531"
+        formatado: "(11) 93245-3531"
 description: |-
   1º Carimbo:
   ...
@@ -50,6 +57,44 @@ images:
 ```
 
 O schema da collection está em `src/content.config.ts`.
+
+Os endereços digitados manualmente ficam no frontmatter em `enderecos`. Cada item possui `logradouro`, `numero`, `complemento` opcional e uma lista de `telefones`. O campo `numero` do telefone usa apenas dígitos com DDD; `formatado` é a versão para exibição; `tipo` pode ser `telefone` ou `whatsapp`.
+
+Ao rodar `process_images.py`, o bloco `enderecos` já existente é preservado para evitar perder dados cadastrados manualmente.
+
+## Site Astro
+
+O site usa Astro Content Collections e Tailwind CSS. Para rodar localmente:
+
+```sh
+pnpm install
+pnpm dev
+```
+
+O servidor local abre em:
+
+```txt
+http://localhost:4321
+```
+
+Para gerar a versão estática:
+
+```sh
+pnpm build
+```
+
+Para validar os arquivos Astro e TypeScript:
+
+```sh
+pnpm check
+```
+
+Rotas principais:
+
+- `/` lista todas as experiências com busca e filtros;
+- `/restaurantes`, `/produtos` e `/servicos` abrem a lista filtrada por categoria;
+- `/experiencias/{categoria}/{slug}` abre a página de detalhe;
+- `/como-funciona` mostra uma página institucional simples.
 
 ## Pages CMS
 

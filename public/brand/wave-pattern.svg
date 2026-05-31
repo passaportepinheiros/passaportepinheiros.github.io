@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="320" viewBox="0 0 1800 320">
+  <defs>
+    <path id="passport-wave" d="M-48 20q24-14 48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0t48 0"/>
+  </defs>
+  <g fill="none" stroke="#b7c5cf" stroke-width="2.75" stroke-linecap="round" opacity="0.18">
+    <use href="#passport-wave" y="0"/>
+    <use href="#passport-wave" y="36"/>
+    <use href="#passport-wave" y="72"/>
+    <use href="#passport-wave" y="108"/>
+    <use href="#passport-wave" y="144"/>
+    <use href="#passport-wave" y="180"/>
+    <use href="#passport-wave" y="216"/>
+    <use href="#passport-wave" y="252"/>
+    <use href="#passport-wave" y="288"/>
+  </g>
+</svg>

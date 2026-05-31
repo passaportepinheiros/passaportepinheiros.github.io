@@ -14,3 +14,4 @@ dist/
 
 # Saida antiga do processamento, antes da separacao Astro/public.
 data/content/
+design/

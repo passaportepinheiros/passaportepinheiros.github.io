@@ -4,6 +4,16 @@ slug: "sakeumi-restaurante"
 category: "restaurantes"
 instagram: "sakeumi.restaurante"
 instagramUrl: "https://www.instagram.com/sakeumi.restaurante/"
+enderecos:
+  - logradouro: "Rua Maria Carolina"
+    numero: "730"
+    telefones:
+      - tipo: "telefone"
+        numero: "1126674954"
+        formatado: "(11) 2667-4954"
+      - tipo: "whatsapp"
+        numero: "11981315948"
+        formatado: "(11) 98131-5948"
 description: |-
   Na compra de 1 Rodízio TRADICIONAL
   ganhe 50% de desconto no Rodízio

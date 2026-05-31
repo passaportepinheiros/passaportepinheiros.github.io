@@ -4,6 +4,10 @@ slug: "lanchonete-da-cidade"
 category: "restaurantes"
 instagram: "lanchonetedacidade"
 instagramUrl: "https://www.instagram.com/lanchonetedacidade/"
+enderecos:
+  - logradouro: "Rua Coropé"
+    numero: "51"
+    telefones: []
 description: |-
   Na compra de 1 burguer ou
   sanduíche, seu acompanhante

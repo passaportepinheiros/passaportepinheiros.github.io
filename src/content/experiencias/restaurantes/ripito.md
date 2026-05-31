@@ -4,6 +4,13 @@ slug: "ripito"
 category: "restaurantes"
 instagram: "ripito.cafeteria"
 instagramUrl: "https://www.instagram.com/ripito.cafeteria/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "312"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "11950439629"
+        formatado: "(11) 95043-9629"
 description: |-
   Na compra de 1 Prato
   Principal (ou do dia)

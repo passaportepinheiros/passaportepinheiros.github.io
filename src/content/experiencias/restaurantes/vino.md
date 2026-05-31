@@ -4,6 +4,13 @@ slug: "vino"
 category: "restaurantes"
 instagram: "vinopinheiros"
 instagramUrl: "https://www.instagram.com/vinopinheiros/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "47"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "41987900700"
+        formatado: "(41) 98790-0700"
 description: |-
   Na compra de 1 prato do
   cardápio, seu

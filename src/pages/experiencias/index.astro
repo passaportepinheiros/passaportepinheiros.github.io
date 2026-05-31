@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import ExperienceExplorer from '../../components/ExperienceExplorer.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortExperiences } from '../../lib/experiences';
+
+const experiences = sortExperiences(await getCollection('experiencias'));
+---
+
+<BaseLayout
+  title="Experiências"
+  description="Lista de experiências participantes do Passaporte Pinheiros."
+>
+  <ExperienceExplorer experiences={experiences} />
+</BaseLayout>

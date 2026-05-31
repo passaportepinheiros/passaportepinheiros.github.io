@@ -4,6 +4,13 @@ slug: "dedo-de-la-chica"
 category: "restaurantes"
 instagram: "dedodelachica"
 instagramUrl: "https://www.instagram.com/dedodelachica/"
+enderecos:
+  - logradouro: "Rua Fidalga"
+    numero: "32"
+    telefones:
+      - tipo: "telefone"
+        numero: "1138198522"
+        formatado: "(11) 3819-8522"
 description: |-
   Na compra de 1 rodízio
   mexicano seu acompanhante

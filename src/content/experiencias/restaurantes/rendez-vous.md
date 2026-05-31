@@ -4,6 +4,13 @@ slug: "rendez-vous"
 category: "restaurantes"
 instagram: "rendezvous.bistro"
 instagramUrl: "https://www.instagram.com/rendezvous.bistro/"
+enderecos:
+  - logradouro: "Rua Fradique Coutinho"
+    numero: "179"
+    telefones:
+      - tipo: "telefone"
+        numero: "1145640146"
+        formatado: "(11) 4564-0146"
 description: |-
   Na compra de 1 prato principal à la
   carte, seu acompanhante ganha

@@ -4,6 +4,13 @@ slug: "beik-cookies"
 category: "restaurantes"
 instagram: "beik_cookies"
 instagramUrl: "https://www.instagram.com/beik_cookies/"
+enderecos:
+  - logradouro: "Rua dos Pinheiros"
+    numero: "248A"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "11966298143"
+        formatado: "(11) 96629-8143"
 description: |-
   Na compra de 1 cookie e um café,
   ganhe outro cookie e outro café de

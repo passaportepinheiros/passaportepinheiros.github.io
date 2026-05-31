@@ -4,6 +4,10 @@ slug: "ombra"
 category: "restaurantes"
 instagram: "ombra_sp"
 instagramUrl: "https://www.instagram.com/ombra_sp/"
+enderecos:
+  - logradouro: "Rua Lisboa"
+    numero: "579"
+    telefones: []
 description: |-
   Na compra de 1 pedaço de
   pizza, seu acompanhante

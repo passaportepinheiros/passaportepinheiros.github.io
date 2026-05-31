@@ -44,6 +44,51 @@ components:
       - name: filename
         label: Arquivo original
         type: string
+  telefone:
+    type: object
+    label: Telefone
+    fields:
+      - name: tipo
+        label: Tipo
+        type: select
+        required: true
+        options:
+          values:
+            - name: telefone
+              label: Telefone
+            - name: whatsapp
+              label: WhatsApp
+      - name: numero
+        label: Numero normalizado
+        type: string
+        required: true
+        description: Apenas digitos, incluindo DDD.
+      - name: formatado
+        label: Numero formatado
+        type: string
+        required: true
+  endereco:
+    type: object
+    label: Endereco
+    fields:
+      - name: logradouro
+        label: Logradouro
+        type: string
+        required: true
+      - name: numero
+        label: Numero
+        type: string
+        required: true
+      - name: complemento
+        label: Complemento
+        type: string
+      - name: telefones
+        label: Telefones
+        component: telefone
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.tipo}: {fields.formatado}"
 
 content:
   - name: experiencias
@@ -64,7 +109,7 @@ content:
           fields: [title, instagram, slug]
           primary: title
           sort: [title, slug]
-          search: [title, slug, instagram, description]
+          search: [title, slug, instagram, description, enderecos]
           default:
             sort: title
             order: asc
@@ -102,6 +147,13 @@ content:
             type: string
             required: true
             pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: enderecos
+            label: Enderecos
+            component: endereco
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.logradouro}, {fields.numero}"
           - name: description
             label: Descricao
             type: text
@@ -140,7 +192,7 @@ content:
           fields: [title, instagram, slug]
           primary: title
           sort: [title, slug]
-          search: [title, slug, instagram, description]
+          search: [title, slug, instagram, description, enderecos]
           default:
             sort: title
             order: asc
@@ -178,6 +230,13 @@ content:
             type: string
             required: true
             pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: enderecos
+            label: Enderecos
+            component: endereco
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.logradouro}, {fields.numero}"
           - name: description
             label: Descricao
             type: text
@@ -216,7 +275,7 @@ content:
           fields: [title, instagram, slug]
           primary: title
           sort: [title, slug]
-          search: [title, slug, instagram, description]
+          search: [title, slug, instagram, description, enderecos]
           default:
             sort: title
             order: asc
@@ -254,6 +313,13 @@ content:
             type: string
             required: true
             pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: enderecos
+            label: Enderecos
+            component: endereco
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.logradouro}, {fields.numero}"
           - name: description
             label: Descricao
             type: text

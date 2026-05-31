@@ -4,6 +4,13 @@ slug: "modern-pets"
 category: "servicos"
 instagram: "modernpets.br"
 instagramUrl: "https://www.instagram.com/modernpets.br/"
+enderecos:
+  - logradouro: "Rua Artur de Azevedo"
+    numero: "1014"
+    telefones:
+      - tipo: "whatsapp"
+        numero: "11917273700"
+        formatado: "(11) 91727-3700"
 description: |-
   Desconto de R$ 75,00 para
   novas assinaturas

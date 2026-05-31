@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border/70 bg-surface">
+  <div class="container-shell grid gap-8 py-12 md:grid-cols-[1fr_1.5fr_auto] md:items-center">
+    <a href="/" class="flex items-center" aria-label="Passaporte Pinheiros">
+      <img
+        src="/brand/logo-passaporte-pinheiros.svg"
+        alt="Passaporte Pinheiros"
+        class="h-12 w-auto"
+      />
+    </a>
+
+    <p class="max-w-xl text-base leading-relaxed text-muted">
+      © {year} Passaporte Pinheiros. O melhor do bairro na sua mão.
+    </p>
+
+    <nav class="flex flex-wrap gap-x-5 gap-y-3 font-body text-sm font-semibold uppercase tracking-wide text-muted" aria-label="Links do rodapé">
+      <a class="hover:text-primary" href="https://www.instagram.com/passaportepinheiros/">Instagram</a>
+      <a class="hover:text-primary" href="/como-funciona/">Como funciona</a>
+      <a class="hover:text-primary" href="/">Experiências</a>
+    </nav>
+  </div>
+</footer>

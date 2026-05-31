@@ -4,6 +4,13 @@ slug: "bakebun-bakery"
 category: "restaurantes"
 instagram: "bakebunoficial"
 instagramUrl: "https://www.instagram.com/bakebunoficial/"
+enderecos:
+  - logradouro: "Rua Padre Carvalho"
+    numero: "97"
+    telefones:
+      - tipo: "telefone"
+        numero: "11916988203"
+        formatado: "(11) 91698-8203"
 description: |-
   Na compra de 1 Cinnamon Roll
   Cobertura Especial seu

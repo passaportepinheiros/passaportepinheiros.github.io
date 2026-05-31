@@ -4,6 +4,13 @@ slug: "balcone"
 category: "restaurantes"
 instagram: "balcone.sp"
 instagramUrl: "https://www.instagram.com/balcone.sp/"
+enderecos:
+  - logradouro: "Rua Cristiano Viana"
+    numero: "370"
+    telefones:
+      - tipo: "telefone"
+        numero: "1134767084"
+        formatado: "(11) 3476-7084"
 description: |-
   Na compra de um prato*
   seu acompanhante ganha outro de
