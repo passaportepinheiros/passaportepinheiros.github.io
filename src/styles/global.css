@@ -2,6 +2,8 @@
 
 @source "../";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: "Oswald", "Arial Narrow", sans-serif;
   --font-body: "Work Sans", "Arial", sans-serif;
@@ -23,6 +25,7 @@
 
 :root {
   --container-max: 1200px;
+  --wave-pattern-url: url("/brand/wave-pattern.svg");
 }
 
 html.dark {
@@ -63,7 +66,7 @@ body::before {
   z-index: -1;
   background-color: #f8fbfd;
   background-image:
-    url("/brand/wave-pattern.svg"),
+    var(--wave-pattern-url),
     linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 252, 0.94));
   background-position:
     center top,
@@ -75,6 +78,13 @@ body::before {
     max(1800px, 100vw) auto,
     cover;
   pointer-events: none;
+}
+
+html.dark body::before {
+  background-color: #0f1923;
+  background-image:
+    var(--wave-pattern-url),
+    linear-gradient(135deg, rgba(15, 25, 35, 0.98), rgba(22, 33, 48, 0.97));
 }
 
 a {

@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { withBase } from '../lib/urls';
 
 interface Props {
   title?: string;
@@ -14,18 +15,19 @@ const {
 } = Astro.props;
 
 const pageTitle = title === 'Passaporte Pinheiros' ? title : `${title} | Passaporte Pinheiros`;
+const wavePatternUrl = `--wave-pattern-url: url("${withBase('/brand/wave-pattern.svg')}")`;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" style={wavePatternUrl}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="/cropped-personlizar_01-1-32x32.webp" type="image/webp" sizes="32x32" />
-    <link rel="apple-touch-icon" href="/cropped-personlizar_01-1-180x180.webp" sizes="180x180" />
-    <link rel="icon" href="/cropped-personlizar_01-1-192x192.webp" type="image/webp" sizes="192x192" />
+    <link rel="icon" href={withBase('/cropped-personlizar_01-1-32x32.webp')} type="image/webp" sizes="32x32" />
+    <link rel="apple-touch-icon" href={withBase('/cropped-personlizar_01-1-180x180.webp')} sizes="180x180" />
+    <link rel="icon" href={withBase('/cropped-personlizar_01-1-192x192.webp')} type="image/webp" sizes="192x192" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,7 +49,42 @@ const pageTitle = title === 'Passaporte Pinheiros' ? title : `${title} | Passapo
     ></script>
   </head>
   <body>
+    <script is:inline>
+      (function () {
+        var saved = localStorage.getItem('pp-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <div class="flex min-h-screen flex-col">
+      <div class="theme-bar border-b border-border/50 bg-surface-soft text-right">
+        <div class="container-shell flex justify-end gap-0 py-1">
+          <button type="button" id="theme-btn-light" class="px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted transition hover:text-primary" aria-pressed="false">Light</button>
+          <span class="text-[11px] text-border">|</span>
+          <button type="button" id="theme-btn-dark" class="px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted transition hover:text-primary" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var isDark = document.documentElement.classList.contains('dark');
+          var btnLight = document.getElementById('theme-btn-light');
+          var btnDark = document.getElementById('theme-btn-dark');
+          function sync(dark: boolean) {
+            document.documentElement.classList.toggle('dark', dark);
+            btnLight?.setAttribute('aria-pressed', String(!dark));
+            btnDark?.setAttribute('aria-pressed', String(dark));
+            btnLight?.classList.toggle('text-primary', !dark);
+            btnLight?.classList.toggle('text-muted', dark);
+            btnDark?.classList.toggle('text-primary', dark);
+            btnDark?.classList.toggle('text-muted', !dark);
+          }
+          sync(isDark);
+          btnLight?.addEventListener('click', function () { sync(false); localStorage.setItem('pp-theme', 'light'); });
+          btnDark?.addEventListener('click', function () { sync(true); localStorage.setItem('pp-theme', 'dark'); });
+        })();
+      </script>
       <SiteHeader />
       <main class="flex-1">
         <slot />

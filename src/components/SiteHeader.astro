@@ -1,7 +1,8 @@
 ---
 import { ChevronDown, Menu, X } from '@lucide/astro';
+import { withBase, withoutBase } from '../lib/urls';
 
-const pathname = Astro.url.pathname;
+const pathname = withoutBase(Astro.url.pathname);
 
 const isExperienciasActive =
   pathname.startsWith('/restaurantes') ||
@@ -9,28 +10,28 @@ const isExperienciasActive =
   pathname.startsWith('/produtos');
 
 const topLinks = [
-  { href: '/', label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
-  { href: '/como-funciona/', label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
+  { href: withBase('/'), label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
+  { href: withBase('/como-funciona/'), label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
 ];
 
 const subLinks = [
-  { href: '/restaurantes/', label: 'Restaurantes', active: pathname.startsWith('/restaurantes') },
-  { href: '/servicos/', label: 'Serviços', active: pathname.startsWith('/servicos') },
-  { href: '/produtos/', label: 'Produtos', active: pathname.startsWith('/produtos') },
+  { href: withBase('/restaurantes/'), label: 'Restaurantes', active: pathname.startsWith('/restaurantes') },
+  { href: withBase('/servicos/'), label: 'Serviços', active: pathname.startsWith('/servicos') },
+  { href: withBase('/produtos/'), label: 'Produtos', active: pathname.startsWith('/produtos') },
 ];
 
 const mobileLinks = [
-  { href: '/', label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
+  { href: withBase('/'), label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
   ...subLinks,
-  { href: '/como-funciona/', label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
+  { href: withBase('/como-funciona/'), label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
 ];
 ---
 
-<header class="sticky top-0 z-40 border-b border-border/70 bg-white/95 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-border/70 bg-white/95 backdrop-blur dark:bg-[#162130]/95">
   <div class="container-shell flex h-20 items-center justify-between gap-6">
-    <a href="/" class="flex items-center" aria-label="Passaporte Pinheiros">
+    <a href={withBase('/')} class="flex items-center" aria-label="Passaporte Pinheiros">
       <img
-        src="/brand/logo-passaporte-pinheiros.svg"
+        src={withBase('/brand/logo-passaporte-pinheiros.svg')}
         alt="Passaporte Pinheiros"
         class="h-10 w-auto md:h-12"
       />
@@ -38,7 +39,7 @@ const mobileLinks = [
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Navegação principal">
       <a
-        href="/"
+        href={topLinks[0].href}
         class:list={[
           'font-body text-[14px] font-semibold uppercase tracking-wide transition-colors hover:text-primary',
           topLinks[0].active ? 'mt-2 border-b-2 border-primary pb-1 text-primary' : 'text-muted',
@@ -65,7 +66,7 @@ const mobileLinks = [
         </button>
 
         <div
-          class="absolute left-1/2 top-full z-50 hidden w-44 -translate-x-1/2 translate-y-2 rounded-lg border border-border/70 bg-white py-1 shadow-lg"
+          class="absolute left-1/2 top-full z-50 hidden w-44 -translate-x-1/2 translate-y-2 rounded-lg border border-border/70 bg-white py-1 shadow-lg dark:bg-[#162130]"
           data-dropdown-menu
           role="menu"
         >
@@ -86,7 +87,7 @@ const mobileLinks = [
       </div>
 
       <a
-        href="/como-funciona/"
+        href={topLinks[1].href}
         class:list={[
           'font-body text-[14px] font-semibold uppercase tracking-wide transition-colors hover:text-primary',
           topLinks[1].active ? 'mt-2 border-b-2 border-primary pb-1 text-primary' : 'text-muted',
@@ -186,4 +187,5 @@ const mobileLinks = [
       if (!dropdown.contains(e.target as Node)) close();
     });
   });
+
 </script>
