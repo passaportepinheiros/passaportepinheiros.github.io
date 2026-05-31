@@ -3,6 +3,8 @@ import {
   BriefcaseBusiness,
   CircleCheck,
   Heart,
+  List,
+  Map,
   Search,
   ShoppingBag,
   SlidersHorizontal,
@@ -40,6 +42,8 @@ const experiencesData = sortedExperiences.map((exp) => ({
     numero: end.numero,
     complemento: end.complemento,
     telefones: end.telefones,
+    lat: end.lat,
+    lng: end.lng,
   })),
 }));
 
@@ -147,9 +151,40 @@ const statusFilterItems = [
         </div>
       </div>
 
+      <div class="mb-5 inline-flex rounded-full border border-border/70 bg-surface-muted p-1" role="tablist" aria-label="Modo de visualização">
+        <button
+          type="button"
+          class="view-toggle focus-ring inline-flex items-center gap-2 rounded-full px-4 py-2 font-display text-sm font-bold text-muted transition data-[active=true]:bg-white data-[active=true]:text-primary data-[active=true]:shadow-sm"
+          data-view-toggle="list"
+          data-active="true"
+          role="tab"
+          aria-selected="true"
+        >
+          <List class="h-4 w-4" aria-hidden="true" />
+          Lista
+        </button>
+        <button
+          type="button"
+          class="view-toggle focus-ring inline-flex items-center gap-2 rounded-full px-4 py-2 font-display text-sm font-bold text-muted transition data-[active=true]:bg-white data-[active=true]:text-primary data-[active=true]:shadow-sm"
+          data-view-toggle="map"
+          data-active="false"
+          role="tab"
+          aria-selected="false"
+        >
+          <Map class="h-4 w-4" aria-hidden="true" />
+          Mapa
+        </button>
+      </div>
+
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" data-results-grid>
         {sortedExperiences.map((experience) => <ExperienceCard experience={experience} />)}
       </div>
+
+      <div
+        class="hidden h-[600px] w-full overflow-hidden rounded-lg border border-border/70 bg-surface"
+        data-map-view
+        id="exp-map"
+      ></div>
 
       <div class="hidden rounded-lg border border-border/70 bg-surface p-8 text-center" data-empty-state>
         <p class="font-display text-2xl font-bold text-primary">Nenhuma experiência encontrada</p>
@@ -279,6 +314,14 @@ const statusFilterItems = [
 
     let activeCategory = root.getAttribute('data-initial-category') || 'todos';
     let activeStatus = 'todos';
+    let currentView: 'list' | 'map' = 'list';
+    const mapContainer = root.querySelector<HTMLElement>('[data-map-view]');
+    const viewToggles = [...root.querySelectorAll<HTMLButtonElement>('[data-view-toggle]')];
+
+    // Leaflet state (initialized lazily when map view is first opened)
+    let leafletMap: any = null;
+    let markersLayer: any = null;
+    const markerBySlug = new Map<string, any>();
 
     const readStorageSet = (key: string) => {
       try {
@@ -384,9 +427,10 @@ const statusFilterItems = [
 
       if (resultCount) resultCount.textContent = String(visible);
       emptyState?.classList.toggle('hidden', visible > 0);
-      grid?.classList.toggle('hidden', visible === 0);
+      grid?.classList.toggle('hidden', visible === 0 || currentView === 'map');
       updateVisibleSlugs();
       updateStatusCounts();
+      updateMapMarkers();
     };
 
     filterButtons.forEach((button) => {
@@ -435,6 +479,88 @@ const statusFilterItems = [
     updateStatusCounts();
     applyFilters();
 
+    // ---- Map view (Leaflet + OSM) ----
+    const ensureLeaflet = (): Promise<any> => {
+      const w = window as any;
+      if (w.L) return Promise.resolve(w.L);
+      return new Promise((resolve) => {
+        const check = () => {
+          if (w.L) resolve(w.L);
+          else setTimeout(check, 50);
+        };
+        check();
+      });
+    };
+
+    const initMap = async () => {
+      if (leafletMap || !mapContainer) return;
+      const L = await ensureLeaflet();
+      leafletMap = L.map(mapContainer, {
+        center: [-23.5645, -46.689],
+        zoom: 15,
+        scrollWheelZoom: true,
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(leafletMap);
+      markersLayer = L.layerGroup().addTo(leafletMap);
+      updateMapMarkers();
+    };
+
+    const updateMapMarkers = async () => {
+      if (currentView !== 'map' || !leafletMap || !markersLayer) return;
+      const L = (window as any).L;
+      markersLayer.clearLayers();
+      markerBySlug.clear();
+
+      const bounds: Array<[number, number]> = [];
+      for (const slug of visibleSlugs) {
+        const exp = allExpData.find((e) => e.slug === slug);
+        if (!exp) continue;
+        const end = exp.enderecos.find((e) => typeof e.lat === 'number' && typeof e.lng === 'number');
+        if (!end || end.lat == null || end.lng == null) continue;
+
+        const marker = L.marker([end.lat, end.lng], { title: exp.title });
+        marker.bindTooltip(exp.title, { direction: 'top', offset: [-15, -10] });
+        marker.on('click', () => openModal(exp.slug));
+        marker.addTo(markersLayer);
+        markerBySlug.set(slug, marker);
+        bounds.push([end.lat, end.lng]);
+      }
+
+      if (bounds.length > 0) {
+        leafletMap.fitBounds(bounds, { padding: [40, 40], maxZoom: 16 });
+      }
+    };
+
+    const setView = async (view: 'list' | 'map') => {
+      currentView = view;
+      viewToggles.forEach((btn) => {
+        const isActive = btn.getAttribute('data-view-toggle') === view;
+        btn.setAttribute('data-active', String(isActive));
+        btn.setAttribute('aria-selected', String(isActive));
+      });
+      const showMap = view === 'map';
+      mapContainer?.classList.toggle('hidden', !showMap);
+      grid?.classList.toggle('hidden', showMap || visibleSlugs.length === 0);
+      if (showMap) {
+        await initMap();
+        // Leaflet needs an explicit resize after the container becomes visible
+        setTimeout(() => {
+          leafletMap?.invalidateSize();
+          updateMapMarkers();
+        }, 50);
+      }
+    };
+
+    viewToggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = (btn.getAttribute('data-view-toggle') as 'list' | 'map') || 'list';
+        setView(view);
+      });
+    });
+
     // ---- Experience Modal ----
     type ExpModalData = {
       slug: string;
@@ -449,6 +575,8 @@ const statusFilterItems = [
         numero: string;
         complemento?: string;
         telefones: Array<{ tipo: string; numero: string; formatado: string }>;
+        lat?: number;
+        lng?: number;
       }>;
     };
 
