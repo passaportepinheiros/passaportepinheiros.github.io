@@ -32,6 +32,9 @@ const experiencias = defineCollection({
     instagram: z.string(),
     instagramUrl: z.url(),
     enderecos: z.array(enderecoSchema).default([]),
+    foursquare_id: z.string().optional(),
+    categoria_fsq: z.string().optional(),
+    website: z.string().optional(),
     description: z.string(),
     images: z.object({
       experience: z.string(),
