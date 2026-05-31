@@ -31,22 +31,15 @@ const experiences = sortExperiences(await getCollection('experiencias'));
         </a>
       </div>
 
-      <div class="grid gap-4 rounded-lg border border-border/70 bg-surface-soft p-4 shadow-[0_20px_60px_rgba(0,110,199,0.10)] md:grid-cols-3">
-        <div class="rounded bg-white p-5">
-          <strong class="brand-heading text-4xl text-primary">{experiences.length}</strong>
-          <p class="mt-1 text-sm font-semibold text-muted">experiências cadastradas</p>
-        </div>
-        <div class="rounded bg-white p-5">
-          <strong class="brand-heading text-4xl text-primary">
-            {experiences.filter((experience) => experience.data.category === 'restaurantes').length}
-          </strong>
-          <p class="mt-1 text-sm font-semibold text-muted">restaurantes</p>
-        </div>
-        <div class="rounded bg-white p-5">
-          <strong class="brand-heading text-4xl text-primary">
-            {experiences.filter((experience) => experience.data.category !== 'restaurantes').length}
-          </strong>
-          <p class="mt-1 text-sm font-semibold text-muted">produtos e serviços</p>
+      <div class="overflow-hidden rounded-xl shadow-[0_20px_60px_rgba(0,110,199,0.15)]">
+        <div class="relative aspect-video w-full">
+          <iframe
+            src="https://www.youtube.com/embed/fqn1gppmD1A"
+            title="Passaporte Pinheiros"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="absolute inset-0 h-full w-full border-0"
+          ></iframe>
         </div>
       </div>
     </div>
