@@ -1,0 +1,279 @@
+media:
+  - name: produtosAssets
+    label: Imagens de produtos
+    input: public/experiencias/produtos
+    output: /experiencias/produtos
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: restaurantesAssets
+    label: Imagens de restaurantes
+    input: public/experiencias/restaurantes
+    output: /experiencias/restaurantes
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: servicosAssets
+    label: Imagens de servicos
+    input: public/experiencias/servicos
+    output: /experiencias/servicos
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "cms: cria {path}"
+      update: "cms: atualiza {path}"
+      delete: "cms: remove {path}"
+      rename: "cms: renomeia {oldPath} para {newPath}"
+
+components:
+  source:
+    type: object
+    label: Origem
+    readonly: true
+    fields:
+      - name: path
+        label: Caminho original
+        type: string
+      - name: filename
+        label: Arquivo original
+        type: string
+
+content:
+  - name: experiencias
+    label: Experiencias
+    type: group
+    items:
+      - name: produtos
+        label: Produtos
+        type: collection
+        path: src/content/experiencias/produtos
+        format: yaml-frontmatter
+        filename: "{fields.slug}.md"
+        operations:
+          create: false
+          rename: false
+          delete: false
+        view:
+          fields: [title, instagram, slug]
+          primary: title
+          sort: [title, slug]
+          search: [title, slug, instagram, description]
+          default:
+            sort: title
+            order: asc
+        fields:
+          - name: title
+            label: Nome
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            readonly: true
+            pattern: "^[a-z0-9-]+$"
+            options:
+              maxlength: 120
+          - name: category
+            label: Categoria
+            type: select
+            required: true
+            readonly: true
+            options:
+              values:
+                - name: produtos
+                  label: Produtos
+          - name: instagram
+            label: Instagram
+            type: string
+            required: true
+            description: Informe sem @.
+          - name: instagramUrl
+            label: URL do Instagram
+            type: string
+            required: true
+            pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: description
+            label: Descricao
+            type: text
+            required: true
+          - name: images
+            label: Imagens
+            type: object
+            required: true
+            fields:
+              - name: experience
+                label: Foto da experiencia
+                type: image
+                required: true
+                options:
+                  media: produtosAssets
+              - name: logo
+                label: Logo
+                type: image
+                required: true
+                options:
+                  media: produtosAssets
+          - name: source
+            component: source
+
+      - name: restaurantes
+        label: Restaurantes
+        type: collection
+        path: src/content/experiencias/restaurantes
+        format: yaml-frontmatter
+        filename: "{fields.slug}.md"
+        operations:
+          create: false
+          rename: false
+          delete: false
+        view:
+          fields: [title, instagram, slug]
+          primary: title
+          sort: [title, slug]
+          search: [title, slug, instagram, description]
+          default:
+            sort: title
+            order: asc
+        fields:
+          - name: title
+            label: Nome
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            readonly: true
+            pattern: "^[a-z0-9-]+$"
+            options:
+              maxlength: 120
+          - name: category
+            label: Categoria
+            type: select
+            required: true
+            readonly: true
+            options:
+              values:
+                - name: restaurantes
+                  label: Restaurantes
+          - name: instagram
+            label: Instagram
+            type: string
+            required: true
+            description: Informe sem @.
+          - name: instagramUrl
+            label: URL do Instagram
+            type: string
+            required: true
+            pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: description
+            label: Descricao
+            type: text
+            required: true
+          - name: images
+            label: Imagens
+            type: object
+            required: true
+            fields:
+              - name: experience
+                label: Foto da experiencia
+                type: image
+                required: true
+                options:
+                  media: restaurantesAssets
+              - name: logo
+                label: Logo
+                type: image
+                required: true
+                options:
+                  media: restaurantesAssets
+          - name: source
+            component: source
+
+      - name: servicos
+        label: Servicos
+        type: collection
+        path: src/content/experiencias/servicos
+        format: yaml-frontmatter
+        filename: "{fields.slug}.md"
+        operations:
+          create: false
+          rename: false
+          delete: false
+        view:
+          fields: [title, instagram, slug]
+          primary: title
+          sort: [title, slug]
+          search: [title, slug, instagram, description]
+          default:
+            sort: title
+            order: asc
+        fields:
+          - name: title
+            label: Nome
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            readonly: true
+            pattern: "^[a-z0-9-]+$"
+            options:
+              maxlength: 120
+          - name: category
+            label: Categoria
+            type: select
+            required: true
+            readonly: true
+            options:
+              values:
+                - name: servicos
+                  label: Servicos
+          - name: instagram
+            label: Instagram
+            type: string
+            required: true
+            description: Informe sem @.
+          - name: instagramUrl
+            label: URL do Instagram
+            type: string
+            required: true
+            pattern: "^https://www\\.instagram\\.com/.+/$"
+          - name: description
+            label: Descricao
+            type: text
+            required: true
+          - name: images
+            label: Imagens
+            type: object
+            required: true
+            fields:
+              - name: experience
+                label: Foto da experiencia
+                type: image
+                required: true
+                options:
+                  media: servicosAssets
+              - name: logo
+                label: Logo
+                type: image
+                required: true
+                options:
+                  media: servicosAssets
+          - name: source
+            component: source

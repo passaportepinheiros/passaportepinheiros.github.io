@@ -51,6 +51,30 @@ images:
 
 O schema da collection está em `src/content.config.ts`.
 
+## Pages CMS
+
+Este repositório também está configurado para edição pelo Pages CMS, usando o arquivo `.pages.yml` na raiz.
+
+Para usar:
+
+1. Publique este repositório no GitHub.
+2. Acesse <https://app.pagescms.org>.
+3. Entre com sua conta do GitHub.
+4. Autorize o Pages CMS no repositório.
+5. Edite as experiências em `Experiencias > Produtos`, `Experiencias > Restaurantes` ou `Experiencias > Servicos`.
+
+Nesta primeira configuração, o CMS permite editar os campos e trocar imagens, mas não permite criar, renomear ou apagar experiências. Isso evita quebrar a relação entre `slug`, nome do arquivo e metadados gerados pelo `process_images.py`.
+
+As imagens enviadas pelo CMS são gravadas em:
+
+```txt
+public/experiencias/produtos/
+public/experiencias/restaurantes/
+public/experiencias/servicos/
+```
+
+O Pages CMS salva alterações como commits no próprio repositório.
+
 ## Pré-requisitos
 
 O script usa ferramentas locais:
