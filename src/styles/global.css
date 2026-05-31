@@ -25,6 +25,19 @@
   --container-max: 1200px;
 }
 
+html.dark {
+  --color-background: #0f1923;
+  --color-surface: #162130;
+  --color-surface-soft: #1b2a3b;
+  --color-surface-muted: #1e3047;
+  --color-primary: #3b9ede;
+  --color-primary-strong: #62b4ec;
+  --color-primary-soft: #0d2a40;
+  --color-ink: #e8edf2;
+  --color-muted: #8fa3b8;
+  --color-border: #253648;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -118,6 +131,20 @@ input {
 
 .brand-pill:hover {
   background: var(--color-primary-strong);
+}
+
+.detail-back-button,
+.detail-back-button:visited {
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--color-primary-strong);
+  box-shadow: 0 10px 26px rgba(0, 44, 90, 0.2);
+}
+
+.detail-back-button:hover,
+.detail-back-button:focus-visible {
+  background: #ffffff;
+  color: var(--color-primary);
 }
 
 .blue-word {
