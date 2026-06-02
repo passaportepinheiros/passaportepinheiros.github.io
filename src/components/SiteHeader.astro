@@ -3,22 +3,39 @@ import { ChevronDown, Menu, X } from '@lucide/astro';
 import { withBase, withoutBase } from '../lib/urls';
 
 const pathname = withoutBase(Astro.url.pathname);
+const activeCategory = Astro.url.searchParams.get('categoria');
 
 const isExperienciasActive =
+  pathname.startsWith('/experiencias') ||
   pathname.startsWith('/restaurantes') ||
   pathname.startsWith('/servicos') ||
   pathname.startsWith('/produtos');
 
 const topLinks = [
-  { href: withBase('/'), label: 'Explorar', active: pathname === '/' || pathname.startsWith('/experiencias') },
+  { href: withBase('/'), label: 'Explorar', active: pathname === '/' },
   { href: withBase('/sobre/'), label: 'Sobre', active: pathname.startsWith('/sobre') },
   { href: withBase('/como-funciona/'), label: 'Como funciona', active: pathname.startsWith('/como-funciona') },
 ];
 
+const categoryHref = (category: string) =>
+  new URL(withBase(`/experiencias/?categoria=${category}`), Astro.url).toString();
+
 const subLinks = [
-  { href: withBase('/restaurantes/'), label: 'Restaurantes', active: pathname.startsWith('/restaurantes') },
-  { href: withBase('/servicos/'), label: 'Serviços', active: pathname.startsWith('/servicos') },
-  { href: withBase('/produtos/'), label: 'Produtos', active: pathname.startsWith('/produtos') },
+  {
+    href: categoryHref('restaurantes'),
+    label: 'Restaurantes',
+    active: pathname.startsWith('/restaurantes') || activeCategory === 'restaurantes',
+  },
+  {
+    href: categoryHref('servicos'),
+    label: 'Serviços',
+    active: pathname.startsWith('/servicos') || activeCategory === 'servicos',
+  },
+  {
+    href: categoryHref('produtos'),
+    label: 'Produtos',
+    active: pathname.startsWith('/produtos') || activeCategory === 'produtos',
+  },
 ];
 
 const mobileLinks = [
