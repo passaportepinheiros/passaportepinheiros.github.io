@@ -16,7 +16,7 @@ categoria_fsq: "Pet Supplies Store"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["loja", "pet"]
+tags: ["pizza", "vinho"]
 description: |-
   Na compra de 1 Mini Pizza Individual (15cm), ganhe outra Mini Pizza Individual de igual ou menor valor. OU na compra de 1 Pizza (30cm) + 2 taças de vinho, ganhe outra pizza de igual ou menor valor + 2 taças de vinho. Consultar disponibilidade de marca. Válido: segunda e terça das 12h às 18h; quarta, quinta e sexta das 12h às 23h; sábado e domingo das 17h às 22h.
 benefitType: "compre-1-leve-outro"

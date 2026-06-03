@@ -103,8 +103,6 @@ def inject_lat_lng(fm: str, results: list[tuple[str, tuple[float, float] | None]
                         indent = "    "  # 4 spaces (inside enderecos list item)
                         out.append(f"{indent}lat: {lat}\n")
                         out.append(f"{indent}lng: {lng}\n")
-                    else:
-                        out.extend(block_lines[1:])  # no coords, keep as-is
                 else:
                     out.extend(block_lines[1:])
 

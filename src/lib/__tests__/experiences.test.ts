@@ -1,3 +1,5 @@
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, it, expect } from 'vitest';
 import {
   categoryLabel,
@@ -10,6 +12,7 @@ import {
   searchPayload,
   experiencePath,
   categories,
+  knownTags,
 } from '../experiences';
 import { makeExperience } from './helpers';
 
@@ -33,6 +36,54 @@ describe('categories', () => {
     }
   });
 });
+
+describe('knownTags', () => {
+  it('não possui tags visíveis duplicadas', () => {
+    const values = knownTags.map((tag) => tag.value);
+    expect(new Set(values).size).toBe(values.length);
+  });
+
+  it('cobre todas as experiências com pelo menos uma tag visível', () => {
+    const contentDir = join(process.cwd(), 'src/content/experiencias');
+    const tagValues = knownTags.flatMap((tag) => [tag.value, ...(tag.aliases ?? [])]);
+    const files = listMarkdownFiles(contentDir);
+    const withoutVisibleTag = files
+      .map((file) => ({
+        file,
+        tags: readExperienceTags(readFileSync(file, 'utf8')),
+      }))
+      .filter((entry) => !entry.tags.some((tag) => tagValues.includes(tag)))
+      .map((entry) => entry.file.replace(`${process.cwd()}/`, ''));
+
+    expect(withoutVisibleTag).toEqual([]);
+  });
+});
+
+function listMarkdownFiles(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = join(dir, entry.name);
+    if (entry.isDirectory()) return listMarkdownFiles(entryPath);
+    return entry.isFile() && entry.name.endsWith('.md') ? [entryPath] : [];
+  });
+}
+
+function readExperienceTags(markdown: string): string[] {
+  const inline = markdown.match(/^tags:\s*\[(.*?)\]/m);
+  if (inline) {
+    return inline[1]
+      .split(',')
+      .map((tag) => tag.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean);
+  }
+
+  const block = markdown.match(/^tags:\s*\n((?:\s+-\s+.*\n?)+)/m);
+  if (!block) return [];
+
+  return block[1]
+    .split('\n')
+    .map((tag) => tag.trim().replace(/^-\s*/, '').replace(/^['"]|['"]$/g, ''))
+    .filter(Boolean);
+}
 
 describe('categoryLabel', () => {
   it('retorna plural de restaurantes', () => {

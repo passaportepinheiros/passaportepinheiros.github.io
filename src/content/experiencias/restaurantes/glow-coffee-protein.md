@@ -16,7 +16,7 @@ categoria_fsq: "Dance Studio"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["aulas", "danca"]
+tags: ["cafe", "saudavel"]
 description: |-
   Na compra de 1 shake, ganhe 1 café expresso.
 benefitType: "brinde"

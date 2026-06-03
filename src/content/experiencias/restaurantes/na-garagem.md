@@ -5,6 +5,8 @@ category: "restaurantes"
 enderecos:
   - logradouro: "Rua Benjamin Ergas"
     numero: "301"
+    lat: -23.56649
+    lng: -46.6891261
     telefones:
       - tipo: "telefone"
         numero: "11972377047"
@@ -12,7 +14,7 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: []
+tags: ["hamburguer"]
 description: |-
   Na compra de 1 smashed + 1 batata frita, seu acompanhante ganha outro smashed + 1 batata frita.
 benefitType: "compre-1-leve-outro"

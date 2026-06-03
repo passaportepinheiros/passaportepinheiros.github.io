@@ -6,6 +6,8 @@ enderecos:
   - logradouro: "Rua Paes Leme"
     numero: "136"
     complemento: "Sala 901"
+    lat: -23.5673307
+    lng: -46.6976175
     telefones:
       - tipo: "telefone"
         numero: "119933132202"
@@ -13,7 +15,7 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["servico"]
+tags: ["bem-estar", "servico"]
 description: |-
   Compre uma consulta de quiropraxia + massagem e ganhe outra.
 benefitType: "compre-1-leve-outro"

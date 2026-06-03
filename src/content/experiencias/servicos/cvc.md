@@ -14,7 +14,7 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["servico"]
+tags: ["servico", "viagem"]
 description: |-
   Ganhe até 5% de desconto em pacotes* de viagens + 1 oferta surpresa durante a compra. *Aéreo com hospedagem + algum serviço incluso.
 benefitType: "desconto"

@@ -201,6 +201,11 @@ input {
   color: var(--color-primary-strong);
 }
 
+.tag-filter-button[aria-pressed="true"] .tag-filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: currentColor;
+}
+
 @media (max-width: 767px) {
   .container-shell {
     width: min(100% - 24px, var(--container-max));

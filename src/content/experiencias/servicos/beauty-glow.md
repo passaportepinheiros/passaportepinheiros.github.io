@@ -16,7 +16,7 @@ categoria_fsq: "Dance Studio"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["aulas", "danca", "servico"]
+tags: ["beleza", "bem-estar", "servico"]
 description: |-
   Na compra de uma escova, ganhe uma hidratação.
 benefitType: "brinde"

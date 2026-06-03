@@ -17,7 +17,7 @@ website: "http://www.casadobrincar.com.br"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["entretenimento"]
+tags: ["doces", "vinho"]
 description: |-
   Na compra de 2 pratos individuais ou 1 para compartilhar, ganhe duas sobremesas (doces portugueses). OU na compra de 2 pratos individuais ou 1 para compartilhar, ganhe 2 taças de vinho. Consultar disponibilidade de rótulo.
 benefitType: "brinde"

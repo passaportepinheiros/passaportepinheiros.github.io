@@ -5,6 +5,8 @@ category: "produtos"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "69"
+    lat: -23.5657911
+    lng: -46.6847396
     telefones:
       - tipo: "telefone"
         numero: "11971852005"
@@ -12,7 +14,7 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["produto"]
+tags: ["artesanato", "loja", "produto"]
 description: |-
   Na compra de qualquer produto, ganhe 1 ecobag exclusiva Casa Ocre.
 benefitType: "brinde"

@@ -6,6 +6,8 @@ enderecos:
   - logradouro: "Rua Doutor Manoel Carlos Ferraz de Almeida"
     numero: "37"
     complemento: "Box 15 - Mercado de Pinheiros"
+    lat: -23.5656156
+    lng: -46.6924088
     telefones:
       - tipo: "telefone"
         numero: "11921818880"
@@ -13,7 +15,7 @@ enderecos:
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: []
+tags: ["cafe"]
 description: |-
   Na compra de um sanduíche, seu acompanhante ganha outro de igual ou menor valor.
 benefitType: "compre-1-leve-outro"

@@ -28,7 +28,7 @@ images:
 source:
   path: "data/instagram/restaurantes/684433741_18107532878304897_3062667008071127746_n..webp"
   filename: "684433741_18107532878304897_3062667008071127746_n..webp"
-tags: ["bicicleta", "loja", "mexicana"]
+tags: ["mexicana"]
 benefitType: "compre-1-leve-outro"
 ---
 

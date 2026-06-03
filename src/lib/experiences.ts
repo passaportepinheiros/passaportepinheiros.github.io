@@ -115,19 +115,22 @@ export function benefitTypeLabel(value: BenefitType): string {
   return benefitTypes.find((b) => b.value === value)?.label ?? value;
 }
 
-export const knownTags: Array<{ value: string; label: string }> = [
+export const knownTags: Array<{ value: string; label: string; aliases?: string[] }> = [
   { value: 'cafe', label: 'Café' },
   { value: 'bar', label: 'Bar' },
   { value: 'drinks', label: 'Drinks' },
-  { value: 'chopp', label: 'Chopp/Cerveja' },
+  { value: 'chopp', label: 'Chopp/Cerveja', aliases: ['cerveja'] },
   { value: 'vinho', label: 'Vinho' },
   { value: 'pizza', label: 'Pizza' },
   { value: 'hamburguer', label: 'Hambúrguer' },
   { value: 'japonesa', label: 'Japonesa' },
   { value: 'italiana', label: 'Italiana' },
+  { value: 'massas', label: 'Massas' },
   { value: 'mexicana', label: 'Mexicana' },
   { value: 'arabe', label: 'Árabe' },
   { value: 'brasileira', label: 'Brasileira' },
+  { value: 'confort-food', label: 'Comfort food' },
+  { value: 'francesa', label: 'Francesa' },
   { value: 'churrasco', label: 'Churrasco' },
   { value: 'gelato', label: 'Gelato' },
   { value: 'sorvete', label: 'Sorvete' },
@@ -136,8 +139,11 @@ export const knownTags: Array<{ value: string; label: string }> = [
   { value: 'petiscos', label: 'Petiscos' },
   { value: 'pastel', label: 'Pastel' },
   { value: 'saudavel', label: 'Saudável' },
+  { value: 'loja', label: 'Loja' },
   { value: 'danca', label: 'Dança' },
   { value: 'pet', label: 'Pet' },
   { value: 'tattoo', label: 'Tatuagem' },
   { value: 'idiomas', label: 'Idiomas' },
+  { value: 'viagem', label: 'Viagem' },
+  { value: 'bem-estar', label: 'Bem-estar' },
 ];

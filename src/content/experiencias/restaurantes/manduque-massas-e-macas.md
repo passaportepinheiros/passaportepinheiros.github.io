@@ -26,7 +26,7 @@ images:
 source:
   path: "data/instagram/restaurantes/684812735_18107532818304897_8265484282910086032_n..webp"
   filename: "684812735_18107532818304897_8265484282910086032_n..webp"
-tags: ["confort-food"]
+tags: ["confort-food", "massas"]
 benefitType: "brinde"
 ---
 

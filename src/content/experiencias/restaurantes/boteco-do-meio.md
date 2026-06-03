@@ -16,7 +16,7 @@ categoria_fsq: "Restaurant"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: []
+tags: ["bar", "brasileira", "petiscos"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.
 benefitType: "compre-1-leve-outro"

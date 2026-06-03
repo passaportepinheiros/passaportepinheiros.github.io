@@ -16,7 +16,7 @@ categoria_fsq: "Water Park"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["familia", "lazer"]
+tags: ["bar", "brasileira"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.
 benefitType: "compre-1-leve-outro"

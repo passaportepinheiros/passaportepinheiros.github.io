@@ -16,7 +16,7 @@ categoria_fsq: "Bar"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
-tags: ["bar", "drinks"]
+tags: ["bar", "cerveja", "chopp", "drinks", "hamburguer"]
 description: |-
   Na compra de 1 combo com 1 cheese salada + 1 pint de chopp artesanal pilsen ou Irish Red Ale, seu acompanhante ganha outro combo igual.
 benefitType: "compre-1-leve-outro"
