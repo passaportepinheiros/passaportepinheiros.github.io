@@ -44,7 +44,7 @@ jobs:
                     exit 1
                   fi
 
-                  build_type="$(python3 -c 'import json; print(json.load(open("/tmp/pages.json", encoding="utf-8")).get("build_type", ""))')"
+                  build_type="$(node -e 'const fs = require("fs"); const data = JSON.parse(fs.readFileSync("/tmp/pages.json", "utf8")); console.log(data.build_type || "");')"
 
                   if [ "$build_type" != "workflow" ]; then
                     echo "enabled=false" >> "$GITHUB_OUTPUT"

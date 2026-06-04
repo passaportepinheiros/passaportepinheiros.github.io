@@ -33,17 +33,6 @@ settings:
       rename: "cms: renomeia {oldPath} para {newPath}"
 
 components:
-  source:
-    type: object
-    label: Origem
-    readonly: true
-    fields:
-      - name: path
-        label: Caminho original
-        type: string
-      - name: filename
-        label: Arquivo original
-        type: string
   telefone:
     type: object
     label: Telefone
@@ -102,9 +91,9 @@ content:
         format: yaml-frontmatter
         filename: "{fields.slug}.md"
         operations:
-          create: false
-          rename: false
-          delete: false
+          create: true
+          rename: true
+          delete: true
         view:
           fields: [title, instagram, slug]
           primary: title
@@ -124,7 +113,6 @@ content:
             label: Slug
             type: string
             required: true
-            readonly: true
             pattern: "^[a-z0-9-]+$"
             options:
               maxlength: 120
@@ -132,7 +120,6 @@ content:
             label: Categoria
             type: select
             required: true
-            readonly: true
             options:
               values:
                 - name: produtos
@@ -157,27 +144,20 @@ content:
           - name: description
             label: Descricao
             type: text
-            required: true
           - name: images
             label: Imagens
             type: object
-            required: true
             fields:
               - name: experience
                 label: Foto da experiencia
                 type: image
-                required: true
                 options:
                   media: produtosAssets
               - name: logo
                 label: Logo
                 type: image
-                required: true
                 options:
                   media: produtosAssets
-          - name: source
-            component: source
-
       - name: restaurantes
         label: Restaurantes
         type: collection
@@ -185,9 +165,9 @@ content:
         format: yaml-frontmatter
         filename: "{fields.slug}.md"
         operations:
-          create: false
-          rename: false
-          delete: false
+          create: true
+          rename: true
+          delete: true
         view:
           fields: [title, instagram, slug]
           primary: title
@@ -207,7 +187,6 @@ content:
             label: Slug
             type: string
             required: true
-            readonly: true
             pattern: "^[a-z0-9-]+$"
             options:
               maxlength: 120
@@ -215,7 +194,6 @@ content:
             label: Categoria
             type: select
             required: true
-            readonly: true
             options:
               values:
                 - name: restaurantes
@@ -240,27 +218,20 @@ content:
           - name: description
             label: Descricao
             type: text
-            required: true
           - name: images
             label: Imagens
             type: object
-            required: true
             fields:
               - name: experience
                 label: Foto da experiencia
                 type: image
-                required: true
                 options:
                   media: restaurantesAssets
               - name: logo
                 label: Logo
                 type: image
-                required: true
                 options:
                   media: restaurantesAssets
-          - name: source
-            component: source
-
       - name: servicos
         label: Servicos
         type: collection
@@ -268,9 +239,9 @@ content:
         format: yaml-frontmatter
         filename: "{fields.slug}.md"
         operations:
-          create: false
-          rename: false
-          delete: false
+          create: true
+          rename: true
+          delete: true
         view:
           fields: [title, instagram, slug]
           primary: title
@@ -290,7 +261,6 @@ content:
             label: Slug
             type: string
             required: true
-            readonly: true
             pattern: "^[a-z0-9-]+$"
             options:
               maxlength: 120
@@ -298,7 +268,6 @@ content:
             label: Categoria
             type: select
             required: true
-            readonly: true
             options:
               values:
                 - name: servicos
@@ -323,23 +292,17 @@ content:
           - name: description
             label: Descricao
             type: text
-            required: true
           - name: images
             label: Imagens
             type: object
-            required: true
             fields:
               - name: experience
                 label: Foto da experiencia
                 type: image
-                required: true
                 options:
                   media: servicosAssets
               - name: logo
                 label: Logo
                 type: image
-                required: true
                 options:
                   media: servicosAssets
-          - name: source
-            component: source
