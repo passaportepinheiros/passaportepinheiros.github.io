@@ -1,6 +1,7 @@
 ---
 title: "Ripito"
 slug: "ripito"
+googlePlaceId: "ChIJlU0P1eFXzpQRmBB7JycdaS0"
 category: "restaurantes"
 instagram: "ripito.cafeteria"
 instagramUrl: "https://www.instagram.com/ripito.cafeteria/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/ripito/experiencia.jpg"
   logo: "/experiencias/restaurantes/ripito/logo.png"
-source:
-  path: "data/instagram/restaurantes/686331001_18107686250304897_3574150192523446794_n..webp"
-  filename: "686331001_18107686250304897_3574150192523446794_n..webp"
 tags: ["cafe", "doces"]
 benefitType: "compre-1-leve-outro"
 ---

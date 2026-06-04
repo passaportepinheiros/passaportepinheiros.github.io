@@ -1,6 +1,7 @@
 ---
 title: "Bar do Quintal"
 slug: "bar-do-quintal"
+googlePlaceId: "ChIJG0C0tHBXzpQRTTuY9iKsRT4"
 category: "restaurantes"
 instagram: "bardoquintal"
 instagramUrl: "https://www.instagram.com/bardoquintal/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/bar-do-quintal/experiencia.jpg"
   logo: "/experiencias/restaurantes/bar-do-quintal/logo.png"
-source:
-  path: "data/instagram/restaurantes/687523008_18107582762304897_6649100160283709191_n..webp"
-  filename: "687523008_18107582762304897_6649100160283709191_n..webp"
 tags: ["pizza"]
 benefitType: "compre-1-leve-outro"
 ---

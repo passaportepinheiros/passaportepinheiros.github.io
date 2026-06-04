@@ -1,6 +1,7 @@
 ---
 title: "Beer4u"
 slug: "beer4u"
+googlePlaceId: "ChIJgU9i1LxXzpQRW79he6499Hc"
 category: "restaurantes"
 instagram: "beer4upinheiros"
 instagramUrl: "https://www.instagram.com/beer4upinheiros/"
@@ -31,9 +32,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/beer4u/experiencia.jpg"
   logo: "/experiencias/restaurantes/beer4u/logo.png"
-source:
-  path: "data/instagram/restaurantes/684391011_18107653313304897_7121303415902274826_n..webp"
-  filename: "684391011_18107653313304897_7121303415902274826_n..webp"
 tags: ["bar", "cerveja", "chopp", "pet", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Boteco do Meio"
 slug: "boteco-do-meio"
+googlePlaceId: "ChIJDXEyVBNXzpQR4mxp3sNA4i8"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Ferreira de Araújo"
@@ -13,9 +14,6 @@ enderecos:
     lng: -46.6981605
 foursquare_id: "50c9f6b0e4b0c995a353ff54"
 categoria_fsq: "Restaurant"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["bar", "brasileira", "petiscos"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.

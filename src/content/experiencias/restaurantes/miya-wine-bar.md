@@ -1,6 +1,7 @@
 ---
 title: "Miya Wine Bar"
 slug: "miya-wine-bar"
+googlePlaceId: "ChIJPRTGZ4dXzpQRa_tjh3TM8dQ"
 category: "restaurantes"
 instagram: "miyawinebar"
 instagramUrl: "https://www.instagram.com/miyawinebar/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/miya-wine-bar/experiencia.jpg"
   logo: "/experiencias/restaurantes/miya-wine-bar/logo.png"
-source:
-  path: "data/instagram/restaurantes/684237932_18107532797304897_3147131184310313914_n..webp"
-  filename: "684237932_18107532797304897_3147131184310313914_n..webp"
 tags: ["bar", "vinho"]
 benefitType: "compre-1-leve-outro"
 ---

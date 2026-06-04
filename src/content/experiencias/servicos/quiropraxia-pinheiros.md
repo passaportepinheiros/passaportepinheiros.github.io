@@ -1,6 +1,7 @@
 ---
 title: "Quiropraxia Pinheiros"
 slug: "quiropraxia-pinheiros"
+googlePlaceId: "ChIJh5MUzPpXzpQRTvO57lnc0OI"
 category: "servicos"
 enderecos:
   - logradouro: "Rua Paes Leme"
@@ -14,9 +15,6 @@ enderecos:
         formatado: "11 9 933132202"
 foursquare_id: "4e51342cb0fb088f3c33ce10"
 categoria_fsq: "Brazilian Restaurant"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["bem-estar", "servico"]
 description: |-
   Compre uma consulta de quiropraxia + massagem e ganhe outra.

@@ -1,6 +1,7 @@
 ---
 title: "Pirajá"
 slug: "piraja"
+googlePlaceId: "ChIJd2CZjrNXzpQRZRnafznFQIE"
 category: "restaurantes"
 instagram: "barpiraja"
 instagramUrl: "https://www.instagram.com/barpiraja/"
@@ -52,9 +53,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/piraja/experiencia.jpg"
   logo: "/experiencias/restaurantes/piraja/logo.png"
-source:
-  path: "data/instagram/restaurantes/684506231_18107686316304897_7941550905378918750_n..webp"
-  filename: "684506231_18107686316304897_7941550905378918750_n..webp"
 tags: ["bar", "chopp", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

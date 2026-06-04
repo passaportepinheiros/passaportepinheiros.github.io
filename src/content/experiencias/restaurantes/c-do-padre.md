@@ -1,6 +1,7 @@
 ---
 title: "C... do Padre"
 slug: "c-do-padre"
+googlePlaceId: "ChIJM5bR4qZXzpQRq4wbXgRa-lg"
 category: "restaurantes"
 instagram: "ocdopadre"
 instagramUrl: "https://www.instagram.com/ocdopadre/"
@@ -28,9 +29,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/c-do-padre/experiencia.jpg"
   logo: "/experiencias/restaurantes/c-do-padre/logo.png"
-source:
-  path: "data/instagram/restaurantes/687169360_18107582702304897_4316215101597420399_n..webp"
-  filename: "687169360_18107582702304897_4316215101597420399_n..webp"
 tags: ["brasileira", "hamburguer", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

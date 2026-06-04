@@ -1,6 +1,7 @@
 ---
 title: "Low BBQ"
 slug: "low-bbq"
+googlePlaceId: "ChIJ4bGnhpFXzpQRFO351Hg4_QI"
 category: "restaurantes"
 instagram: "lowbbqbar"
 instagramUrl: "https://www.instagram.com/lowbbqbar/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/low-bbq/experiencia.jpg"
   logo: "/experiencias/restaurantes/low-bbq/logo.png"
-source:
-  path: "data/instagram/restaurantes/686367932_18107653253304897_6232399824314841584_n..webp"
-  filename: "686367932_18107653253304897_6232399824314841584_n..webp"
 tags: ["carnes", "churrasco", "hamburguer"]
 benefitType: "compre-1-leve-outro"
 ---

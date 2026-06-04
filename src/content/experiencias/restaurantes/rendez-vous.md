@@ -1,6 +1,7 @@
 ---
 title: "Rendez Vous"
 slug: "rendez-vous"
+googlePlaceId: "ChIJ71IsCZ5XzpQRHii6NHQSmhs"
 category: "restaurantes"
 instagram: "rendezvous.bistro"
 instagramUrl: "https://www.instagram.com/rendezvous.bistro/"
@@ -29,9 +30,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/rendez-vous/experiencia.jpg"
   logo: "/experiencias/restaurantes/rendez-vous/logo.png"
-source:
-  path: "data/instagram/restaurantes/689455568_18107686286304897_6584300782887316755_n..webp"
-  filename: "689455568_18107686286304897_6584300782887316755_n..webp"
 tags: ["francesa"]
 benefitType: "compre-1-leve-outro"
 ---

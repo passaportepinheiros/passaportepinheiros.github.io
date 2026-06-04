@@ -1,6 +1,7 @@
 ---
 title: "Bakebun Bakery"
 slug: "bakebun-bakery"
+googlePlaceId: "ChIJnbOXzNJXzpQROJ6-kdZ1Mhc"
 category: "restaurantes"
 instagram: "bakebunoficial"
 instagramUrl: "https://www.instagram.com/bakebunoficial/"
@@ -23,9 +24,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/bakebun-bakery/experiencia.jpg"
   logo: "/experiencias/restaurantes/bakebun-bakery/logo.png"
-source:
-  path: "data/instagram/restaurantes/686466601_18107653433304897_2816366475888946094_n..webp"
-  filename: "686466601_18107653433304897_2816366475888946094_n..webp"
 tags: ["padaria"]
 benefitType: "compre-1-leve-outro"
 ---

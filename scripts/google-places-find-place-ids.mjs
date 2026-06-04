@@ -8,7 +8,7 @@ import process from 'node:process';
 const ROOT_DIR = process.cwd();
 const CONTENT_DIR = path.join(ROOT_DIR, 'src/content/experiencias');
 const DEFAULT_JSON_OUT = path.join(ROOT_DIR, 'data/google-places-place-ids.generated.json');
-const DEFAULT_MD_OUT = path.join(ROOT_DIR, 'data/google-places-place-ids.generated.md');
+const DEFAULT_CSV_OUT = path.join(ROOT_DIR, 'data/google-places-place-ids.generated.csv');
 const PLACES_TEXT_SEARCH_URL = 'https://places.googleapis.com/v1/places:searchText';
 const FIELD_MASK = [
   'places.id',
@@ -22,16 +22,27 @@ const FIELD_MASK = [
 const args = parseArgs(process.argv.slice(2));
 loadDotEnv(path.join(ROOT_DIR, '.env'));
 
+const delayMs = Number(args.delay ?? 250);
+const jsonOut = path.resolve(ROOT_DIR, args.jsonOut ?? DEFAULT_JSON_OUT);
+const csvOut = path.resolve(ROOT_DIR, args.csvOut ?? DEFAULT_CSV_OUT);
+
+if (args.fromJson) {
+  const reportPath = path.resolve(ROOT_DIR, args.fromJson);
+  const existingReport = JSON.parse(await readFile(reportPath, 'utf8'));
+
+  await mkdir(path.dirname(csvOut), { recursive: true });
+  await writeFile(csvOut, renderCsvReport(existingReport), 'utf8');
+
+  console.log(`Wrote ${path.relative(ROOT_DIR, csvOut)} from ${path.relative(ROOT_DIR, reportPath)}`);
+  process.exit(0);
+}
+
 const apiKey = process.env.GOOGLE_PLACES_API_KEY;
 
 if (!apiKey) {
   console.error('ERROR: GOOGLE_PLACES_API_KEY is not set. Add it to .env or export it in the shell.');
   process.exit(1);
 }
-
-const delayMs = Number(args.delay ?? 250);
-const jsonOut = path.resolve(ROOT_DIR, args.jsonOut ?? DEFAULT_JSON_OUT);
-const mdOut = path.resolve(ROOT_DIR, args.mdOut ?? DEFAULT_MD_OUT);
 
 const files = await findMarkdownFiles(CONTENT_DIR);
 let experiences = [];
@@ -119,13 +130,13 @@ const jsonReport = {
 };
 
 await mkdir(path.dirname(jsonOut), { recursive: true });
-await mkdir(path.dirname(mdOut), { recursive: true });
+await mkdir(path.dirname(csvOut), { recursive: true });
 await writeFile(jsonOut, `${JSON.stringify(jsonReport, null, 2)}\n`, 'utf8');
-await writeFile(mdOut, renderMarkdownReport(jsonReport), 'utf8');
+await writeFile(csvOut, renderCsvReport(jsonReport), 'utf8');
 
 console.log();
 console.log(`Wrote ${path.relative(ROOT_DIR, jsonOut)}`);
-console.log(`Wrote ${path.relative(ROOT_DIR, mdOut)}`);
+console.log(`Wrote ${path.relative(ROOT_DIR, csvOut)}`);
 console.log(`Summary: ${JSON.stringify(jsonReport.summary)}`);
 
 function parseArgs(argv) {
@@ -560,85 +571,98 @@ function toJsonResult(result) {
   };
 }
 
-function renderMarkdownReport(report) {
-  const lines = [
-    '# Google Places Place IDs',
-    '',
-    `Gerado em: ${report.generatedAt}`,
-    '',
-    `Total: ${report.total}`,
-    '',
-    'Resumo:',
-    '',
-    `- High: ${report.summary.high ?? 0}`,
-    `- Medium: ${report.summary.medium ?? 0}`,
-    `- Low: ${report.summary.low ?? 0}`,
-    `- Not found: ${report.summary['not-found'] ?? 0}`,
-    `- Error: ${report.summary.error ?? 0}`,
-    '',
-    '> Revise principalmente itens com confiança `medium`, `low`, `not-found` ou `error` antes de gravar `googlePlaceId` nos markdowns das experiências.',
-    '',
-    '| Slug | Título | Confiança | Place ID | Nome Google | Distância | Endereço Google |',
-    '| --- | --- | --- | --- | --- | ---: | --- |',
+function renderCsvReport(report) {
+  const headers = [
+    'confirmado',
+    'placeIdConfirmado',
+    'observacoes',
+    'slug',
+    'title',
+    'category',
+    'confidence',
+    'googlePlaceId',
+    'displayName',
+    'formattedAddress',
+    'distanceMeters',
+    'businessStatus',
+    'googleMapsUri',
+    'existingGooglePlaceId',
+    'file',
+    'query',
+    'candidateCount',
+    'candidate1Id',
+    'candidate1Name',
+    'candidate1Address',
+    'candidate1DistanceMeters',
+    'candidate1Score',
+    'candidate2Id',
+    'candidate2Name',
+    'candidate2Address',
+    'candidate2DistanceMeters',
+    'candidate2Score',
+    'candidate3Id',
+    'candidate3Name',
+    'candidate3Address',
+    'candidate3DistanceMeters',
+    'candidate3Score',
   ];
 
-  for (const result of report.results) {
-    lines.push([
-      escapeMarkdownTable(result.slug),
-      escapeMarkdownTable(result.title),
+  const rows = report.results.map((result) => {
+    const candidate1 = result.candidates?.[0] ?? {};
+    const candidate2 = result.candidates?.[1] ?? {};
+    const candidate3 = result.candidates?.[2] ?? {};
+
+    return [
+      '',
+      '',
+      '',
+      result.slug,
+      result.title,
+      result.category,
       result.confidence,
-      result.googlePlaceId ? `\`${result.googlePlaceId}\`` : '',
-      escapeMarkdownTable(result.displayName ?? ''),
-      typeof result.distanceMeters === 'number' ? `${result.distanceMeters}m` : '',
-      escapeMarkdownTable(result.formattedAddress ?? result.error ?? ''),
-    ].join(' | ').replace(/^/, '| ').replace(/$/, ' |'));
-  }
+      result.googlePlaceId,
+      result.displayName,
+      result.formattedAddress ?? result.error,
+      result.distanceMeters,
+      result.businessStatus,
+      result.googleMapsUri,
+      result.existingGooglePlaceId,
+      result.file,
+      result.query,
+      result.candidates?.length ?? 0,
+      candidate1.id,
+      candidate1.displayName,
+      candidate1.formattedAddress,
+      candidate1.distanceMeters,
+      candidate1.score,
+      candidate2.id,
+      candidate2.displayName,
+      candidate2.formattedAddress,
+      candidate2.distanceMeters,
+      candidate2.score,
+      candidate3.id,
+      candidate3.displayName,
+      candidate3.formattedAddress,
+      candidate3.distanceMeters,
+      candidate3.score,
+    ];
+  });
 
-  lines.push('');
-  lines.push('## Candidatos');
-  lines.push('');
-
-  for (const result of report.results) {
-    lines.push(`### ${result.slug}`);
-    lines.push('');
-    lines.push(`Arquivo: \`${result.file}\``);
-    lines.push('');
-    lines.push(`Busca: \`${result.query}\``);
-    lines.push('');
-
-    if (result.error) {
-      lines.push(`Erro: ${result.error}`);
-      lines.push('');
-      continue;
-    }
-
-    if (!result.candidates.length) {
-      lines.push('Nenhum candidato encontrado.');
-      lines.push('');
-      continue;
-    }
-
-    for (const [index, candidate] of result.candidates.entries()) {
-      const distance = typeof candidate.distanceMeters === 'number'
-        ? `${candidate.distanceMeters}m`
-        : 'sem distância';
-
-      lines.push(`${index + 1}. \`${candidate.id}\` - ${candidate.displayName} (${distance}, score ${candidate.score})`);
-      lines.push(`   ${candidate.formattedAddress}`);
-
-      if (candidate.googleMapsUri) {
-        lines.push(`   ${candidate.googleMapsUri}`);
-      }
-    }
-
-    lines.push('');
-  }
-
-  return `${lines.join('\n')}\n`;
+  return `${[headers, ...rows].map((row) => row.map(escapeCsv).join(',')).join('\n')}\n`;
 }
 
-function escapeMarkdownTable(value) {
-  return String(value).replace(/\|/g, '\\|').replace(/\n/g, '<br>');
+function escapeCsv(value) {
+  if (value === null || value === undefined) {
+    return '';
+  }
+
+  const stringValue = String(value);
+
+  if (/[",\n\r]/.test(stringValue)) {
+    return `"${stringValue.replace(/"/g, '""')}"`;
+  }
+
+  return stringValue;
 }
 
 function escapeRegExp(value) {

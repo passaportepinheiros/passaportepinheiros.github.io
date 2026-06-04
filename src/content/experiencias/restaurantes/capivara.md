@@ -1,6 +1,7 @@
 ---
 title: "Capivara"
 slug: "capivara"
+googlePlaceId: "ChIJIVuiotxXzpQRp8_1ADcWa-k"
 category: "restaurantes"
 instagram: "redecapivara"
 instagramUrl: "https://www.instagram.com/redecapivara/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/capivara/experiencia.jpg"
   logo: "/experiencias/restaurantes/capivara/logo.png"
-source:
-  path: "data/instagram/restaurantes/684585222_18107533154304897_7504348542463716753_n..webp"
-  filename: "684585222_18107533154304897_7504348542463716753_n..webp"
 tags: ["bar", "drinks", "hamburguer", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

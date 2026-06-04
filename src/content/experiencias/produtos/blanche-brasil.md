@@ -1,6 +1,7 @@
 ---
 title: "Blanche Brasil"
 slug: "blanche-brasil"
+googlePlaceId: "ChIJAQAk5p1XzpQR-GKzfuqd6CI"
 category: "produtos"
 instagram: "blanche.brasil"
 instagramUrl: "https://www.instagram.com/blanche.brasil/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/produtos/blanche-brasil/experiencia.jpg"
   logo: "/experiencias/produtos/blanche-brasil/logo.png"
-source:
-  path: "data/instagram/produtos/684272246_18107582729304897_2538628061660273634_n..webp"
-  filename: "684272246_18107582729304897_2538628061660273634_n..webp"
 tags: ["artesanato", "loja", "produto"]
 benefitType: "compre-1-leve-outro"
 ---

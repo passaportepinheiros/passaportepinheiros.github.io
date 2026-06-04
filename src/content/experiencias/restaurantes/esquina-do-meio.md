@@ -1,6 +1,7 @@
 ---
 title: "Esquina do Meio"
 slug: "esquina-do-meio"
+googlePlaceId: "ChIJzYEZJqFXzpQR_zpyM25rKho"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Ferreira de Araújo"
@@ -13,9 +14,6 @@ enderecos:
     lng: -46.6979796
 foursquare_id: "4f424ad8e4b020398e9390cd"
 categoria_fsq: "Water Park"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["bar", "brasileira"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.

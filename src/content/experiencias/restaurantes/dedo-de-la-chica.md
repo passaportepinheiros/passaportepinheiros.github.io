@@ -1,6 +1,7 @@
 ---
 title: "Dedo de La Chica"
 slug: "dedo-de-la-chica"
+googlePlaceId: "ChIJO7YXnZdXzpQRgqlbzmvNsio"
 category: "restaurantes"
 instagram: "dedodelachica"
 instagramUrl: "https://www.instagram.com/dedodelachica/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/dedo-de-la-chica/experiencia.jpg"
   logo: "/experiencias/restaurantes/dedo-de-la-chica/logo.png"
-source:
-  path: "data/instagram/restaurantes/684620935_18107533070304897_1974193859578041160_n..webp"
-  filename: "684620935_18107533070304897_1974193859578041160_n..webp"
 tags: ["mexicana"]
 benefitType: "compre-1-leve-outro"
 ---

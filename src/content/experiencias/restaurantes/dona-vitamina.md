@@ -1,6 +1,7 @@
 ---
 title: "Dona Vitamina"
 slug: "dona-vitamina"
+googlePlaceId: "ChIJQ8Ix7J1XzpQRu2HM9JGbbzs"
 category: "restaurantes"
 instagram: "donavitamina"
 instagramUrl: "https://www.instagram.com/donavitamina/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/dona-vitamina/experiencia.jpg"
   logo: "/experiencias/restaurantes/dona-vitamina/logo.png"
-source:
-  path: "data/instagram/restaurantes/684762221_18107533028304897_499562404416732035_n..webp"
-  filename: "684762221_18107533028304897_499562404416732035_n..webp"
 tags: ["hamburguer", "padaria", "saudavel", "sucos"]
 benefitType: "compre-1-leve-outro"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Casa Bugbee"
 slug: "casa-bugbee"
+googlePlaceId: "ChIJnciuUgBXzpQR_Bi1uyyxa38"
 category: "produtos"
 enderecos:
   - logradouro: "Rua Mateus Grou"
@@ -13,9 +14,6 @@ enderecos:
     lng: -46.6844031
 foursquare_id: "6814e37487d6f228c0342eee"
 categoria_fsq: "Children's Clothing Store"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["infantil", "loja", "produto", "roupas"]
 description: |-
   Ganhe 20% de desconto* na compra de produtos Bugbee. *Não cumulativo com outras promoções.

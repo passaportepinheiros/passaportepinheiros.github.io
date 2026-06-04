@@ -1,6 +1,7 @@
 ---
 title: "Ombra"
 slug: "ombra"
+googlePlaceId: "ChIJQQAXVINXzpQRADbVPR22Ab0"
 category: "restaurantes"
 instagram: "ombra_sp"
 instagramUrl: "https://www.instagram.com/ombra_sp/"
@@ -23,9 +24,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/ombra/experiencia.jpg"
   logo: "/experiencias/restaurantes/ombra/logo.png"
-source:
-  path: "data/instagram/restaurantes/685789872_18107686421304897_4224829060856598659_n..webp"
-  filename: "685789872_18107686421304897_4224829060856598659_n..webp"
 tags: ["pizza", "vinho"]
 benefitType: "compre-1-leve-outro"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Suri"
 slug: "suri"
+googlePlaceId: "ChIJ9bH1vJ5XzpQRkhuIjzH7urI"
 category: "restaurantes"
 instagram: "suricevichebar"
 instagramUrl: "https://www.instagram.com/suricevichebar/"
@@ -27,9 +28,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/suri/experiencia.jpg"
   logo: "/experiencias/restaurantes/suri/logo.png"
-source:
-  path: "data/instagram/restaurantes/686168952_18107686214304897_8284574910715016662_n..webp"
-  filename: "686168952_18107686214304897_8284574910715016662_n..webp"
 tags: ["drinks"]
 benefitType: "compre-1-leve-outro"
 ---

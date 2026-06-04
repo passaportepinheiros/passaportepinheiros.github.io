@@ -1,6 +1,7 @@
 ---
 title: "Mocotó Café"
 slug: "mocoto-cafe"
+googlePlaceId: "ChIJWaHFAqFXzpQRfyXiHod9Y1o"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Pedro Cristi"
@@ -17,9 +18,6 @@ categoria_fsq: "Northeastern Brazilian Restaurant"
 website: "http://www.mocoto.com.br"
 instagram: "mocotocafe"
 instagramUrl: "https://www.instagram.com/mocotocafe/"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["brasileira", "cafe", "doces", "petiscos"]
 description: |-
   Na compra de 1 baião de dois completo, ganhe 1 porção de dadinho de tapioca (6 unidades) e uma sobremesa.

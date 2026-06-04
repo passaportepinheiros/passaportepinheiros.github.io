@@ -1,6 +1,7 @@
 ---
 title: "Na Garagem"
 slug: "na-garagem"
+googlePlaceId: "ChIJE5QN7p9XzpQRypYMFJf8l5E"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Benjamin Ergas"
@@ -13,9 +14,6 @@ enderecos:
         formatado: "(11) 97237-7047"
 foursquare_id: "522381e7498e44085f7b22c1"
 categoria_fsq: "Burger Joint"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["hamburguer"]
 description: |-
   Na compra de 1 smashed + 1 batata frita, seu acompanhante ganha outro smashed + 1 batata frita.

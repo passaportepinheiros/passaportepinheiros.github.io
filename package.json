@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "places:find": "node --no-warnings scripts/google-places-find-place-ids.mjs",
+    "places:apply-ids": "node --no-warnings scripts/google-places-apply-place-ids.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"

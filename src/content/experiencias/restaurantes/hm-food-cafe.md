@@ -1,6 +1,7 @@
 ---
 title: "HM Food Café"
 slug: "hm-food-cafe"
+googlePlaceId: "ChIJL6zyR6ZXzpQRAOwaP8ksrPQ"
 category: "restaurantes"
 instagram: "hmfoodcafe"
 instagramUrl: "https://www.instagram.com/hmfoodcafe/"
@@ -27,9 +28,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/hm-food-cafe/experiencia.jpg"
   logo: "/experiencias/restaurantes/hm-food-cafe/logo.png"
-source:
-  path: "data/instagram/restaurantes/694283467_18107582660304897_7971929137062943954_n..webp"
-  filename: "694283467_18107582660304897_7971929137062943954_n..webp"
 tags: ["cafe"]
 benefitType: "compre-1-leve-outro"
 ---

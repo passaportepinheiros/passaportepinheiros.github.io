@@ -1,6 +1,7 @@
 ---
 title: "Petros Greek Taverna"
 slug: "petros-greek-taverna"
+googlePlaceId: "ChIJVat1QFZXzpQRqZN2a-gc6pI"
 category: "restaurantes"
 instagram: "petrosgreektaverna"
 instagramUrl: "https://www.instagram.com/petrosgreektaverna/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/petros-greek-taverna/experiencia.jpg"
   logo: "/experiencias/restaurantes/petros-greek-taverna/logo.png"
-source:
-  path: "data/instagram/restaurantes/687684471_18107686358304897_7428499089525854654_n..webp"
-  filename: "687684471_18107686358304897_7428499089525854654_n..webp"
 tags: ["vinho"]
 benefitType: "compre-1-leve-outro"
 ---

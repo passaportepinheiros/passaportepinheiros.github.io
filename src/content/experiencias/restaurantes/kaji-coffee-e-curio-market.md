@@ -1,6 +1,7 @@
 ---
 title: "Kaji Coffee & Curio Market"
 slug: "kaji-coffee-e-curio-market"
+googlePlaceId: "ChIJW5i1HA1XzpQRRjtbrLSLiaY"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Doutor Manoel Carlos Ferraz de Almeida"
@@ -14,9 +15,6 @@ enderecos:
         formatado: "(11) 92181-8880"
 foursquare_id: "68655826be0dc35e3232a457"
 categoria_fsq: "Coffee Shop"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["cafe"]
 description: |-
   Na compra de um sanduíche, seu acompanhante ganha outro de igual ou menor valor.

@@ -1,6 +1,7 @@
 ---
 title: "Feliciana Pães"
 slug: "feliciana-paes"
+googlePlaceId: "ChIJq22Y1KRXzpQR_oWUUO3gr6A"
 category: "restaurantes"
 instagram: "feliciana.paes"
 instagramUrl: "https://www.instagram.com/feliciana.paes/"
@@ -28,9 +29,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/feliciana-paes/experiencia.jpg"
   logo: "/experiencias/restaurantes/feliciana-paes/logo.png"
-source:
-  path: "data/instagram/restaurantes/684358399_18107582684304897_9171869787164451850_n..webp"
-  filename: "684358399_18107582684304897_9171869787164451850_n..webp"
 tags: ["cafe", "padaria"]
 benefitType: "compre-1-leve-outro"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Sakeumi Restaurante"
 slug: "sakeumi-restaurante"
+googlePlaceId: "ChIJmT4JbydXzpQR07QdUZoNqa0"
 category: "restaurantes"
 instagram: "sakeumi.restaurante"
 instagramUrl: "https://www.instagram.com/sakeumi.restaurante/"
@@ -31,9 +32,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/sakeumi-restaurante/experiencia.jpg"
   logo: "/experiencias/restaurantes/sakeumi-restaurante/logo.png"
-source:
-  path: "data/instagram/restaurantes/685723285_18107686235304897_3936802905578385527_n..webp"
-  filename: "685723285_18107686235304897_3936802905578385527_n..webp"
 tags: ["asiatica", "japonesa"]
 benefitType: "desconto"
 ---

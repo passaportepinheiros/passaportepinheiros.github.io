@@ -1,6 +1,7 @@
 ---
 title: Taba Pastéis e Salgados
 slug: taba-pasteis-e-salgados
+googlePlaceId: "ChIJ28nTplFXzpQRTTYl2AZPfr4"
 category: restaurantes
 instagram: tabapastel
 instagramUrl: https://www.instagram.com/tabapastel/
@@ -30,9 +31,6 @@ description: |-
 images:
   experience: /experiencias/restaurantes/taba-pasteis-e-salgados/experiencia.jpg
   logo: /experiencias/restaurantes/taba-pasteis-e-salgados/logo.png
-source:
-  path: data/instagram/restaurantes/686425276_18107685992304897_211750122792936024_n..webp
-  filename: 686425276_18107685992304897_211750122792936024_n..webp
 tags:
   - loja
   - mercado

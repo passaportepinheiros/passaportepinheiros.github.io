@@ -1,6 +1,7 @@
 ---
 title: "CVC"
 slug: "cvc"
+googlePlaceId: "ChIJ_XjNPNJXzpQRyluyhLMJoCM"
 category: "servicos"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
@@ -11,9 +12,6 @@ enderecos:
         formatado: "(11) 93060-4601"
     lat: -23.5649491
     lng: -46.6814747
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["servico", "viagem"]
 description: |-
   Ganhe até 5% de desconto em pacotes* de viagens + 1 oferta surpresa durante a compra. *Aéreo com hospedagem + algum serviço incluso.

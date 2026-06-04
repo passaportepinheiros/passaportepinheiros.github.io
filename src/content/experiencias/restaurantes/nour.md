@@ -1,6 +1,7 @@
 ---
 title: "Nour"
 slug: "nour"
+googlePlaceId: "ChIJVZlB8hVXzpQRoTrxVI1XhJk"
 category: "restaurantes"
 instagram: "nourbrasil"
 instagramUrl: "https://www.instagram.com/nourbrasil/"
@@ -27,9 +28,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/nour/experiencia.jpg"
   logo: "/experiencias/restaurantes/nour/logo.png"
-source:
-  path: "data/instagram/restaurantes/684551696_18107695847304897_1610803269986908375_n..webp"
-  filename: "684551696_18107695847304897_1610803269986908375_n..webp"
 tags: ["arabe", "oriente-medio"]
 benefitType: "compre-1-leve-outro"
 ---

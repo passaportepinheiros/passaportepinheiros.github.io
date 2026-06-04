@@ -1,6 +1,7 @@
 ---
 title: "O Pasquim"
 slug: "o-pasquim"
+googlePlaceId: "ChIJVxParKJXzpQRmD6--HklS1I"
 category: "restaurantes"
 instagram: "opasquimbar"
 instagramUrl: "https://www.instagram.com/opasquimbar/"
@@ -29,9 +30,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/o-pasquim/experiencia.jpg"
   logo: "/experiencias/restaurantes/o-pasquim/logo.png"
-source:
-  path: "data/instagram/restaurantes/684275118_18107686445304897_6736158086641761042_n..webp"
-  filename: "684275118_18107686445304897_6736158086641761042_n..webp"
 tags: ["bar", "drinks", "pet", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

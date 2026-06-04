@@ -1,6 +1,7 @@
 ---
 title: "Trinca Bar"
 slug: "trinca-bar"
+googlePlaceId: "ChIJ20FycqpXzpQRKGIldRJuwCk"
 category: "restaurantes"
 instagram: "trincabar"
 instagramUrl: "https://www.instagram.com/trincabar/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/trinca-bar/experiencia.jpg"
   logo: "/experiencias/restaurantes/trinca-bar/logo.png"
-source:
-  path: "data/instagram/restaurantes/688761688_18107653544304897_5460981802516203332_n..webp"
-  filename: "688761688_18107653544304897_5460981802516203332_n..webp"
 tags: ["bar", "coquetel", "drinks"]
 benefitType: "compre-1-leve-outro"
 ---

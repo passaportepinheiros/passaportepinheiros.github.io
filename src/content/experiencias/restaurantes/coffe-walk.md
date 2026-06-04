@@ -1,6 +1,7 @@
 ---
 title: "Coffe Walk"
 slug: "coffe-walk"
+googlePlaceId: "ChIJETVoXrxXzpQRQleLtWNRE2g"
 category: "restaurantes"
 instagram: "coffeewalkbr"
 instagramUrl: "https://www.instagram.com/coffeewalkbr/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/coffe-walk/experiencia.jpg"
   logo: "/experiencias/restaurantes/coffe-walk/logo.png"
-source:
-  path: "data/instagram/restaurantes/686319292_18107582549304897_4286890208299419828_n..webp"
-  filename: "686319292_18107582549304897_4286890208299419828_n..webp"
 tags: ["cafe"]
 benefitType: "compre-1-leve-outro"
 ---

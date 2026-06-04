@@ -1,6 +1,7 @@
 ---
 title: "Casa Ocre Autoral"
 slug: "casa-ocre-autoral"
+googlePlaceId: "ChIJKU8hFv5XzpQR8yOdgqX9vqc"
 category: "produtos"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
@@ -14,9 +15,6 @@ enderecos:
 foursquare_id: "56993b84498ee6848a9a7cce"
 categoria_fsq: "Pie Shop"
 website: "http://www.acasadocheesecake.com.br"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["artesanato", "loja", "produto"]
 description: |-
   Na compra de qualquer produto, ganhe 1 ecobag exclusiva Casa Ocre.

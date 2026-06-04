@@ -1,6 +1,7 @@
 ---
 title: "Vino!"
 slug: "vino"
+googlePlaceId: "ChIJcSVNBHZXzpQRPoVm5atdDmk"
 category: "restaurantes"
 instagram: "vinopinheiros"
 instagramUrl: "https://www.instagram.com/vinopinheiros/"
@@ -27,9 +28,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/vino/experiencia.jpg"
   logo: "/experiencias/restaurantes/vino/logo.png"
-source:
-  path: "data/instagram/restaurantes/687686958_18107653511304897_5129309674380833100_n..webp"
-  filename: "687686958_18107653511304897_5129309674380833100_n..webp"
 tags: ["bar", "vinho"]
 benefitType: "desconto"
 ---

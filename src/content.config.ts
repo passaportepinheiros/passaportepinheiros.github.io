@@ -32,6 +32,7 @@ const experiencias = defineCollection({
     instagram: z.string().optional(),
     instagramUrl: z.url().optional(),
     enderecos: z.array(enderecoSchema).default([]),
+    googlePlaceId: z.string().optional(),
     foursquare_id: z.string().optional(),
     categoria_fsq: z.string().optional(),
     website: z.string().optional(),
@@ -39,10 +40,6 @@ const experiencias = defineCollection({
     images: z.object({
       experience: z.string(),
       logo: z.string(),
-    }).optional(),
-    source: z.object({
-      path: z.string(),
-      filename: z.string(),
     }).optional(),
     tags: z.array(z.string()).default([]),
     benefitType: z.enum([

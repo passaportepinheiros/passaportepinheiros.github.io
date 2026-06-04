@@ -1,6 +1,7 @@
 ---
 title: "Meio Fio Bar"
 slug: "meio-fio-bar"
+googlePlaceId: "ChIJYRD2RABXzpQRJk4V_DcMcYU"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Vupabussu"
@@ -15,9 +16,6 @@ foursquare_id: "5c423a323092be002c05d208"
 categoria_fsq: "Cocktail Bar"
 instagram: "arlete.bar"
 instagramUrl: "https://www.instagram.com/arlete.bar/"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["bar", "coquetel", "drinks"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.

@@ -1,6 +1,7 @@
 ---
 title: "Bráz Elettrica"
 slug: "braz-elettrica"
+googlePlaceId: "ChIJESUQ-XdXzpQRs9E6u_6-90E"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
@@ -12,9 +13,6 @@ categoria_fsq: "Pizzeria"
 website: "https://www.brazelettrica.com.br"
 instagram: "brazelettrica"
 instagramUrl: "https://www.instagram.com/brazelettrica/"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["pizza"]
 description: |-
   Na compra de 1 pizza, seu acompanhante ganha outra de igual ou menor valor. Válido na Bráz Elettrica da Rua dos Pinheiros, de domingo a quinta-feira.

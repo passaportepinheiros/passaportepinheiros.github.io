@@ -1,6 +1,7 @@
 ---
 title: "Beauty Glow"
 slug: "beauty-glow"
+googlePlaceId: "ChIJsakN9lBXzpQRJi_5jF9T-G4"
 category: "servicos"
 enderecos:
   - logradouro: "Rua Artur Azevedo"
@@ -13,9 +14,6 @@ enderecos:
     lng: -46.6841749
 foursquare_id: "69a45519d8edf07832c60f37"
 categoria_fsq: "Dance Studio"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["beleza", "bem-estar", "servico"]
 description: |-
   Na compra de uma escova, ganhe uma hidratação.

@@ -19,3 +19,6 @@ design/
 
 # Relatorios locais gerados a partir da Google Places API.
 data/google-places-*.generated.*
+data/enrichment/google-places/
+data/Planilha sem título - Página1.csv
+.pnpm-store/

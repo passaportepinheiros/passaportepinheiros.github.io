@@ -1,6 +1,7 @@
 ---
 title: "Beik Cookies"
 slug: "beik-cookies"
+googlePlaceId: "ChIJdWiDAiZXzpQRQyXh7l-mGHQ"
 category: "restaurantes"
 instagram: "beik_cookies"
 instagramUrl: "https://www.instagram.com/beik_cookies/"
@@ -22,9 +23,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/beik-cookies/experiencia.jpg"
   logo: "/experiencias/restaurantes/beik-cookies/logo.png"
-source:
-  path: "data/instagram/restaurantes/687801291_18107582744304897_443903714475058698_n..webp"
-  filename: "687801291_18107582744304897_443903714475058698_n..webp"
 tags: ["cafe"]
 benefitType: "compre-1-leve-outro"
 ---

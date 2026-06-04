@@ -1,6 +1,7 @@
 ---
 title: "Lanchonete da Cidade"
 slug: "lanchonete-da-cidade"
+googlePlaceId: "ChIJNbUVd6NXzpQRS-oHRo-wvG0"
 category: "restaurantes"
 instagram: "lanchonetedacidade"
 instagramUrl: "https://www.instagram.com/lanchonetedacidade/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/lanchonete-da-cidade/experiencia.jpg"
   logo: "/experiencias/restaurantes/lanchonete-da-cidade/logo.png"
-source:
-  path: "data/instagram/restaurantes/684351895_18107653265304897_521418019643609772_n..webp"
-  filename: "684351895_18107653265304897_521418019643609772_n..webp"
 tags: ["hamburguer", "lanche"]
 benefitType: "compre-1-leve-outro"
 ---

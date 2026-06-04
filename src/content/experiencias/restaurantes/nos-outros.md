@@ -1,6 +1,7 @@
 ---
 title: "NOS outros"
 slug: "nos-outros"
+googlePlaceId: "ChIJNWjonINXzpQRfNVKFGxZmQg"
 category: "restaurantes"
 instagram: "nos.otros"
 instagramUrl: "https://www.instagram.com/nos.otros/"
@@ -29,9 +30,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/nos-outros/experiencia.jpg"
   logo: "/experiencias/restaurantes/nos-outros/logo.png"
-source:
-  path: "data/instagram/restaurantes/686344361_18107695886304897_1510785856816467132_n..webp"
-  filename: "686344361_18107695886304897_1510785856816467132_n..webp"
 tags: ["drinks", "petiscos"]
 benefitType: "compre-1-leve-outro"
 ---

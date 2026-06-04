@@ -1,6 +1,7 @@
 ---
 title: "Modern Pets"
 slug: "modern-pets"
+googlePlaceId: "ChIJGQooILxXzpQRI1b0j1pnrCE"
 category: "servicos"
 instagram: "modernpets.br"
 instagramUrl: "https://www.instagram.com/modernpets.br/"
@@ -26,9 +27,6 @@ description: |-
 images:
   experience: "/experiencias/servicos/modern-pets/experiencia.jpg"
   logo: "/experiencias/servicos/modern-pets/logo.png"
-source:
-  path: "data/instagram/servicos/685894226_18107695934304897_8716529358017958955_n..webp"
-  filename: "685894226_18107695934304897_8716529358017958955_n..webp"
 tags: ["pet", "servico"]
 benefitType: "desconto"
 ---

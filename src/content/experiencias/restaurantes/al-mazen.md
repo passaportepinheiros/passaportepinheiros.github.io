@@ -1,6 +1,7 @@
 ---
 title: "Al Mazen"
 slug: "al-mazen"
+googlePlaceId: "ChIJWdq0LUBXzpQRJXGt2P_YPwo"
 category: "restaurantes"
 instagram: "almazen_chefmazenzwawe"
 instagramUrl: "https://www.instagram.com/almazen_chefmazenzwawe/"
@@ -25,9 +26,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/al-mazen/experiencia.jpg"
   logo: "/experiencias/restaurantes/al-mazen/logo.png"
-source:
-  path: "data/instagram/restaurantes/684762217_18107532764304897_5243164425353511701_n..webp"
-  filename: "684762217_18107532764304897_5243164425353511701_n..webp"
 tags: ["arabe", "oriente-medio"]
 benefitType: "desconto"
 ---

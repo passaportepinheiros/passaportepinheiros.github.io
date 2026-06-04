@@ -1,6 +1,7 @@
 ---
 title: "Partisans Pub"
 slug: "partisans-pub"
+googlePlaceId: "ChIJK4DoYZxXzpQRrag7bYI86KM"
 category: "restaurantes"
 enderecos:
   - logradouro: "Rua Conego Eugênio Leite"
@@ -13,9 +14,6 @@ enderecos:
     lng: -46.6789917
 foursquare_id: "4c2e85dfed37a59355ca6503"
 categoria_fsq: "Bar"
-source:
-  path: "digitado.txt"
-  filename: "digitado.txt"
 tags: ["bar", "cerveja", "chopp", "drinks", "hamburguer"]
 description: |-
   Na compra de 1 combo com 1 cheese salada + 1 pint de chopp artesanal pilsen ou Irish Red Ale, seu acompanhante ganha outro combo igual.

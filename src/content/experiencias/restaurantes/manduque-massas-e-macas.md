@@ -1,6 +1,7 @@
 ---
 title: "Manduque Massas e Maçãs"
 slug: "manduque-massas-e-macas"
+googlePlaceId: "ChIJeQcu4LNXzpQRFx-HCXZdL5A"
 category: "restaurantes"
 instagram: "manduque.massas"
 instagramUrl: "https://www.instagram.com/manduque.massas/"
@@ -23,9 +24,6 @@ description: |-
 images:
   experience: "/experiencias/restaurantes/manduque-massas-e-macas/experiencia.jpg"
   logo: "/experiencias/restaurantes/manduque-massas-e-macas/logo.png"
-source:
-  path: "data/instagram/restaurantes/684812735_18107532818304897_8265484282910086032_n..webp"
-  filename: "684812735_18107532818304897_8265484282910086032_n..webp"
 tags: ["confort-food", "massas"]
 benefitType: "brinde"
 ---
