@@ -46,10 +46,46 @@ type Telefone = Endereco['telefones'][number];
 const formatEndereco = (endereco: Endereco) =>
   `${endereco.logradouro}, ${endereco.numero}`;
 
+const googleMapsUrl = (endereco: Endereco) => {
+  const query = [
+    data.title,
+    formatEndereco(endereco),
+    endereco.bairro,
+    endereco.cidade ?? 'São Paulo',
+    'SP',
+    'Brasil',
+  ]
+    .filter(Boolean)
+    .join(' ');
+  const params = new URLSearchParams({
+    api: '1',
+    query,
+  });
+
+  if (data.googlePlaceId) {
+    params.set('query_place_id', data.googlePlaceId);
+  }
+
+  return `https://www.google.com/maps/search/?${params.toString()}`;
+};
+
 const primeiroEndereco = data.enderecos[0];
 const localizacaoResumo = primeiroEndereco
   ? formatEndereco(primeiroEndereco)
   : 'Pinheiros, São Paulo';
+const primeiroEnderecoComMapa = data.enderecos.find(
+  (endereco) => typeof endereco.lat === 'number' && typeof endereco.lng === 'number',
+);
+const mapPoints = data.enderecos
+  .filter((endereco) => typeof endereco.lat === 'number' && typeof endereco.lng === 'number')
+  .map((endereco) => ({
+    title: data.enderecos.length > 1 ? `${data.title} - ${formatEndereco(endereco)}` : data.title,
+    address: formatEndereco(endereco),
+    complement: endereco.complemento ?? '',
+    lat: endereco.lat,
+    lng: endereco.lng,
+    mapsUrl: googleMapsUrl(endereco),
+  }));
 
 const telefoneMeta = (telefone: Telefone) => {
   const isLinkable = /^\d{10,11}$/.test(telefone.numero);
@@ -101,6 +137,15 @@ const jsonLd = {
     : undefined,
   ...(primeiroEndereco?.telefones[0]
     ? { telephone: primeiroEndereco.telefones[0].formatado }
+    : {}),
+  ...(primeiroEnderecoComMapa
+    ? {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: primeiroEnderecoComMapa.lat,
+          longitude: primeiroEnderecoComMapa.lng,
+        },
+      }
     : {}),
 };
 ---
@@ -179,6 +224,60 @@ const jsonLd = {
         <div class="mt-4 grid max-w-3xl gap-4 text-lg leading-relaxed text-muted">
           {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         </div>
+
+        {
+          mapPoints.length > 0 && (
+            <section class="mt-10">
+              <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p class="font-display text-sm font-bold uppercase tracking-wide text-primary">Localização</p>
+                  <h2 class="mt-2 font-display text-3xl font-extrabold text-ink">Onde encontrar</h2>
+                </div>
+                {mapPoints.length === 1 && (
+                  <a
+                    href={mapPoints[0].mapsUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="focus-ring inline-flex items-center gap-2 rounded border border-primary px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white"
+                  >
+                    Abrir no Google Maps
+                    <ExternalLink class="h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+
+              <div class="overflow-hidden rounded-lg border border-border bg-surface shadow-sm">
+                <div
+                  data-experience-map
+                  data-map-points={JSON.stringify(mapPoints)}
+                  class="pp-leaflet-map h-[320px] w-full bg-surface-soft md:h-[380px]"
+                  aria-label={`Mapa de localização de ${data.title}`}
+                />
+                {mapPoints.length > 1 && (
+                  <div class="grid gap-3 border-t border-border bg-surface p-4 sm:grid-cols-2">
+                    {mapPoints.map((point) => (
+                      <a
+                        href={point.mapsUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="focus-ring flex items-start gap-3 rounded border border-border/70 bg-surface-soft/70 p-3 text-sm transition hover:border-primary hover:text-primary"
+                      >
+                        <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                        <span class="min-w-0">
+                          <span class="block font-semibold text-ink">{point.address}</span>
+                          <span class="mt-1 inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wide text-primary">
+                            Abrir no Google Maps
+                            <ExternalLink class="h-3.5 w-3.5" aria-hidden="true" />
+                          </span>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+          )
+        }
       </div>
 
       <aside class="rounded-lg border border-border/70 bg-surface p-6 md:self-start">
@@ -238,6 +337,16 @@ const jsonLd = {
                         {endereco.complemento}
                       </p>
                     )}
+
+                    <a
+                      href={googleMapsUrl(endereco)}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="focus-ring mt-3 inline-flex items-center gap-2 rounded border border-border px-3 py-2 font-display text-xs font-bold uppercase tracking-wide text-primary transition hover:border-primary hover:bg-primary hover:text-white"
+                    >
+                      Abrir no Google Maps
+                      <ExternalLink class="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
 
                     {endereco.telefones.length > 0 && (
                       <div class="mt-3 flex flex-wrap gap-2">
@@ -301,4 +410,85 @@ const jsonLd = {
       </section>
     )
   }
+
+  <script is:inline>
+    (function () {
+      var mapContainers = document.querySelectorAll('[data-experience-map]');
+      if (!mapContainers.length) return;
+
+      function ensureLeaflet() {
+        if (window.L) return Promise.resolve(window.L);
+
+        return new Promise(function (resolve) {
+          var check = function () {
+            if (window.L) resolve(window.L);
+            else window.setTimeout(check, 50);
+          };
+          check();
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      ensureLeaflet().then(function (L) {
+        mapContainers.forEach(function (container) {
+          if (container.dataset.mapInitialized === 'true') return;
+
+          var points = [];
+          try {
+            points = JSON.parse(container.getAttribute('data-map-points') || '[]');
+          } catch {
+            points = [];
+          }
+
+          if (!points.length) return;
+          container.dataset.mapInitialized = 'true';
+
+          var map = L.map(container, {
+            scrollWheelZoom: false,
+            zoomControl: true,
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          }).addTo(map);
+
+          var bounds = [];
+          points.forEach(function (point) {
+            if (typeof point.lat !== 'number' || typeof point.lng !== 'number') return;
+
+            var marker = L.marker([point.lat, point.lng], { title: point.title }).addTo(map);
+            marker.bindPopup(
+              '<strong>' +
+                escapeHtml(point.title) +
+                '</strong><br><span>' +
+                escapeHtml(point.address) +
+                '</span><br><a href="' +
+                escapeHtml(point.mapsUrl) +
+                '" target="_blank" rel="noreferrer noopener">Abrir no Google Maps</a>',
+            );
+            bounds.push([point.lat, point.lng]);
+          });
+
+          if (bounds.length === 1) {
+            map.setView(bounds[0], 16);
+          } else if (bounds.length > 1) {
+            map.fitBounds(bounds, { padding: [36, 36], maxZoom: 16 });
+          }
+
+          window.setTimeout(function () {
+            map.invalidateSize();
+          }, 0);
+        });
+      });
+    })();
+  </script>
 </BaseLayout>
