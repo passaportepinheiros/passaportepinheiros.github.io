@@ -12,6 +12,11 @@ enderecos:
       - tipo: "telefone"
         numero: "1135301365"
         formatado: "(11) 3530-1365"
+foursquare_id: "566c55cc498e493157ea2819"
+categoria_fsq: "Northeastern Brazilian Restaurant"
+website: "http://www.mocoto.com.br"
+instagram: "mocotocafe"
+instagramUrl: "https://www.instagram.com/mocotocafe/"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"

@@ -12,6 +12,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11921818880"
         formatado: "(11) 92181-8880"
+foursquare_id: "68655826be0dc35e3232a457"
+categoria_fsq: "Coffee Shop"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"

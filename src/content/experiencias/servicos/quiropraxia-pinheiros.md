@@ -12,6 +12,8 @@ enderecos:
       - tipo: "telefone"
         numero: "119933132202"
         formatado: "11 9 933132202"
+foursquare_id: "4e51342cb0fb088f3c33ce10"
+categoria_fsq: "Brazilian Restaurant"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"

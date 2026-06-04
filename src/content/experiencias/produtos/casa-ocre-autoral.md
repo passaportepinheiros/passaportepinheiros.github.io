@@ -11,6 +11,9 @@ enderecos:
       - tipo: "telefone"
         numero: "11971852005"
         formatado: "(11) 97185-2005"
+foursquare_id: "56993b84498ee6848a9a7cce"
+categoria_fsq: "Pie Shop"
+website: "http://www.acasadocheesecake.com.br"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"

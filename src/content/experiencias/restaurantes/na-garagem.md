@@ -11,6 +11,8 @@ enderecos:
       - tipo: "telefone"
         numero: "11972377047"
         formatado: "(11) 97237-7047"
+foursquare_id: "522381e7498e44085f7b22c1"
+categoria_fsq: "Burger Joint"
 source:
   path: "digitado.txt"
   filename: "digitado.txt"
