@@ -229,7 +229,7 @@ const statusFilterItems = [
 
     <div>
       <div class="mb-6 rounded-lg border border-border/70 bg-surface p-4 shadow-[0_16px_44px_rgba(0,110,199,0.06)]">
-        <div class="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+        <div class="grid gap-4 md:grid-cols-[1fr_auto_auto] md:items-center lg:grid-cols-[1fr_auto]">
           <label class="focus-within:border-primary flex min-h-12 items-center gap-3 rounded-full border border-border/70 bg-background px-4 transition">
             <Search class="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
             <span class="sr-only">Buscar experiências</span>
@@ -240,6 +240,17 @@ const statusFilterItems = [
               data-search-input
             />
           </label>
+
+          <button
+            type="button"
+            class="focus-ring inline-flex items-center justify-center gap-2 rounded-full border border-primary px-5 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white lg:hidden"
+            data-filter-menu-open
+            aria-controls="experience-filters"
+            aria-expanded="false"
+          >
+            <SlidersHorizontal class="h-4 w-4" aria-hidden="true" />
+            Filtros
+          </button>
 
           <button
             type="button"
@@ -381,7 +392,7 @@ const statusFilterItems = [
             href="#"
             class="modal-primary-link inline-flex items-center gap-1 text-sm font-semibold transition"
           >
-            Ver página completa
+            Ver mais
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
@@ -413,6 +424,9 @@ const statusFilterItems = [
     const searchInput = root.querySelector<HTMLInputElement>('[data-search-input]');
     const clearButton = root.querySelector<HTMLButtonElement>('[data-clear-filters]');
     const filterOverlay = root.querySelector<HTMLElement>('[data-filter-overlay]');
+    const filterMenuOpenButtons = [
+      ...root.querySelectorAll<HTMLButtonElement>('[data-filter-menu-open]'),
+    ];
     const filterMenuCloseButtons = [
       ...root.querySelectorAll<HTMLButtonElement>('[data-filter-menu-close]'),
     ];
@@ -468,20 +482,32 @@ const statusFilterItems = [
     if (searchInput && initialBusca) searchInput.value = initialBusca;
 
     const desktopFilters = window.matchMedia('(min-width: 1024px)');
-    const openFilterMenu = () => {
+    let lastFilterTrigger: HTMLElement | null = null;
+    const setFilterOpenButtons = (open: boolean) => {
+      filterMenuOpenButtons.forEach((button) => {
+        button.setAttribute('aria-expanded', String(open));
+      });
+    };
+    const openFilterMenu = (trigger?: HTMLElement | null) => {
+      lastFilterTrigger = trigger ?? (document.activeElement as HTMLElement | null);
       filterOverlay?.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      setFilterOpenButtons(true);
       root.querySelector<HTMLElement>('[data-filter-menu-close]')?.focus();
     };
 
     const closeFilterMenu = () => {
       filterOverlay?.classList.add('hidden');
       document.body.style.overflow = '';
-      window.dispatchEvent(new CustomEvent('experience-filters:closed'));
-      document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]')?.focus();
+      setFilterOpenButtons(false);
+      lastFilterTrigger?.focus();
     };
 
-    window.addEventListener('experience-filters:open', openFilterMenu);
+    filterMenuOpenButtons.forEach((button) => {
+      button.addEventListener('click', () => openFilterMenu(button));
+    });
+
+    window.addEventListener('experience-filters:open', () => openFilterMenu());
     filterMenuCloseButtons.forEach((button) => {
       button.addEventListener('click', closeFilterMenu);
     });
@@ -494,7 +520,7 @@ const statusFilterItems = [
       if (event.matches) {
         filterOverlay?.classList.add('hidden');
         document.body.style.overflow = '';
-        window.dispatchEvent(new CustomEvent('experience-filters:closed'));
+        setFilterOpenButtons(false);
       }
     });
 
@@ -528,15 +554,7 @@ const statusFilterItems = [
       }
     };
 
-    const writeStorageSet = (key: string, values: Set<string>) => {
-      localStorage.setItem(key, JSON.stringify([...values]));
-    };
-
     const readFavorites = () => readStorageSet(favoriteStorageKey);
-
-    const writeFavorites = (favorites: Set<string>) => {
-      writeStorageSet(favoriteStorageKey, favorites);
-    };
 
     const syncFavorites = () => {
       const favorites = readFavorites();
@@ -696,21 +714,9 @@ const statusFilterItems = [
       });
     });
 
-    root.querySelectorAll('[data-favorite-button]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const id = button.getAttribute('data-favorite-id');
-        if (!id) return;
-
-        const favorites = readFavorites();
-        if (favorites.has(id)) {
-          favorites.delete(id);
-        } else {
-          favorites.add(id);
-        }
-        writeFavorites(favorites);
-        syncFavorites();
-        applyFilters();
-      });
+    window.addEventListener('passaporte:favorites-changed', () => {
+      syncFavorites();
+      applyFilters();
     });
 
     // scheduleMapUpdate is a forward ref resolved after map functions are defined

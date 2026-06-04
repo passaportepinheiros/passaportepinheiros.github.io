@@ -5,6 +5,7 @@ import {
   categoryLabel,
   categorySingular,
   sortExperiences,
+  getRelatedExperiences,
   getCategoryCounts,
   compactDescription,
   normalizeDescription,
@@ -166,6 +167,60 @@ describe('sortExperiences', () => {
 
     expect(original[0].data.title).toBe('Zebra');
     expect(original[1].data.title).toBe('Alfa');
+  });
+});
+
+describe('getRelatedExperiences', () => {
+  it('prioriza experiências mais parecidas em vez da ordem alfabética', () => {
+    const current = makeExperience({
+      title: 'Atual',
+      slug: 'atual',
+      category: 'restaurantes',
+      benefitType: 'desconto',
+      categoria_fsq: 'Italian Restaurant',
+      tags: ['pizza', 'vinho'],
+      description: 'Pizza e vinho para compartilhar.',
+    });
+    const alphabeticalFirst = makeExperience({
+      title: 'A Bar',
+      slug: 'a-bar',
+      category: 'restaurantes',
+      benefitType: 'brinde',
+      categoria_fsq: 'Bar',
+      tags: ['drinks'],
+      description: 'Drinks e petiscos.',
+    });
+    const similar = makeExperience({
+      title: 'Z Similar',
+      slug: 'z-similar',
+      category: 'restaurantes',
+      benefitType: 'desconto',
+      categoria_fsq: 'Italian Restaurant',
+      tags: ['pizza', 'vinho'],
+      description: 'Pizza artesanal com vinho.',
+    });
+
+    const related = getRelatedExperiences(current, [alphabeticalFirst, similar, current], 1);
+
+    expect(related.map((item) => item.data.slug)).toEqual(['z-similar']);
+  });
+
+  it('limita a quantidade, exclui a experiência atual e fica na mesma categoria', () => {
+    const current = makeExperience({ slug: 'atual', category: 'restaurantes' });
+    const restaurants = Array.from({ length: 5 }, (_, index) =>
+      makeExperience({
+        title: `Restaurante ${index}`,
+        slug: `restaurante-${index}`,
+        category: 'restaurantes',
+      }),
+    );
+    const service = makeExperience({ slug: 'servico', category: 'servicos' });
+
+    const related = getRelatedExperiences(current, [current, service, ...restaurants], 4);
+
+    expect(related).toHaveLength(4);
+    expect(related.some((item) => item.data.slug === 'atual')).toBe(false);
+    expect(related.every((item) => item.data.category === 'restaurantes')).toBe(true);
   });
 });
 

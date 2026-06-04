@@ -96,5 +96,95 @@ const ogImageUrl = ogImage ?? `${siteOrigin}${withBase('/brand/logo-passaporte-p
       </main>
       <SiteFooter />
     </div>
+    <div id="favorite-toast" class="favorite-toast" role="status" aria-live="polite"></div>
+    <script is:inline>
+      (function () {
+        var favoriteStorageKey = 'passaporte-pinheiros:favorites';
+        var toastTimer = null;
+
+        function readFavorites() {
+          try {
+            var parsed = JSON.parse(localStorage.getItem(favoriteStorageKey) || '[]');
+            return new Set(Array.isArray(parsed) ? parsed : []);
+          } catch {
+            return new Set();
+          }
+        }
+
+        function writeFavorites(favorites) {
+          localStorage.setItem(favoriteStorageKey, JSON.stringify(Array.from(favorites)));
+        }
+
+        function favoriteTitle(button) {
+          return button.getAttribute('data-favorite-title') || 'Experiência';
+        }
+
+        function syncFavoriteButtons() {
+          var favorites = readFavorites();
+          document.querySelectorAll('[data-favorite-button]').forEach(function (button) {
+            var id = button.getAttribute('data-favorite-id');
+            var title = favoriteTitle(button);
+            var active = id ? favorites.has(id) : false;
+
+            button.setAttribute('data-active', String(active));
+            button.setAttribute('aria-pressed', String(active));
+            button.setAttribute(
+              'aria-label',
+              active ? 'Remover ' + title + ' dos favoritos' : 'Favoritar ' + title,
+            );
+          });
+        }
+
+        function showFavoriteToast(message) {
+          var toast = document.getElementById('favorite-toast');
+          if (!toast) return;
+
+          window.clearTimeout(toastTimer);
+          toast.textContent = message;
+          toast.classList.add('favorite-toast--visible');
+          toastTimer = window.setTimeout(function () {
+            toast.classList.remove('favorite-toast--visible');
+          }, 2400);
+        }
+
+        document.addEventListener('click', function (event) {
+          var target = event.target;
+          var button = target instanceof Element
+            ? target.closest('[data-favorite-button]')
+            : null;
+
+          if (!(button instanceof HTMLElement)) return;
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          var id = button.getAttribute('data-favorite-id');
+          if (!id) return;
+
+          var title = favoriteTitle(button);
+          var favorites = readFavorites();
+          var active = !favorites.has(id);
+
+          if (active) {
+            favorites.add(id);
+          } else {
+            favorites.delete(id);
+          }
+
+          writeFavorites(favorites);
+          syncFavoriteButtons();
+          window.dispatchEvent(new CustomEvent('passaporte:favorites-changed', {
+            detail: { id: id, active: active },
+          }));
+          showFavoriteToast(
+            active
+              ? title + ' foi adicionado aos favoritos.'
+              : title + ' foi removido dos favoritos.',
+          );
+        });
+
+        syncFavoriteButtons();
+      })();
+    </script>
   </body>
 </html>

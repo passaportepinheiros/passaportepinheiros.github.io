@@ -1,4 +1,4 @@
-import type { Category, Experience } from '../experiences';
+import type { BenefitType, Category, Experience } from '../experiences';
 
 /**
  * Factory para criar experiências mock com apenas os campos necessários para os testes.
@@ -11,6 +11,9 @@ export function makeExperience(overrides: {
   instagram?: string;
   instagramUrl?: string;
   description?: string;
+  benefitType?: BenefitType;
+  categoria_fsq?: string;
+  tags?: string[];
   enderecos?: Array<{
     logradouro?: string;
     numero?: string;
@@ -20,7 +23,6 @@ export function makeExperience(overrides: {
     lng?: number;
   }>;
   images?: { experience: string; logo: string };
-  source?: { path: string; filename: string };
 } = {}): Experience {
   return {
     id: overrides.slug ?? 'test-experience',
@@ -32,6 +34,9 @@ export function makeExperience(overrides: {
       instagram: overrides.instagram ?? 'instagramtest',
       instagramUrl: overrides.instagramUrl ?? 'https://www.instagram.com/instagramtest/',
       description: overrides.description ?? 'Descrição de teste.',
+      benefitType: overrides.benefitType ?? 'beneficio-especial',
+      categoria_fsq: overrides.categoria_fsq,
+      tags: overrides.tags ?? [],
       enderecos: (overrides.enderecos ?? []).map((e) => ({
         logradouro: e.logradouro ?? 'Rua Teste',
         numero: e.numero ?? '123',
@@ -43,10 +48,6 @@ export function makeExperience(overrides: {
       images: overrides.images ?? {
         experience: '/img/test.jpg',
         logo: '/img/logo-test.png',
-      },
-      source: overrides.source ?? {
-        path: 'test/experiencia-teste.md',
-        filename: 'experiencia-teste.md',
       },
     },
   } as unknown as Experience;
