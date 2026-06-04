@@ -5,6 +5,7 @@ import {
   categoryLabel,
   compactDescription,
   experiencePath,
+  instagramProfileUrl,
   searchPayload,
   type Experience,
 } from '../lib/experiences';
@@ -19,6 +20,7 @@ const { data } = experience;
 const href = experiencePath(experience);
 const description = compactDescription(data.description ?? '');
 const experienceId = `${data.category}:${data.slug}`;
+const instagramHref = instagramProfileUrl(data.instagram);
 ---
 
 <article
@@ -99,9 +101,9 @@ const experienceId = `${data.category}:${data.slug}`;
     </div>
 
     <div class="mt-auto flex min-w-0 items-center justify-between gap-4 pt-5">
-      {data.instagram && data.instagramUrl ? (
+      {data.instagram && instagramHref ? (
         <a
-          href={data.instagramUrl}
+          href={instagramHref}
           target="_blank"
           rel="noreferrer"
           data-no-modal

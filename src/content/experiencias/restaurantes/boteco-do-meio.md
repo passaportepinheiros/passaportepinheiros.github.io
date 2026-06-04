@@ -3,6 +3,7 @@ title: "Boteco do Meio"
 slug: "boteco-do-meio"
 googlePlaceId: "ChIJDXEyVBNXzpQR4mxp3sNA4i8"
 category: "restaurantes"
+instagram: "botecodomeio_"
 enderecos:
   - logradouro: "Rua Ferreira de Araújo"
     numero: "756"

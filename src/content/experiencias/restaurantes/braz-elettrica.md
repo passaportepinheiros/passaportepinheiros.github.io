@@ -12,7 +12,6 @@ foursquare_id: "594d3622ad17890c42a0c6b6"
 categoria_fsq: "Pizzeria"
 website: "https://www.brazelettrica.com.br"
 instagram: "brazelettrica"
-instagramUrl: "https://www.instagram.com/brazelettrica/"
 tags: ["pizza"]
 description: |-
   Na compra de 1 pizza, seu acompanhante ganha outra de igual ou menor valor. Válido na Bráz Elettrica da Rua dos Pinheiros, de domingo a quinta-feira.

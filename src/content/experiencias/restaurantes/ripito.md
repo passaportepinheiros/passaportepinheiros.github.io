@@ -4,7 +4,6 @@ slug: "ripito"
 googlePlaceId: "ChIJlU0P1eFXzpQRmBB7JycdaS0"
 category: "restaurantes"
 instagram: "ripito.cafeteria"
-instagramUrl: "https://www.instagram.com/ripito.cafeteria/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "312"

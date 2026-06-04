@@ -4,7 +4,6 @@ slug: taba-pasteis-e-salgados
 googlePlaceId: "ChIJ28nTplFXzpQRTTYl2AZPfr4"
 category: restaurantes
 instagram: tabapastel
-instagramUrl: https://www.instagram.com/tabapastel/
 enderecos:
   - logradouro: Rua Pedro Cristi
     numero: "89"

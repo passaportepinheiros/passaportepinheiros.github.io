@@ -24,6 +24,17 @@ export function sortExperiences(experiences: Experience[]): Experience[] {
   );
 }
 
+export function instagramProfileUrl(instagram?: string | null): string | undefined {
+  const handle = instagram
+    ?.trim()
+    .replace(/^@+/, '')
+    .replace(/^https?:\/\/(?:www\.)?instagram\.com\//i, '')
+    .replace(/[/?#].*$/, '')
+    .replace(/\/+$/, '');
+
+  return handle ? `https://www.instagram.com/${handle}/` : undefined;
+}
+
 export function getRelatedExperiences(
   current: Experience,
   experiences: Experience[],
@@ -209,7 +220,7 @@ export function searchPayload(experience: Experience): string {
     experience.data.slug,
     experience.data.category,
     experience.data.instagram ?? '',
-    experience.data.instagramUrl ?? '',
+    instagramProfileUrl(experience.data.instagram) ?? '',
     experience.data.description ?? '',
     enderecos,
   ]

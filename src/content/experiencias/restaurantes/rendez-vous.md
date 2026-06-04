@@ -4,7 +4,6 @@ slug: "rendez-vous"
 googlePlaceId: "ChIJ71IsCZ5XzpQRHii6NHQSmhs"
 category: "restaurantes"
 instagram: "rendezvous.bistro"
-instagramUrl: "https://www.instagram.com/rendezvous.bistro/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "179"

@@ -4,7 +4,6 @@ slug: "ogres-tatoo"
 googlePlaceId: "ChIJU-ibOXNXzpQRmmysUZa0QH0"
 category: "servicos"
 instagram: "ogrestattoo"
-instagramUrl: "https://www.instagram.com/ogrestattoo/"
 enderecos:
   - logradouro: "Rua Teodoro Sampaio"
     numero: "2767"

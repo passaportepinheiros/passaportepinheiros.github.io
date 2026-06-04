@@ -3,6 +3,7 @@ title: "Glow Coffee Protein"
 slug: "glow-coffee-protein"
 googlePlaceId: "ChIJ-efKL3dXzpQR1aFNWLNObaw"
 category: "restaurantes"
+instagram: "glowcoffeeprotein"
 enderecos:
   - logradouro: "Rua Artur de Azevedo"
     numero: "1359"

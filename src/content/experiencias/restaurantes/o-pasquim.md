@@ -4,7 +4,6 @@ slug: "o-pasquim"
 googlePlaceId: "ChIJVxParKJXzpQRmD6--HklS1I"
 category: "restaurantes"
 instagram: "opasquimbar"
-instagramUrl: "https://www.instagram.com/opasquimbar/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "1097"

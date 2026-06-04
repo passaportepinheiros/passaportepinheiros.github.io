@@ -4,7 +4,6 @@ slug: "vino"
 googlePlaceId: "ChIJcSVNBHZXzpQRPoVm5atdDmk"
 category: "restaurantes"
 instagram: "vinopinheiros"
-instagramUrl: "https://www.instagram.com/vinopinheiros/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "47"

@@ -4,7 +4,6 @@ slug: "sakeumi-restaurante"
 googlePlaceId: "ChIJmT4JbydXzpQR07QdUZoNqa0"
 category: "restaurantes"
 instagram: "sakeumi.restaurante"
-instagramUrl: "https://www.instagram.com/sakeumi.restaurante/"
 enderecos:
   - logradouro: "Rua Maria Carolina"
     numero: "730"

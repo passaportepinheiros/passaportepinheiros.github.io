@@ -4,7 +4,6 @@ slug: "influx"
 googlePlaceId: "ChIJ6_EgAnZXzpQRIXPb19wcLmc"
 category: "servicos"
 instagram: "influxbr"
-instagramUrl: "https://www.instagram.com/influxbr/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "75"

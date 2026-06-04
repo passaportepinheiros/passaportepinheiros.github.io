@@ -3,6 +3,7 @@ title: "Cristal Casamia"
 slug: "cristal-casamia"
 googlePlaceId: "ChIJCf8PNX5XzpQR4Ma3rE3rPNk"
 category: "produtos"
+instagram: "cristalcasamia"
 enderecos:
   - logradouro: "Rua Costa Carvalho"
     numero: "234"

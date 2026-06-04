@@ -15,7 +15,6 @@ enderecos:
 foursquare_id: "5e710b9d4dfa1a00082cd175"
 categoria_fsq: "Comfort Food Restaurant"
 instagram: "barracadalulu"
-instagramUrl: "https://www.instagram.com/barracadalulu/"
 tags: ["confort-food"]
 description: |-
   Na compra de qualquer item do cardápio, seu acompanhante ganha outro de igual ou menor valor.

@@ -4,7 +4,6 @@ slug: "lanchonete-da-cidade"
 googlePlaceId: "ChIJNbUVd6NXzpQRS-oHRo-wvG0"
 category: "restaurantes"
 instagram: "lanchonetedacidade"
-instagramUrl: "https://www.instagram.com/lanchonetedacidade/"
 enderecos:
   - logradouro: "Rua Coropé"
     numero: "51"

@@ -4,7 +4,6 @@ slug: "la-sabrosa"
 googlePlaceId: "ChIJsZZX1TJYzpQRIbnZlCCsWyY"
 category: "restaurantes"
 instagram: "taquerialasabrosa"
-instagramUrl: "https://www.instagram.com/taquerialasabrosa/"
 enderecos:
   - logradouro: "Rua Francisco Leitão"
     numero: "246"

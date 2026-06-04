@@ -4,7 +4,6 @@ slug: "beik-cookies"
 googlePlaceId: "ChIJdWiDAiZXzpQRQyXh7l-mGHQ"
 category: "restaurantes"
 instagram: "beik_cookies"
-instagramUrl: "https://www.instagram.com/beik_cookies/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "248A"

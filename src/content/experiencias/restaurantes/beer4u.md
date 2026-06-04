@@ -4,7 +4,6 @@ slug: "beer4u"
 googlePlaceId: "ChIJgU9i1LxXzpQRW79he6499Hc"
 category: "restaurantes"
 instagram: "beer4upinheiros"
-instagramUrl: "https://www.instagram.com/beer4upinheiros/"
 enderecos:
   - logradouro: "Rua João Moura"
     numero: "595"

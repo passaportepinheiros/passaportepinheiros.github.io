@@ -4,7 +4,6 @@ slug: "bar-do-quintal"
 googlePlaceId: "ChIJG0C0tHBXzpQRTTuY9iKsRT4"
 category: "restaurantes"
 instagram: "bardoquintal"
-instagramUrl: "https://www.instagram.com/bardoquintal/"
 enderecos:
   - logradouro: "Rua Coropé"
     numero: "87"

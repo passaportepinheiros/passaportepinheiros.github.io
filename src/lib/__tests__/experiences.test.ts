@@ -404,10 +404,8 @@ describe('searchPayload', () => {
     expect(searchPayload(exp)).toContain('barpiraja');
   });
 
-  it('inclui instagramUrl', () => {
-    const exp = makeExperience({
-      instagramUrl: 'https://www.instagram.com/barpiraja/',
-    });
+  it('inclui URL derivada do instagram', () => {
+    const exp = makeExperience({ instagram: 'barpiraja' });
     expect(searchPayload(exp)).toContain('instagram.com/barpiraja');
   });
 

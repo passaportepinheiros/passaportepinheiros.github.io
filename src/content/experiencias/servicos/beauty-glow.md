@@ -3,6 +3,7 @@ title: "Beauty Glow"
 slug: "beauty-glow"
 googlePlaceId: "ChIJsakN9lBXzpQRJi_5jF9T-G4"
 category: "servicos"
+instagram: "oficialbeautyglow"
 enderecos:
   - logradouro: "Rua Artur Azevedo"
     numero: "1359"

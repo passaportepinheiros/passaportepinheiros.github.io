@@ -3,6 +3,7 @@ title: "Casa Bugbee"
 slug: "casa-bugbee"
 googlePlaceId: "ChIJnciuUgBXzpQR_Bi1uyyxa38"
 category: "produtos"
+instagram: "casabugbee.pinheiros"
 enderecos:
   - logradouro: "Rua Mateus Grou"
     numero: "306"

@@ -4,7 +4,6 @@ slug: "albero-dei-gelati"
 googlePlaceId: "ChIJj8bR7SlXzpQRBGb7SL9IqZ4"
 category: "restaurantes"
 instagram: "alberodeigelati"
-instagramUrl: "https://www.instagram.com/alberodeigelati/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "342"

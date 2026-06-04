@@ -4,7 +4,6 @@ slug: "nos-outros"
 googlePlaceId: "ChIJNWjonINXzpQRfNVKFGxZmQg"
 category: "restaurantes"
 instagram: "nos.otros"
-instagramUrl: "https://www.instagram.com/nos.otros/"
 enderecos:
   - logradouro: "Rua Cônego Eugênio Leite"
     numero: "727"

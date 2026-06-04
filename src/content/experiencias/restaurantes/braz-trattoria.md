@@ -4,7 +4,6 @@ slug: "braz-trattoria"
 googlePlaceId: "ChIJaavYaQBXzpQRwRqh6EDGKrg"
 category: "restaurantes"
 instagram: "braztrattoria"
-instagramUrl: "https://www.instagram.com/braztrattoria/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "412"

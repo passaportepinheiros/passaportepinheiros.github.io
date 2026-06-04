@@ -4,7 +4,6 @@ slug: "ombra"
 googlePlaceId: "ChIJQQAXVINXzpQRADbVPR22Ab0"
 category: "restaurantes"
 instagram: "ombra_sp"
-instagramUrl: "https://www.instagram.com/ombra_sp/"
 enderecos:
   - logradouro: "Rua Lisboa"
     numero: "579"

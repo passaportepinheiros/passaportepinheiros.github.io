@@ -4,7 +4,6 @@ slug: "gua-co"
 googlePlaceId: "ChIJn5JE5JZXzpQRDEZ-JqZulQQ"
 category: "restaurantes"
 instagram: "gua.co"
-instagramUrl: "https://www.instagram.com/gua.co/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "861"

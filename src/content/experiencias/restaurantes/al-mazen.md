@@ -4,7 +4,6 @@ slug: "al-mazen"
 googlePlaceId: "ChIJWdq0LUBXzpQRJXGt2P_YPwo"
 category: "restaurantes"
 instagram: "almazen_chefmazenzwawe"
-instagramUrl: "https://www.instagram.com/almazen_chefmazenzwawe/"
 enderecos:
   - logradouro: "Rua Mourato Coelho"
     numero: "1327"

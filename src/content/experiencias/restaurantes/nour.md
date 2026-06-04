@@ -4,7 +4,6 @@ slug: "nour"
 googlePlaceId: "ChIJVZlB8hVXzpQRoTrxVI1XhJk"
 category: "restaurantes"
 instagram: "nourbrasil"
-instagramUrl: "https://www.instagram.com/nourbrasil/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "1277"

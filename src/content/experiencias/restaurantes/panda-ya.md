@@ -4,7 +4,6 @@ slug: "panda-ya"
 googlePlaceId: "ChIJuX7LiKNXzpQRFGJTqFSp4q8"
 category: "restaurantes"
 instagram: "pandaya.dumpling"
-instagramUrl: "https://www.instagram.com/pandaya.dumpling/"
 enderecos:
   - logradouro: "Rua Lisboa"
     numero: "971"

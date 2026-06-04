@@ -16,6 +16,7 @@ import {
   benefitTypes,
   categoryLabel,
   getCategoryCounts,
+  instagramProfileUrl,
   knownTags,
   sortExperiences,
   type Category,
@@ -52,7 +53,7 @@ const experiencesData = sortedExperiences.map((exp) => ({
   title: exp.data.title,
   description: exp.data.description,
   instagram: exp.data.instagram,
-  instagramUrl: exp.data.instagramUrl,
+  instagramHref: instagramProfileUrl(exp.data.instagram),
   tags: exp.data.tags ?? [],
   benefitType: exp.data.benefitType ?? 'beneficio-especial',
   images: exp.data.images
@@ -873,7 +874,7 @@ const statusFilterItems = [
       title: string;
       description?: string;
       instagram?: string;
-      instagramUrl?: string;
+      instagramHref?: string;
       images?: { experience: string; logo: string };
       enderecos: Array<{
         logradouro: string;
@@ -956,7 +957,7 @@ const statusFilterItems = [
             </div>
           </div>`;
           // Contact buttons row
-          if (end.telefones.length > 0 || exp.instagram) {
+          if (end.telefones.length > 0 || (exp.instagram && exp.instagramHref)) {
             html += `<div class="flex flex-wrap gap-3">`;
             for (const tel of end.telefones) {
               const isWA = tel.tipo === 'whatsapp';
@@ -968,17 +969,17 @@ const statusFilterItems = [
                 : 'modal-contact-link inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition';
               html += `<a href="${href}" ${isWA ? 'target="_blank" rel="noreferrer"' : ''} class="${cls}">${icon}${label}</a>`;
             }
-            if (exp.instagram) {
-              html += `<a href="${esc(exp.instagramUrl)}" target="_blank" rel="noreferrer" class="modal-contact-link inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition">${instagramSvg}@${esc(exp.instagram)}</a>`;
+            if (exp.instagram && exp.instagramHref) {
+              html += `<a href="${esc(exp.instagramHref)}" target="_blank" rel="noreferrer" class="modal-contact-link inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition">${instagramSvg}@${esc(exp.instagram)}</a>`;
             }
             html += `</div>`;
           }
         }
         html += `</div></section>`;
-      } else if (exp.instagram) {
+      } else if (exp.instagram && exp.instagramHref) {
         html += `<section class="space-y-4">
           <p class="text-[12px] font-semibold uppercase tracking-widest text-muted">Instagram</p>
-          <a href="${esc(exp.instagramUrl)}" target="_blank" rel="noreferrer" class="modal-contact-link inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition">${instagramSvg}@${esc(exp.instagram)}</a>
+          <a href="${esc(exp.instagramHref)}" target="_blank" rel="noreferrer" class="modal-contact-link inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition">${instagramSvg}@${esc(exp.instagram)}</a>
         </section>`;
       }
 

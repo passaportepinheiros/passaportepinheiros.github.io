@@ -4,7 +4,6 @@ slug: "capivara"
 googlePlaceId: "ChIJIVuiotxXzpQRp8_1ADcWa-k"
 category: "restaurantes"
 instagram: "redecapivara"
-instagramUrl: "https://www.instagram.com/redecapivara/"
 enderecos:
   - logradouro: "Rua Guaicuí"
     numero: "19"

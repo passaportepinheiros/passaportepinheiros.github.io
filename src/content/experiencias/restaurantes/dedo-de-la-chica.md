@@ -4,7 +4,6 @@ slug: "dedo-de-la-chica"
 googlePlaceId: "ChIJO7YXnZdXzpQRgqlbzmvNsio"
 category: "restaurantes"
 instagram: "dedodelachica"
-instagramUrl: "https://www.instagram.com/dedodelachica/"
 enderecos:
   - logradouro: "Rua Fidalga"
     numero: "32"

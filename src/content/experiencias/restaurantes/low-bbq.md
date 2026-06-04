@@ -4,7 +4,6 @@ slug: "low-bbq"
 googlePlaceId: "ChIJ4bGnhpFXzpQRFO351Hg4_QI"
 category: "restaurantes"
 instagram: "lowbbqbar"
-instagramUrl: "https://www.instagram.com/lowbbqbar/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "1235"

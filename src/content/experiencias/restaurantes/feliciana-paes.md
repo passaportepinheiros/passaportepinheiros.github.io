@@ -4,7 +4,6 @@ slug: "feliciana-paes"
 googlePlaceId: "ChIJq22Y1KRXzpQR_oWUUO3gr6A"
 category: "restaurantes"
 instagram: "feliciana.paes"
-instagramUrl: "https://www.instagram.com/feliciana.paes/"
 enderecos:
   - logradouro: "Rua Pedro Cristi"
     numero: "89"

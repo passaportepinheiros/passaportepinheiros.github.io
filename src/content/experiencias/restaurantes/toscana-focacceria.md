@@ -4,7 +4,6 @@ slug: "toscana-focacceria"
 googlePlaceId: "ChIJBSWUJQBXzpQR1I3mvXP4KpQ"
 category: "restaurantes"
 instagram: "toscana.focacceria"
-instagramUrl: "https://www.instagram.com/toscana.focacceria/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "257"

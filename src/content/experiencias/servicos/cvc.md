@@ -3,6 +3,7 @@ title: "CVC"
 slug: "cvc"
 googlePlaceId: "ChIJ_XjNPNJXzpQRyluyhLMJoCM"
 category: "servicos"
+instagram: "cvc.sp.pinheiros"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "334"

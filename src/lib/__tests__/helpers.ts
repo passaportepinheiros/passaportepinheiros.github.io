@@ -9,7 +9,6 @@ export function makeExperience(overrides: {
   slug?: string;
   category?: Category;
   instagram?: string;
-  instagramUrl?: string;
   description?: string;
   benefitType?: BenefitType;
   categoria_fsq?: string;
@@ -32,7 +31,6 @@ export function makeExperience(overrides: {
       slug: overrides.slug ?? 'experiencia-teste',
       category: overrides.category ?? 'restaurantes',
       instagram: overrides.instagram ?? 'instagramtest',
-      instagramUrl: overrides.instagramUrl ?? 'https://www.instagram.com/instagramtest/',
       description: overrides.description ?? 'Descrição de teste.',
       benefitType: overrides.benefitType ?? 'beneficio-especial',
       categoria_fsq: overrides.categoria_fsq,

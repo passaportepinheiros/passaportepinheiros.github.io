@@ -4,7 +4,6 @@ slug: "the-taco-shop"
 googlePlaceId: "ChIJm3rrdnxXzpQRrFgmRwUg5yw"
 category: "restaurantes"
 instagram: "thetacoshop_br"
-instagramUrl: "https://www.instagram.com/thetacoshop_br/"
 enderecos:
   - logradouro: "Rua Ferreira de Araújo"
     numero: "381"

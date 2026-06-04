@@ -30,7 +30,6 @@ const experiencias = defineCollection({
     slug: z.string(),
     category: z.enum(['produtos', 'restaurantes', 'servicos']),
     instagram: z.string().optional(),
-    instagramUrl: z.url().optional(),
     enderecos: z.array(enderecoSchema).default([]),
     googlePlaceId: z.string().optional(),
     foursquare_id: z.string().optional(),

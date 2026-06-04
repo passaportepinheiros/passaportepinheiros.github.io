@@ -4,7 +4,6 @@ slug: "miya-wine-bar"
 googlePlaceId: "ChIJPRTGZ4dXzpQRa_tjh3TM8dQ"
 category: "restaurantes"
 instagram: "miyawinebar"
-instagramUrl: "https://www.instagram.com/miyawinebar/"
 enderecos:
   - logradouro: "Rua Padre Carvalho"
     numero: "55"

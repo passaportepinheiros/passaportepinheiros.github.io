@@ -8,6 +8,7 @@ import {
   compactDescription,
   descriptionParagraphs,
   getRelatedExperiences,
+  instagramProfileUrl,
   sortExperiences,
   type Experience,
 } from '../lib/experiences';
@@ -32,6 +33,7 @@ const { experience } = Astro.props as Props;
 const { data } = experience;
 const allExperiences = sortExperiences(await getCollection('experiencias'));
 const related = getRelatedExperiences(experience, allExperiences, 4);
+const instagramHref = instagramProfileUrl(data.instagram);
 const fallbackDescription = 'Informações da experiência em atualização.';
 const description = data.description ?? fallbackDescription;
 const benefitDescription = data.description
@@ -78,6 +80,7 @@ const pageUrl = `${siteOrigin}${withBase(`/${data.slug}/`)}`;
 const ogImage = data.images?.experience ? `${siteOrigin}${withBase(data.images.experience)}` : undefined;
 
 const schemaType = data.category === 'restaurantes' ? 'Restaurant' : 'LocalBusiness';
+const sameAs = [data.website, instagramHref].filter((url): url is string => Boolean(url));
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': schemaType,
@@ -85,8 +88,7 @@ const jsonLd = {
   description: compactDescription(description, 200),
   url: pageUrl,
   ...(ogImage ? { image: ogImage } : {}),
-  ...(data.website ? { sameAs: [data.website] } : {}),
-  ...(data.instagramUrl ? { sameAs: [data.instagramUrl] } : {}),
+  ...(sameAs.length > 0 ? { sameAs } : {}),
   address: primeiroEndereco
     ? {
         '@type': 'PostalAddress',
@@ -191,9 +193,9 @@ const jsonLd = {
         </div>
 
         <div class="mt-6 grid gap-3 border-t border-border/70 pt-5">
-          {data.instagramUrl && (
+          {instagramHref && (
             <a
-              href={data.instagramUrl}
+              href={instagramHref}
               target="_blank"
               rel="noreferrer"
               class="focus-ring inline-flex items-center justify-center gap-2 rounded border border-primary px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-primary hover:text-white"

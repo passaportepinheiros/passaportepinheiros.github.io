@@ -4,7 +4,6 @@ slug: "manduque-massas-e-macas"
 googlePlaceId: "ChIJeQcu4LNXzpQRFx-HCXZdL5A"
 category: "restaurantes"
 instagram: "manduque.massas"
-instagramUrl: "https://www.instagram.com/manduque.massas/"
 enderecos:
   - logradouro: "Rua Pedro Cristi"
     numero: "89"

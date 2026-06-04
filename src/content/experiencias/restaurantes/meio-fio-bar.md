@@ -15,7 +15,6 @@ enderecos:
 foursquare_id: "5c423a323092be002c05d208"
 categoria_fsq: "Cocktail Bar"
 instagram: "arlete.bar"
-instagramUrl: "https://www.instagram.com/arlete.bar/"
 tags: ["bar", "coquetel", "drinks"]
 description: |-
   Na compra de 1 prato, seu acompanhante ganha outro de igual ou menor valor.

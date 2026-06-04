@@ -4,7 +4,6 @@ slug: "modern-pets"
 googlePlaceId: "ChIJGQooILxXzpQRI1b0j1pnrCE"
 category: "servicos"
 instagram: "modernpets.br"
-instagramUrl: "https://www.instagram.com/modernpets.br/"
 enderecos:
   - logradouro: "Rua Artur de Azevedo"
     numero: "1014"

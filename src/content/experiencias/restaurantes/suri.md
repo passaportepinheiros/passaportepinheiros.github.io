@@ -4,7 +4,6 @@ slug: "suri"
 googlePlaceId: "ChIJ9bH1vJ5XzpQRkhuIjzH7urI"
 category: "restaurantes"
 instagram: "suricevichebar"
-instagramUrl: "https://www.instagram.com/suricevichebar/"
 enderecos:
   - logradouro: "Rua Costa Carvalho"
     numero: "72"

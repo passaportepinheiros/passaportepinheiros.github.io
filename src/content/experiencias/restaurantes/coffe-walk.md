@@ -4,7 +4,6 @@ slug: "coffe-walk"
 googlePlaceId: "ChIJETVoXrxXzpQRQleLtWNRE2g"
 category: "restaurantes"
 instagram: "coffeewalkbr"
-instagramUrl: "https://www.instagram.com/coffeewalkbr/"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "165"

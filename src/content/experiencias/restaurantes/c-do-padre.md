@@ -4,7 +4,6 @@ slug: "c-do-padre"
 googlePlaceId: "ChIJM5bR4qZXzpQRq4wbXgRa-lg"
 category: "restaurantes"
 instagram: "ocdopadre"
-instagramUrl: "https://www.instagram.com/ocdopadre/"
 enderecos:
   - logradouro: "Rua Padre Carvalho"
     numero: "799"

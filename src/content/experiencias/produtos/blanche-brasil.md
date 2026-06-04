@@ -4,7 +4,6 @@ slug: "blanche-brasil"
 googlePlaceId: "ChIJAQAk5p1XzpQR-GKzfuqd6CI"
 category: "produtos"
 instagram: "blanche.brasil"
-instagramUrl: "https://www.instagram.com/blanche.brasil/"
 enderecos:
   - logradouro: "Rua Mateus Grou"
     numero: "185"

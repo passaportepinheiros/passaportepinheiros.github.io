@@ -4,7 +4,6 @@ slug: "bakebun-bakery"
 googlePlaceId: "ChIJnbOXzNJXzpQROJ6-kdZ1Mhc"
 category: "restaurantes"
 instagram: "bakebunoficial"
-instagramUrl: "https://www.instagram.com/bakebunoficial/"
 enderecos:
   - logradouro: "Rua Padre Carvalho"
     numero: "97"

@@ -4,7 +4,6 @@ slug: "dona-vitamina"
 googlePlaceId: "ChIJQ8Ix7J1XzpQRu2HM9JGbbzs"
 category: "restaurantes"
 instagram: "donavitamina"
-instagramUrl: "https://www.instagram.com/donavitamina/"
 enderecos:
   - logradouro: "Rua Mateus Grou"
     numero: "152"

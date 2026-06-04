@@ -3,6 +3,7 @@ title: "Quiropraxia Pinheiros"
 slug: "quiropraxia-pinheiros"
 googlePlaceId: "ChIJh5MUzPpXzpQRTvO57lnc0OI"
 category: "servicos"
+instagram: "quiropraxiapinheiros"
 enderecos:
   - logradouro: "Rua Paes Leme"
     numero: "136"

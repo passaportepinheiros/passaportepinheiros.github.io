@@ -3,6 +3,7 @@ title: "Esquina do Meio"
 slug: "esquina-do-meio"
 googlePlaceId: "ChIJzYEZJqFXzpQR_zpyM25rKho"
 category: "restaurantes"
+instagram: "esquinadomeio_"
 enderecos:
   - logradouro: "Rua Ferreira de Araújo"
     numero: "685"

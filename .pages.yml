@@ -129,11 +129,6 @@ content:
             type: string
             required: true
             description: Informe sem @.
-          - name: instagramUrl
-            label: URL do Instagram
-            type: string
-            required: true
-            pattern: "^https://www\\.instagram\\.com/.+/$"
           - name: enderecos
             label: Enderecos
             component: endereco
@@ -203,11 +198,6 @@ content:
             type: string
             required: true
             description: Informe sem @.
-          - name: instagramUrl
-            label: URL do Instagram
-            type: string
-            required: true
-            pattern: "^https://www\\.instagram\\.com/.+/$"
           - name: enderecos
             label: Enderecos
             component: endereco
@@ -277,11 +267,6 @@ content:
             type: string
             required: true
             description: Informe sem @.
-          - name: instagramUrl
-            label: URL do Instagram
-            type: string
-            required: true
-            pattern: "^https://www\\.instagram\\.com/.+/$"
           - name: enderecos
             label: Enderecos
             component: endereco

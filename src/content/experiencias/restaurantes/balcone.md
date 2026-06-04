@@ -4,7 +4,6 @@ slug: "balcone"
 googlePlaceId: "ChIJyUicCrxXzpQR9PG2kCdEhAM"
 category: "restaurantes"
 instagram: "balcone.sp"
-instagramUrl: "https://www.instagram.com/balcone.sp/"
 enderecos:
   - logradouro: "Rua Cristiano Viana"
     numero: "370"

@@ -4,7 +4,6 @@ slug: "carmel-s-pipocas"
 googlePlaceId: "ChIJTUgCJYRXzpQRsHiqkgFlEuA"
 category: "restaurantes"
 instagram: "carmelspipocas"
-instagramUrl: "https://www.instagram.com/carmelspipocas/"
 enderecos:
   - logradouro: "Rua Francisco Leitão"
     numero: "285"

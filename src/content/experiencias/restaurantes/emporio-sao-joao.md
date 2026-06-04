@@ -4,7 +4,6 @@ slug: "emporio-sao-joao"
 googlePlaceId: "ChIJH4in0ndXzpQRK2L4CJXHGN4"
 category: "restaurantes"
 instagram: "emporiosaojoao"
-instagramUrl: "https://www.instagram.com/emporiosaojoao/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "456"

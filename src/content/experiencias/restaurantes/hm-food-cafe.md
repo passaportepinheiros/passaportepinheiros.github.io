@@ -4,7 +4,6 @@ slug: "hm-food-cafe"
 googlePlaceId: "ChIJL6zyR6ZXzpQRAOwaP8ksrPQ"
 category: "restaurantes"
 instagram: "hmfoodcafe"
-instagramUrl: "https://www.instagram.com/hmfoodcafe/"
 enderecos:
   - logradouro: "Rua Teodoro Sampaio"
     numero: "1027"

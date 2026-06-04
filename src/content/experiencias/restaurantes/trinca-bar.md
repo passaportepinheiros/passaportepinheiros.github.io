@@ -4,7 +4,6 @@ slug: "trinca-bar"
 googlePlaceId: "ChIJ20FycqpXzpQRKGIldRJuwCk"
 category: "restaurantes"
 instagram: "trincabar"
-instagramUrl: "https://www.instagram.com/trincabar/"
 enderecos:
   - logradouro: "Rua Costa Carvalho"
     numero: "96"

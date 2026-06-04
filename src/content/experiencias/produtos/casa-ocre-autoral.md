@@ -3,6 +3,7 @@ title: "Casa Ocre Autoral"
 slug: "casa-ocre-autoral"
 googlePlaceId: "ChIJKU8hFv5XzpQR8yOdgqX9vqc"
 category: "produtos"
+instagram: "casa_ocreautoral"
 enderecos:
   - logradouro: "Rua Fradique Coutinho"
     numero: "69"

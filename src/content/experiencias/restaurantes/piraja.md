@@ -4,7 +4,6 @@ slug: "piraja"
 googlePlaceId: "ChIJd2CZjrNXzpQRZRnafznFQIE"
 category: "restaurantes"
 instagram: "barpiraja"
-instagramUrl: "https://www.instagram.com/barpiraja/"
 enderecos:
   - logradouro: "Rua dos Pinheiros"
     numero: "209"

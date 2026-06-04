@@ -4,7 +4,6 @@ slug: "petros-greek-taverna"
 googlePlaceId: "ChIJVat1QFZXzpQRqZN2a-gc6pI"
 category: "restaurantes"
 instagram: "petrosgreektaverna"
-instagramUrl: "https://www.instagram.com/petrosgreektaverna/"
 enderecos:
   - logradouro: "Rua Doutor Virgílio Carvalho Pinto"
     numero: "137"

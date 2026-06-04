@@ -3,6 +3,7 @@ title: "Kaji Coffee & Curio Market"
 slug: "kaji-coffee-e-curio-market"
 googlePlaceId: "ChIJW5i1HA1XzpQRRjtbrLSLiaY"
 category: "restaurantes"
+instagram: "kaji_coffee"
 enderecos:
   - logradouro: "Rua Doutor Manoel Carlos Ferraz de Almeida"
     numero: "37"
