@@ -23,6 +23,17 @@ const wavePatternUrl = `--wave-pattern-url: url("${withBase('/brand/wave-pattern
 const siteOrigin = Astro.site ? new URL(Astro.site).origin : 'https://passaportepinheiros.com.br';
 const canonicalUrl = canonical ?? (siteOrigin + Astro.url.pathname);
 const ogImageUrl = ogImage ?? `${siteOrigin}${withBase('/brand/logo-passaporte-pinheiros.svg')}`;
+const googleTagManagerId = import.meta.env.PUBLIC_GOOGLE_TAG_MANAGER_ID?.trim();
+const hasGoogleTagManager = Boolean(
+  googleTagManagerId && /^GTM-[A-Z0-9]+$/.test(googleTagManagerId),
+);
+const googleTagManagerScript = hasGoogleTagManager
+  ? `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':` +
+    `new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],` +
+    `j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=` +
+    `'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);` +
+    `})(window,document,'script','dataLayer','${googleTagManagerId}');`
+  : '';
 ---
 
 <!doctype html>
@@ -34,6 +45,14 @@ const ogImageUrl = ogImage ?? `${siteOrigin}${withBase('/brand/logo-passaporte-p
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="theme-color" content="#006ec7" />
+    {
+      hasGoogleTagManager && (
+        <>
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <script is:inline set:html={googleTagManagerScript}></script>
+        </>
+      )
+    }
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -74,6 +93,19 @@ const ogImageUrl = ogImage ?? `${siteOrigin}${withBase('/brand/logo-passaporte-p
     <slot name="head" />
   </head>
   <body>
+    {
+      hasGoogleTagManager && (
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}`}
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          >
+          </iframe>
+        </noscript>
+      )
+    }
     <script is:inline>
       (function () {
         var saved = localStorage.getItem('pp-theme');

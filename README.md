@@ -78,6 +78,18 @@ Para validar os arquivos Astro e TypeScript:
 pnpm check
 ```
 
+### Variaveis de ambiente
+
+Copie `.env.example` para `.env` quando precisar rodar o projeto com as mesmas integracoes de producao:
+
+```sh
+cp .env.example .env
+```
+
+Variaveis disponiveis:
+
+- `PUBLIC_GOOGLE_TAG_MANAGER_ID`: ID do Google Tag Manager, por exemplo `GTM-TGJVL6FV`.
+
 ## Enriquecimento com Google Places
 
 O fluxo do Google Places existe apenas para descobrir e revisar `googlePlaceId`.

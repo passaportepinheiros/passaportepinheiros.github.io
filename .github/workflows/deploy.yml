@@ -77,6 +77,12 @@ jobs:
             - name: Install dependencies
               run: pnpm install --frozen-lockfile
 
+            - name: Write production environment
+              env:
+                  PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.PUBLIC_GOOGLE_TAG_MANAGER_ID || 'GTM-TGJVL6FV' }}
+              run: |
+                  printf 'PUBLIC_GOOGLE_TAG_MANAGER_ID=%s\n' "${PUBLIC_GOOGLE_TAG_MANAGER_ID}" > .env
+
             - name: Build site
               run: pnpm build
 
