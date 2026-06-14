@@ -1,7 +1,9 @@
 ---
 import { ChevronDown, Menu, X } from '@lucide/astro';
+import { getSiteSettings } from '../lib/site-content';
 import { withBase, withoutBase } from '../lib/urls';
 
+const settings = await getSiteSettings();
 const pathname = withoutBase(Astro.url.pathname);
 const activeCategory = Astro.url.searchParams.get('categoria');
 
@@ -57,15 +59,15 @@ const mobileLinks = [
 
 <header class="sticky top-0 z-[5000] border-b border-border/70 bg-white/95 backdrop-blur dark:bg-[#162130]/95">
   <div class="container-shell flex h-20 items-center justify-between gap-6">
-    <a href={withBase('/')} class="flex items-center" aria-label="Passaporte Pinheiros">
+    <a href={withBase('/')} class="flex items-center" aria-label={settings.brandName}>
       <img
         src={withBase('/brand/logo-passaporte-pinheiros.svg')}
-        alt="Passaporte Pinheiros"
+        alt={settings.brandName}
         class="h-10 w-auto dark:hidden md:h-12"
       />
       <img
         src={withBase('/brand/logo-passaporte-pinheiros-white.svg')}
-        alt="Passaporte Pinheiros"
+        alt={settings.brandName}
         class="hidden h-10 w-auto dark:block md:h-12"
       />
     </a>
@@ -144,9 +146,9 @@ const mobileLinks = [
 
     <a
       class="primary-cta brand-pill hidden px-5 py-3 font-display text-sm font-bold uppercase tracking-wide transition md:inline-flex"
-      href="https://passaporte-pinheiros.pay.yampi.com.br/checkout?skipToCheckout=1&tokenReference=B50R2ZHEK8"
+      href={settings.purchaseCta.href}
     >
-      Garanta seu Passaporte
+      {settings.purchaseCta.label}
     </a>
 
     <button

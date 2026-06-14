@@ -78,8 +78,378 @@ components:
           collapsible:
             collapsed: true
             summary: "{fields.tipo}: {fields.formatado}"
+  pageAction:
+    type: object
+    label: Link
+    fields:
+      - name: label
+        label: Texto
+        type: string
+        required: true
+      - name: href
+        label: URL
+        type: string
+        required: true
+  headline:
+    type: object
+    label: Titulo com destaque
+    fields:
+      - name: prefix
+        label: Texto antes do destaque
+        type: string
+        required: true
+      - name: highlight
+        label: Texto em destaque
+        type: string
+        required: true
+      - name: suffix
+        label: Texto depois do destaque
+        type: string
+        required: true
+  pageImage:
+    type: object
+    label: Imagem
+    fields:
+      - name: src
+        label: Caminho da imagem
+        type: string
+        required: true
+        description: Use um caminho publico, por exemplo /experiencias/restaurantes/panda-ya/experiencia.jpg.
+      - name: alt
+        label: Texto alternativo
+        type: string
+        required: true
+  seo:
+    type: object
+    label: SEO
+    fields:
+      - name: title
+        label: Titulo
+        type: string
+        required: true
+      - name: description
+        label: Descricao
+        type: text
+        required: true
+  socialLink:
+    type: object
+    label: Rede social
+    fields:
+      - name: label
+        label: Nome
+        type: string
+        required: true
+      - name: icon
+        label: Icone
+        type: select
+        required: true
+        options:
+          values:
+            - name: facebook
+              label: Facebook
+            - name: instagram
+              label: Instagram
+      - name: href
+        label: URL
+        type: string
+        required: true
+      - name: ariaLabel
+        label: Rotulo acessivel
+        type: string
+        required: true
+  howItWorksStep:
+    type: object
+    label: Passo
+    fields:
+      - name: icon
+        label: Icone
+        type: select
+        required: true
+        options:
+          values:
+            - name: search
+              label: Busca
+            - name: sparkles
+              label: Brilho
+            - name: atSign
+              label: Arroba
+            - name: circleCheck
+              label: Confirmacao
+      - name: title
+        label: Titulo
+        type: string
+        required: true
+      - name: text
+        label: Texto
+        type: text
+        required: true
 
 content:
+  - name: site
+    label: Site
+    type: group
+    items:
+      - name: settings
+        label: Configuracoes gerais
+        type: file
+        path: src/content/site/settings.yml
+        format: yaml
+        fields:
+          - name: brandName
+            label: Nome da marca
+            type: string
+            required: true
+          - name: purchaseCta
+            label: CTA de compra
+            component: pageAction
+          - name: footer
+            label: Rodape
+            type: object
+            fields:
+              - name: tagline
+                label: Frase do rodape
+                type: text
+                required: true
+              - name: links
+                label: Links uteis
+                component: pageAction
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.label}"
+              - name: socialLinks
+                label: Redes sociais
+                component: socialLink
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{fields.label}"
+      - name: home
+        label: Home
+        type: file
+        path: src/content/site/home.yml
+        format: yaml
+        fields:
+          - name: seo
+            component: seo
+          - name: hero
+            label: Hero
+            type: object
+            fields:
+              - name: eyebrow
+                label: Chamada superior
+                type: string
+                required: true
+              - name: headline
+                label: Titulo principal
+                component: headline
+              - name: intro
+                label: Texto de apoio
+                type: text
+                required: true
+          - name: video
+            label: Video
+            type: object
+            fields:
+              - name: embedUrl
+                label: URL embed do YouTube
+                type: string
+                required: true
+              - name: title
+                label: Titulo do video
+                type: string
+                required: true
+      - name: comoFunciona
+        label: Como funciona
+        type: file
+        path: src/content/site/como-funciona.yml
+        format: yaml
+        fields:
+          - name: seo
+            component: seo
+          - name: hero
+            label: Hero
+            type: object
+            fields:
+              - name: eyebrow
+                label: Chamada superior
+                type: string
+                required: true
+              - name: title
+                label: Titulo principal
+                type: text
+                required: true
+          - name: steps
+            label: Passos
+            component: howItWorksStep
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.title}"
+          - name: faq
+            label: Chamada da FAQ
+            type: object
+            fields:
+              - name: headingHighlight
+                label: Texto destacado do titulo
+                type: string
+                required: true
+              - name: headingRest
+                label: Restante do titulo
+                type: string
+                required: true
+              - name: intro
+                label: Texto de apoio
+                type: text
+                required: true
+      - name: sobre
+        label: Sobre
+        type: file
+        path: src/content/pages/sobre.md
+        format: yaml-frontmatter
+        fields:
+          - name: title
+            label: Titulo
+            type: string
+            required: true
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            readonly: true
+          - name: description
+            label: Descricao SEO
+            type: text
+            required: true
+          - name: eyebrow
+            label: Chamada superior
+            type: string
+            required: true
+          - name: headline
+            label: Titulo principal
+            component: headline
+          - name: intro
+            label: Introducao
+            type: text
+            required: true
+          - name: actions
+            label: Botoes
+            type: object
+            fields:
+              - name: primary
+                label: Botao principal
+                component: pageAction
+              - name: secondary
+                label: Botao secundario
+                component: pageAction
+          - name: featuredImages
+            label: Imagens em destaque
+            component: pageImage
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.alt}"
+            description: Mantenha exatamente 3 imagens.
+          - name: statsLabel
+            label: Rotulo da estatistica
+            type: string
+            required: true
+          - name: pillars
+            label: Pilares
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fields.title}"
+            fields:
+              - name: title
+                label: Titulo
+                type: string
+                required: true
+              - name: icon
+                label: Icone
+                type: select
+                required: true
+                options:
+                  values:
+                    - name: compass
+                      label: Bussola
+                    - name: sparkles
+                      label: Brilho
+                    - name: mapPinned
+                      label: Mapa
+              - name: text
+                label: Texto
+                type: text
+                required: true
+          - name: editorial
+            label: Bloco editorial
+            type: object
+            fields:
+              - name: eyebrow
+                label: Chamada superior
+                type: string
+                required: true
+              - name: title
+                label: Titulo
+                type: string
+                required: true
+              - name: text
+                label: Texto
+                type: text
+                required: true
+          - name: guide
+            label: Guia
+            type: object
+            fields:
+              - name: icon
+                label: Icone
+                type: select
+                required: true
+                options:
+                  values:
+                    - name: bookOpen
+                      label: Livro
+              - name: title
+                label: Titulo
+                type: string
+                required: true
+              - name: paragraphs
+                label: Paragrafos
+                type: text
+                list: true
+              - name: cta
+                label: Link final
+                component: pageAction
+      - name: faq
+        label: Perguntas frequentes
+        type: collection
+        path: src/content/faq
+        format: yaml-frontmatter
+        operations:
+          create: false
+          rename: false
+          delete: false
+        view:
+          fields: [order, question]
+          primary: question
+          sort: [order]
+          search: [question, body]
+          default:
+            sort: order
+            order: asc
+        fields:
+          - name: order
+            label: Ordem
+            type: number
+            required: true
+          - name: question
+            label: Pergunta
+            type: string
+            required: true
+          - name: body
+            label: Resposta
+            type: rich-text
   - name: experiencias
     label: Experiencias
     type: group

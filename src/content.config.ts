@@ -72,6 +72,79 @@ const pageActionSchema = z.object({
   href: z.string(),
 });
 
+const seoSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const siteSettings = defineCollection({
+  loader: glob({
+    base: './src/content/site',
+    pattern: 'settings.yml',
+  }),
+  schema: z.object({
+    brandName: z.string(),
+    purchaseCta: pageActionSchema,
+    footer: z.object({
+      tagline: z.string(),
+      links: z.array(pageActionSchema),
+      socialLinks: z.array(z.object({
+        label: z.string(),
+        icon: z.enum(['facebook', 'instagram']),
+        href: z.string(),
+        ariaLabel: z.string(),
+      })),
+    }),
+  }),
+});
+
+const homePage = defineCollection({
+  loader: glob({
+    base: './src/content/site',
+    pattern: 'home.yml',
+  }),
+  schema: z.object({
+    seo: seoSchema,
+    hero: z.object({
+      eyebrow: z.string(),
+      headline: z.object({
+        prefix: z.string(),
+        highlight: z.string(),
+        suffix: z.string(),
+      }),
+      intro: z.string(),
+    }),
+    video: z.object({
+      embedUrl: z.string(),
+      title: z.string(),
+    }),
+  }),
+});
+
+const howItWorksPage = defineCollection({
+  loader: glob({
+    base: './src/content/site',
+    pattern: 'como-funciona.yml',
+  }),
+  schema: z.object({
+    seo: seoSchema,
+    hero: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+    }),
+    steps: z.array(z.object({
+      icon: z.enum(['search', 'sparkles', 'atSign', 'circleCheck']),
+      title: z.string(),
+      text: z.string(),
+    })),
+    faq: z.object({
+      headingHighlight: z.string(),
+      headingRest: z.string(),
+      intro: z.string(),
+    }),
+  }),
+});
+
 const pages = defineCollection({
   loader: glob({
     base: './src/content/pages',
@@ -113,4 +186,4 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { experiencias, faq, pages };
+export const collections = { experiencias, faq, pages, siteSettings, homePage, howItWorksPage };

@@ -1,0 +1,22 @@
+brandName: Passaporte Pinheiros
+purchaseCta:
+  label: Garanta seu Passaporte
+  href: "https://passaporte-pinheiros.pay.yampi.com.br/checkout?skipToCheckout=1&tokenReference=B50R2ZHEK8"
+footer:
+  tagline: "Não perca essa oportunidade única de economizar e se divertir!"
+  links:
+    - label: Sobre
+      href: "/sobre/"
+    - label: Contato
+      href: "/contato/"
+    - label: Políticas de Privacidade
+      href: "/politicas-de-privacidade/"
+  socialLinks:
+    - label: Facebook
+      icon: facebook
+      href: "https://www.facebook.com/meupassaporte.pinheiros"
+      ariaLabel: Facebook do Passaporte Pinheiros
+    - label: Instagram
+      icon: instagram
+      href: "https://www.instagram.com/passaportepinheiros/"
+      ariaLabel: Instagram do Passaporte Pinheiros

@@ -3,39 +3,41 @@ import { getCollection } from 'astro:content';
 import ExperienceExplorer from '../components/ExperienceExplorer.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortExperiences } from '../lib/experiences';
+import { getHomePage, getSiteSettings } from '../lib/site-content';
 
 const experiences = sortExperiences(await getCollection('experiencias'));
+const [home, settings] = await Promise.all([getHomePage(), getSiteSettings()]);
 ---
 
 <BaseLayout
-  title="Passaporte Pinheiros"
-  description="Explore benefícios, restaurantes, produtos e serviços participantes do Passaporte Pinheiros."
+  title={home.seo.title}
+  description={home.seo.description}
 >
   <section class="container-shell pt-10 pb-6 md:pt-14 md:pb-8">
     <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
       <div class="max-w-xl">
-        <p class="brand-heading text-sm font-bold text-primary">Guia de benefícios do bairro</p>
+        <p class="brand-heading text-sm font-bold text-primary">{home.hero.eyebrow}</p>
         <h1 class="brand-heading mt-3 text-[42px] font-bold leading-[0.95] text-ink md:text-[68px]">
-          Descubra os
-          <span class="blue-word">melhores estabelecimentos</span>
-          do bairro
+          {home.hero.headline.prefix}
+          <span class="blue-word">{home.hero.headline.highlight}</span>
+          {home.hero.headline.suffix}
         </h1>
         <p class="mt-5 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-          Use a busca para encontrar restaurantes, serviços e produtos participantes do Passaporte Pinheiros.
+          {home.hero.intro}
         </p>
         <a
-          href="https://passaporte-pinheiros.pay.yampi.com.br/checkout?skipToCheckout=1&tokenReference=B50R2ZHEK8"
+          href={settings.purchaseCta.href}
           class="primary-cta brand-pill mt-7 inline-flex px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition"
         >
-          Garanta seu Passaporte
+          {settings.purchaseCta.label}
         </a>
       </div>
 
       <div class="overflow-hidden rounded-xl shadow-[0_20px_60px_rgba(0,110,199,0.15)]">
         <div class="relative aspect-video w-full">
           <iframe
-            src="https://www.youtube.com/embed/fqn1gppmD1A"
-            title="Passaporte Pinheiros"
+            src={home.video.embedUrl}
+            title={home.video.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             class="absolute inset-0 h-full w-full border-0"

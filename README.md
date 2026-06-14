@@ -163,7 +163,15 @@ Para usar:
 2. Acesse <https://app.pagescms.org>.
 3. Entre com sua conta do GitHub.
 4. Autorize o Pages CMS no repositório.
-5. Edite as experiências em `Experiencias > Produtos`, `Experiencias > Restaurantes` ou `Experiencias > Servicos`.
+5. Edite as configurações em `Site` ou as experiências em `Experiencias > Produtos`, `Experiencias > Restaurantes` ou `Experiencias > Servicos`.
+
+No grupo `Site`, o CMS permite editar:
+
+- `Configuracoes gerais`: nome da marca, CTA de compra, frase do rodapé, links úteis e redes sociais.
+- `Home`: SEO, textos do hero e vídeo em destaque.
+- `Como funciona`: SEO, hero, cards de passo a passo e chamada da FAQ.
+- `Sobre`: conteúdo institucional da página Sobre.
+- `Perguntas frequentes`: perguntas e respostas já existentes em `src/content/faq`.
 
 O CMS permite criar, editar, renomear e apagar experiências. Cada collection grava os arquivos em `src/content/experiencias/{categoria}` usando o `slug` como nome do Markdown.
 

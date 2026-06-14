@@ -3,48 +3,51 @@ import { AtSign, CircleCheck, Search, Sparkles } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 import FAQ from '../components/FAQ.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getHowItWorksPage } from '../lib/site-content';
 
 const faqItems = await getCollection('faq');
+const page = await getHowItWorksPage();
+const iconMap = {
+  atSign: AtSign,
+  circleCheck: CircleCheck,
+  search: Search,
+  sparkles: Sparkles,
+};
 ---
 
 <BaseLayout
-  title="Como funciona"
-  description="Entenda o fluxo editorial e de consulta das experiências do Passaporte Pinheiros."
+  title={page.seo.title}
+  description={page.seo.description}
 >
   <section class="container-shell py-12 md:py-16">
     <div class="max-w-3xl">
-      <p class="font-display text-sm font-bold uppercase tracking-wide text-primary">Passaporte Pinheiros</p>
+      <p class="font-display text-sm font-bold uppercase tracking-wide text-primary">{page.hero.eyebrow}</p>
       <h1 class="mt-4 font-display text-4xl font-extrabold leading-tight text-primary md:text-6xl">
-        Um guia simples para descobrir e aproveitar experiências no bairro.
+        {page.hero.title}
       </h1>
     </div>
   </section>
 
   <section class="container-shell grid gap-6 pb-16 md:grid-cols-2 lg:grid-cols-4">
-    <div class="rounded-lg border border-border/70 bg-surface p-6">
-      <Search class="h-7 w-7 text-primary" aria-hidden="true" />
-      <h2 class="mt-5 font-display text-xl font-bold text-primary">Explore</h2>
-      <p class="mt-3 leading-relaxed text-muted">Busque por nome, categoria, descrição do benefício ou Instagram.</p>
-    </div>
+    {
+      page.steps.map((step) => {
+        const Icon = iconMap[step.icon];
 
-    <div class="rounded-lg border border-border/70 bg-surface p-6">
-      <Sparkles class="h-7 w-7 text-primary" aria-hidden="true" />
-      <h2 class="mt-5 font-display text-xl font-bold text-primary">Escolha</h2>
-      <p class="mt-3 leading-relaxed text-muted">Abra a experiência para conferir o benefício e acessar o canal oficial do local.</p>
-    </div>
-
-    <div class="rounded-lg border border-border/70 bg-surface p-6">
-      <AtSign class="h-7 w-7 text-primary" aria-hidden="true" />
-      <h2 class="mt-5 font-display text-xl font-bold text-primary">Confirme</h2>
-      <p class="mt-3 leading-relaxed text-muted">Use o Instagram do participante para validar detalhes, horários e disponibilidade.</p>
-    </div>
-
-    <div class="rounded-lg border border-border/70 bg-surface p-6">
-      <CircleCheck class="h-7 w-7 text-primary" aria-hidden="true" />
-      <h2 class="mt-5 font-display text-xl font-bold text-primary">Aproveite</h2>
-      <p class="mt-3 leading-relaxed text-muted">Leve o passaporte e siga as regras informadas por cada parceiro participante.</p>
-    </div>
+        return (
+          <div class="rounded-lg border border-border/70 bg-surface p-6">
+            <Icon class="h-7 w-7 text-primary" aria-hidden="true" />
+            <h2 class="mt-5 font-display text-xl font-bold text-primary">{step.title}</h2>
+            <p class="mt-3 leading-relaxed text-muted">{step.text}</p>
+          </div>
+        );
+      })
+    }
   </section>
 
-  <FAQ items={faqItems} />
+  <FAQ
+    items={faqItems}
+    headingHighlight={page.faq.headingHighlight}
+    headingRest={page.faq.headingRest}
+    intro={page.faq.intro}
+  />
 </BaseLayout>

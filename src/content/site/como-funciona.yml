@@ -1,0 +1,23 @@
+seo:
+  title: Como funciona
+  description: Entenda o fluxo editorial e de consulta das experiências do Passaporte Pinheiros.
+hero:
+  eyebrow: Passaporte Pinheiros
+  title: Um guia simples para descobrir e aproveitar experiências no bairro.
+steps:
+  - icon: search
+    title: Explore
+    text: Busque por nome, categoria, descrição do benefício ou Instagram.
+  - icon: sparkles
+    title: Escolha
+    text: Abra a experiência para conferir o benefício e acessar o canal oficial do local.
+  - icon: atSign
+    title: Confirme
+    text: Use o Instagram do participante para validar detalhes, horários e disponibilidade.
+  - icon: circleCheck
+    title: Aproveite
+    text: Leve o passaporte e siga as regras informadas por cada parceiro participante.
+faq:
+  headingHighlight: Dúvidas
+  headingRest: Frequentes
+  intro: Tudo o que você precisa saber para aproveitar o melhor do bairro.
