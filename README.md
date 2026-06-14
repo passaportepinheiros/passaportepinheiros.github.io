@@ -153,6 +153,19 @@ Para habilitar no GitHub:
 2. Em `Build and deployment`, selecione `Source: GitHub Actions`.
 3. Rode novamente o workflow `Deploy to GitHub Pages`.
 
+## Versionamento de tags
+
+O workflow `.github/workflows/release.yml` usa `zero-release/zero-release` para criar tags SemVer automaticamente a partir de Conventional Commits na branch `main`.
+
+Antes de criar uma tag, o workflow executa:
+
+```sh
+pnpm check
+pnpm build
+```
+
+As tags usam o formato `v%s`, por exemplo `v1.2.3`. Commits `feat:` geram minor, `fix:` e `perf:` geram patch, e commits com `!` ou `BREAKING CHANGE` geram major.
+
 ## Pages CMS
 
 Este repositório também está configurado para edição pelo Pages CMS, usando o arquivo `.pages.yml` na raiz.
