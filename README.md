@@ -155,7 +155,7 @@ Para habilitar no GitHub:
 
 ## Versionamento de tags
 
-O workflow `.github/workflows/release.yml` usa `zero-release/zero-release` para criar tags SemVer automaticamente a partir de Conventional Commits na branch `main`.
+O workflow `.github/workflows/release.yml` usa `zero-release/zero-release@v1.2.2` para criar tags SemVer automaticamente a partir de Conventional Commits na branch `main`.
 
 Antes de criar uma tag, o workflow executa:
 

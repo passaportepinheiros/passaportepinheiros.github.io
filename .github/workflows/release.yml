@@ -41,7 +41,7 @@ jobs:
 
             - name: Create semantic version tag
               id: release
-              uses: zero-release/zero-release@v1
+              uses: zero-release/zero-release@v1.2.2
               with:
                   branches: main
                   plugins: release-notes
